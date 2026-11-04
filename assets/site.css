@@ -1,0 +1,23 @@
+:root{--tl-green:#15803d;--tl-deep:#14532d;--tl-line:#dce9df;--tl-shadow:0 16px 42px rgba(20,83,45,.08)}
+html{scroll-behavior:smooth;scroll-padding-top:6rem}
+body{font-family:Inter,ui-sans-serif,system-ui,sans-serif;color:#17231d;background:#f8fbf8;line-height:1.65;-webkit-font-smoothing:antialiased}
+::selection{background:#bbf7d0;color:#14532d}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #16a34a!important;outline-offset:3px!important}
+header{border-bottom:1px solid rgba(21,128,61,.09);backdrop-filter:saturate(150%) blur(12px)}
+header nav{min-height:68px}
+main h1,main h2,main h3{letter-spacing:-.025em;text-wrap:balance}
+main p{line-height:1.75}
+main section{scroll-margin-top:6rem}
+.service-card,.team-card{border:1px solid rgba(21,128,61,.08);box-shadow:var(--tl-shadow)}
+.service-card{min-width:min(20rem,100%);max-width:100%;transform:none!important}
+.service-card:hover{transform:translateY(-4px)!important;background:#fff!important;box-shadow:0 20px 48px rgba(20,83,45,.13)!important}
+.btn-animate:hover{transform:translateY(-2px)!important}
+.logo-animate{animation:none!important}
+#mobile-menu{border-top:1px solid var(--tl-line);box-shadow:0 14px 22px rgba(15,23,42,.08)}
+#tlai-box{border:1px solid var(--tl-line);box-shadow:0 24px 70px rgba(15,23,42,.22)}
+#tlai-msgs{overscroll-behavior:contain}
+#tlai-chips button{min-height:36px}
+footer{border-top:1px solid rgba(21,128,61,.1)}
+address{font-style:normal}
+@media(max-width:640px){header nav{min-height:64px}.service-card{width:100%;min-width:0;padding:1.25rem}#tlai-box{right:10px;bottom:calc(145px + env(safe-area-inset-bottom,0px));width:calc(100vw - 20px);height:min(470px,calc(100dvh - 175px))}#tlai-btn{right:12px;min-width:132px;height:50px;font-size:14px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.fade-in{opacity:1!important;transform:none!important}}
