@@ -5,11 +5,11 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://talhalabs.vercel.app/service.html</loc>
+    <loc>https://talhalabs.vercel.app/services.html</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://talhalabs.vercel.app/abou.html</loc>
+    <loc>https://talhalabs.vercel.app/about.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
