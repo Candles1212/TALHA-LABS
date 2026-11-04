@@ -212,6 +212,7 @@
             .animate-bounce, .animate-pulse, .logo-animate { animation: none !important; }
         }
     </style>
+    <link rel="stylesheet" href="assets/site.css">
 </head>
 <body class="bg-gray-50 text-gray-800">
 
@@ -229,7 +230,7 @@
                 <a href="contact.html" class="text-gray-600 hover:text-green-600 font-medium nav-underline transition duration-300">Contact Us</a>
             </div>
             <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" aria-label="Open menu" class="md:hidden text-gray-600 hover:text-green-600 focus:outline-none transition-transform duration-300 hover:scale-110">
+            <button id="mobile-menu-button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false" class="md:hidden text-gray-600 hover:text-green-600 focus:outline-none transition-transform duration-300 hover:scale-110">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4"></path>
                 </svg>
@@ -254,13 +255,13 @@
         <!-- Home Section -->
         <section id="home" class="relative bg-green-50 py-12 md:py-16 overflow-hidden rounded-b-3xl shadow-xl fade-in delay-2">
             <div class="container mx-auto px-4 text-center relative z-10">
-                <h1 class="text-5xl md:text-7xl font-semibold text-green-700 mb-2 animate-pulse">Talha Labs</h1>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold text-green-700 mb-2">Talha Labs</h1>
                 <p class="text-xl md:text-2xl font-semibold text-green-800 mb-4">Diagnostic Laboratory in Sadiqabad</p>
-                <h2 class="text-5xl md:text-5xl font-extrabold text-green-900 leading-tight mb-4">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-green-900 leading-tight mb-4">
                     Your Health, Our Priority
                 </h2>
                 <hr class="hr-animated mb-8">
-                <p class="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto mb-8">
+                <p class="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8">
                     Talha Labs provides accurate and reliable diagnostic services in Sadiqabad with state-of-the-art technology and compassionate care.
                 </p>
                 <a href="#services" class="inline-block bg-green-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg btn-animate">
@@ -412,6 +413,7 @@
 
             mobileMenuButton.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', mobileMenu.classList.contains('hidden') ? 'false' : 'true');
                 if (!mobileMenu.classList.contains('hidden')) {
                     mobileMenu.style.opacity = '1';
                     mobileMenu.style.transform = 'translateY(0)';
@@ -562,7 +564,7 @@
             text = (text || '').replace(/^\s+|\s+$/g, '');
             if (!text) return;
             add(label || text, true);
-            if (window.gtag) { gtag('event', 'tl_ai_question', { topic: text }); }
+            if (window.gtag) { gtag('event', 'tl_ai_question', { topic: label || 'preset-option' }); }
             setTimeout(function () { add(answer(text), false); }, 350);
         }
         function toggle(open) {
