@@ -312,8 +312,10 @@
             .animate-bounce, .animate-pulse, .logo-animate { animation: none !important; }
         }
     </style>
+    <link rel="stylesheet" href="assets/site.css">
 </head>
 <body class="bg-gray-50 text-gray-800">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-white focus:px-4 focus:py-3 focus:font-semibold focus:text-green-800 focus:shadow-lg">Skip to main content</a>
 
     <!-- Header Section -->
     <header class="bg-white shadow-sm sticky top-0 z-50 nav-animate">
@@ -329,7 +331,7 @@
                 <a href="contact.html" class="text-gray-600 hover:text-green-600 font-medium nav-underline transition duration-300">Contact Us</a>
             </div>
             <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" aria-label="Open menu" class="md:hidden text-gray-600 hover:text-green-600 focus:outline-none transition-transform duration-300 hover:scale-110">
+            <button id="mobile-menu-button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false" class="md:hidden text-gray-600 hover:text-green-600 focus:outline-none transition-transform duration-300 hover:scale-110">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4"></path>
                 </svg>
@@ -344,7 +346,7 @@
         </div>
     </header>
 
-    <main class="container mx-auto px-4 py-16 fade-in delay-1">
+    <main id="main-content" class="container mx-auto px-4 py-16 fade-in delay-1">
         <h1 class="text-4xl font-bold text-center text-gray-900 mb-4">Our Laboratory Services in Sadiqabad</h1>
         <hr class="hr-animated mb-8">
         <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">Talha Labs offers blood tests, thyroid and hormone profiles, HbA1c, Vitamin D, medical screening and home sample collection in Sadiqabad, with fast and accurate reports.</p>
@@ -503,6 +505,7 @@
 
             mobileMenuButton.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', mobileMenu.classList.contains('hidden') ? 'false' : 'true');
                 if (!mobileMenu.classList.contains('hidden')) {
                     mobileMenu.style.opacity = '1';
                     mobileMenu.style.transform = 'translateY(0)';
@@ -653,7 +656,7 @@
             text = (text || '').replace(/^\s+|\s+$/g, '');
             if (!text) return;
             add(label || text, true);
-            if (window.gtag) { gtag('event', 'tl_ai_question', { topic: text }); }
+            if (window.gtag) { gtag('event', 'tl_ai_question', { topic: label || 'preset-option' }); }
             setTimeout(function () { add(answer(text), false); }, 350);
         }
         function toggle(open) {
