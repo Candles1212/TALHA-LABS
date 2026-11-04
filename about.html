@@ -122,7 +122,7 @@
         }
         /* Navigation bar slide-in animation */
         .nav-animate {
-            animation: navSlideIn 1s cubic-bezier(.4,0,.2,1);
+            animation: navSlideIn 0.5s cubic-bezier(.4,0,.2,1);
         }
         @keyframes navSlideIn {
             from {
@@ -157,7 +157,7 @@
         }
         /* Card hover effect */
         .service-card {
-            transition: transform 0.4s cubic-bezier(.4,0,.2,1), box-shadow 0.4s cubic-bezier(.4,0,.2,1);
+            transition: transform 0.25s cubic-bezier(.4,0,.2,1), box-shadow 0.25s cubic-bezier(.4,0,.2,1);
         }
         .service-card:hover {
             transform: translateY(-12px) scale(1.04) rotate(-1deg);
@@ -201,12 +201,12 @@
         .fade-in {
             opacity: 0;
             transform: translateY(40px);
-            animation: fadeInUp 1s forwards;
+            animation: fadeInUp 0.5s ease-out forwards;
         }
-        .fade-in.delay-1 { animation-delay: 0.2s; }
-        .fade-in.delay-2 { animation-delay: 0.4s; }
-        .fade-in.delay-3 { animation-delay: 0.6s; }
-        .fade-in.delay-4 { animation-delay: 0.8s; }
+        .fade-in.delay-1 { animation-delay: 0s; }
+        .fade-in.delay-2 { animation-delay: 0.05s; }
+        .fade-in.delay-3 { animation-delay: 0.1s; }
+        .fade-in.delay-4 { animation-delay: 0.15s; }
         @keyframes fadeInUp {
             to {
                 opacity: 1;
@@ -216,10 +216,10 @@
     
         /* Team card animation and effect */
         .team-card {
-            transition: transform 0.6s cubic-bezier(.4,0,.2,1), box-shadow 0.6s cubic-bezier(.4,0,.2,1), background 0.6s cubic-bezier(.4,0,.2,1);
+            transition: transform 0.3s cubic-bezier(.4,0,.2,1), box-shadow 0.3s cubic-bezier(.4,0,.2,1), background 0.3s cubic-bezier(.4,0,.2,1);
             opacity: 0;
             transform: translateY(40px) scale(0.98);
-            animation: fadeInUpBox 2.2s forwards;
+            animation: fadeInUpBox 0.6s ease-out forwards;
             background: linear-gradient(120deg, #f0fdf4 80%, #bbf7d0 100%);
         }
         .team-card:hover {
@@ -227,11 +227,17 @@
             box-shadow: 0 10px 32px rgba(22,163,74,0.15), 0 2px 8px rgba(0,0,0,0.08);
             background: linear-gradient(120deg, #bbf7d0 60%, #f0fdf4 100%);
         }
-        .team-card.delay-1 { animation-delay: 0.4s; }
-        .team-card.delay-2 { animation-delay: 0.8s; }
-        .team-card.delay-3 { animation-delay: 1.2s; }
-        .team-card.delay-4 { animation-delay: 1.6s; }
+        .team-card.delay-1 { animation-delay: 0s; }
+        .team-card.delay-2 { animation-delay: 0.05s; }
+        .team-card.delay-3 { animation-delay: 0.1s; }
+        .team-card.delay-4 { animation-delay: 0.15s; }
         @keyframes fadeInUpBox { to { opacity: 1; transform: none; } }
+    
+        /* Respect users who prefer less motion */
+        @media (prefers-reduced-motion: reduce) {
+            .fade-in, .team-card { opacity: 1 !important; transform: none !important; animation: none !important; }
+            .animate-bounce, .animate-pulse, .logo-animate { animation: none !important; }
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -427,7 +433,7 @@
                         observer.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.1 });
+            }, { threshold: 0.05, rootMargin: '0px 0px 60px 0px' });
 
             fadeEls.forEach(el => {
                 el.style.animationPlayState = 'paused';
@@ -465,6 +471,118 @@
                 else if (h.indexOf('tel:') === 0) gtag('event', 'phone_click');
             });
         })();
+    </script>
+
+    <!-- TL AI assistant (rule-based auto-reply bot) -->
+    <style>
+        #tlai-btn{position:fixed;right:16px;bottom:calc(84px + env(safe-area-inset-bottom,0px));z-index:61;height:56px;padding:0 20px 0 6px;border-radius:28px;border:0;background:#16a34a;color:#fff;font:600 15px 'Inter',sans-serif;display:flex;align-items:center;gap:10px;box-shadow:0 4px 14px rgba(0,0,0,.25);cursor:pointer;transition:transform .2s}
+        #tlai-btn:hover{transform:scale(1.05)}
+        #tlai-box{position:fixed;right:16px;bottom:calc(150px + env(safe-area-inset-bottom,0px));z-index:62;width:min(360px,calc(100vw - 32px));height:min(480px,calc(100vh - 180px));background:#fff;border-radius:18px;box-shadow:0 10px 40px rgba(0,0,0,.28);display:none;flex-direction:column;overflow:hidden;font-family:'Inter',sans-serif}
+        #tlai-box.open{display:flex}
+        .tlai-h{background:#16a34a;color:#fff;padding:12px 14px;display:flex;align-items:center;justify-content:space-between}
+        .tlai-h b{font-size:16px}.tlai-h small{display:block;font-size:11px;opacity:.9}
+        .tlai-x{background:none;border:0;color:#fff;font-size:24px;line-height:1;cursor:pointer}
+        #tlai-msgs{flex:1;overflow-y:auto;padding:12px;background:#f0fdf4}
+        .tlai-m{max-width:88%;padding:9px 12px;border-radius:14px;margin-bottom:8px;font-size:14px;line-height:1.45;color:#1f2937;word-wrap:break-word}
+        .tlai-bot{background:#fff;border:1px solid #d1fae5}
+        .tlai-me{background:#16a34a;color:#fff;margin-left:auto}
+        .tlai-m a{color:#15803d;text-decoration:underline}
+        .tlai-me a{color:#fff}
+        #tlai-chips{padding:8px 10px 10px;display:flex;flex-wrap:wrap;gap:6px;background:#fff;border-top:1px solid #d1fae5;max-height:44%;overflow-y:auto}
+        #tlai-chips button{border:1px solid #16a34a;background:#fff;color:#15803d;border-radius:14px;padding:5px 11px;font-size:13px;cursor:pointer}
+        #tlai-chips button:hover{background:#dcfce7}
+    </style>
+    <button id="tlai-btn" type="button" aria-label="Open TL AI assistant" aria-expanded="false">
+        <span style="width:44px;height:44px;border-radius:50%;overflow:hidden;background:#fff;display:inline-block;flex-shrink:0"><img src="taha.jpg" alt="" width="44" height="44" style="display:block;width:100%;height:100%;transform:scale(1.07)"></span>
+        <span>TL AI</span>
+    </button>
+    <div id="tlai-box" role="dialog" aria-label="TL AI assistant">
+        <div class="tlai-h"><div style="display:flex;align-items:center;gap:10px"><span style="width:36px;height:36px;border-radius:50%;overflow:hidden;background:#fff;display:inline-block;flex-shrink:0"><img src="taha.jpg" alt="" width="36" height="36" style="display:block;width:100%;height:100%;transform:scale(1.07)"></span><div><b>TL AI</b><small>Talha Labs automatic assistant</small></div></div><button class="tlai-x" type="button" id="tlai-close" aria-label="Close chat">&times;</button></div>
+        <div id="tlai-msgs"></div>
+        <div id="tlai-chips"></div>
+    </div>
+    <script>
+    (function () {
+        var WA = 'https://wa.me/923006700196';
+        var WAL = '<a href="' + WA + '" target="_blank" rel="noopener">WhatsApp par rabta karein</a>';
+        var KB = [
+            { k: ['dawai', 'dawa ', 'medicine', 'treatment', 'ilaj', 'bimari', 'symptom', 'normal range', 'report theek', 'diagnos', ' dard ', ' pain ', 'bukhar', ' fever '],
+              a: 'Main bimari, dawai ya report ke natayej ke baare mein medical salah nahi de sakta. Is ke liye apne doctor se mashwara karein.' },
+            { k: ['rate', 'price', 'charges', ' fee ', ' cost ', 'kitne paise', 'qeemat', 'kitna ', 'ریٹ', 'قیمت'],
+              a: 'Test ke rate test ke mutabiq hote hain. Rate janne ke liye test ka naam WhatsApp par bhej dein: ' + WAL + '.' },
+            { k: ['khali pet', 'fasting', 'empty stomach', 'bhooka'],
+              a: 'Kuch tests (jaise blood sugar ya lipid profile) ke liye khali pet aana ho sakta hai. Aap ke test ke liye sahi hidayat janne ke liye ' + WAL + ' ya apne doctor se poochein.' },
+            { k: ['home', 'ghar', 'sampling', 'sample collection'],
+              a: 'Ji, <b>home sampling</b> available hai: ghar par safe aur hygienic sample collection. Ilaqa aur waqt ke liye ' + WAL + '.' },
+            { k: ['report', 'result', 'kitni der', 'delivery', 'رپورٹ'],
+              a: 'Reports digital taur par <b>WhatsApp ya email</b> par bhi mil sakti hain. Kisi khaas test ki report kitni der mein milti hai, ye test par depend karta hai, uske liye ' + WAL + '.' },
+            { k: ['time', 'timing', 'open', 'close', 'kab ', 'khula', 'khulta', 'hours', 'waqt', 'baje', 'وقت', 'ٹائم'],
+              a: 'Talha Labs roz <b>subah 7:00 se raat 9:00 baje</b> tak khula hai (haftay ke saaton din).' },
+            { k: ['address', 'location', 'where', 'kahan', 'jagah', 'map', ' pata ', 'direction', 'پتہ', 'ایڈریس'],
+              a: 'Hamara address: <b>Hospital Road, Near Telephone Exchange, Sadiqabad</b>.<br><a href="https://maps.app.goo.gl/Wy42WbfJg7LeZgX67" target="_blank" rel="noopener">Google Maps par dekhein</a>' },
+            { k: ['phone', 'number', 'call', 'contact', 'whatsapp', 'rabta', 'email', 'mail', 'فون', 'نمبر'],
+              a: 'Cell/WhatsApp: <a href="tel:+923006700196">0300-6700196</a><br>Landline: <a href="tel:+92685701210">068-5701210</a><br>Email: <a href="mailto:talhalabs78@gmail.com">talhalabs78@gmail.com</a><br>' + WAL },
+            { k: ['appointment', 'booking', 'book ', 'time lena'],
+              a: 'Booking aur home sampling ke liye ' + WAL + ' ya <a href="tel:+923006700196">0300-6700196</a> par call karein.' },
+            { k: ['doctor', 'pathologist', 'team', 'kab se', 'since', 'founder', 'owner', 'anwar'],
+              a: 'Talha Labs <b>2003</b> se khidmat de raha hai. Hamari team mein Dr. Khalid Mehmood (Consultant Pathologist) aur Prof. Dr. M Rafique Cheema (CEO / Consultant Hematologist) shamil hain. <a href="about.html">Team dekhein</a>' },
+            { k: ['cbc', 'lft', 'kft', 'liver', 'kidney', 'thyroid', 'hba1c', 'vitamin', 'hormone', 'sugar', 'lipid', 'dengue', 'hepatitis', 'hiv', 'screening', 'pfa'],
+              a: 'Ji, ye test hamari services mein shamil hai. Rate aur report ke waqt ke liye ' + WAL + '. <a href="services.html">Poori list dekhein</a>' },
+            { k: ['service', 'kon kon', 'kya kya', 'tests', 'list', 'ٹیسٹ'],
+              a: 'Hamari services: CBC, Liver aur Kidney function tests, Thyroid profile, Blood sugar aur Lipid profile, HbA1c, Vitamin D, Hormones test, Medical screening (PFA), Home sampling aur Digital reports. <a href="services.html">Poori list dekhein</a>' },
+            { k: ['thank', 'shukria', 'shukriya', 'jazak'],
+              a: 'Khushi hui madad kar ke. Koi aur sawal ho to poochein.' },
+            { k: ['salam', 'hello', ' hi ', ' hey ', 'aoa'],
+              a: 'Wa Alaikum Assalam! Aap timing, location, services ya rabta ke baare mein poochh sakte hain.' }
+        ];
+        var FALLBACK = 'Maaf kijiye, mujhe is sawal ka jawab nahi pata. Neeche diye gaye options dekhein, ya hamari team se baat karein: ' + WAL + '.';
+        var CHIPS = [['Timing', 'timing'], ['Location', 'location'], ['Phone / WhatsApp', 'phone'], ['Email', 'email'], ['Services', 'services'], ['Home sampling', 'home sampling'], ['Reports', 'report'], ['Rates', 'rate'], ['Booking', 'booking'], ['Khali pet (fasting)', 'fasting'], ['Doctors / Team', 'doctor'], ['CBC', 'cbc'], ['Thyroid', 'thyroid'], ['Vitamin D', 'vitamin'], ['HbA1c', 'hba1c'], ['Liver / Kidney', 'liver'], ['Blood sugar', 'sugar'], ['Hormones', 'hormone'], ['Dengue / Hepatitis', 'dengue'], ['Medical screening', 'screening'], ['Bimari ki salah', 'dawai']];
+
+        var btn = document.getElementById('tlai-btn'), box = document.getElementById('tlai-box'),
+            msgs = document.getElementById('tlai-msgs'), chips = document.getElementById('tlai-chips'),
+            started = false;
+
+        function add(content, me) {
+            var d = document.createElement('div');
+            d.className = 'tlai-m ' + (me ? 'tlai-me' : 'tlai-bot');
+            if (me) { d.textContent = content; } else { d.innerHTML = content; }
+            msgs.appendChild(d);
+            msgs.scrollTop = msgs.scrollHeight;
+        }
+        function answer(text) {
+            var t = ' ' + text.toLowerCase().replace(/[.,!?;:()"'\/\\-]/g, ' ') + ' ';
+            for (var i = 0; i < KB.length; i++) {
+                for (var j = 0; j < KB[i].k.length; j++) {
+                    if (t.indexOf(KB[i].k[j]) > -1) return KB[i].a;
+                }
+            }
+            return FALLBACK;
+        }
+        function ask(text, label) {
+            text = (text || '').replace(/^\s+|\s+$/g, '');
+            if (!text) return;
+            add(label || text, true);
+            if (window.gtag) { gtag('event', 'tl_ai_question', { topic: text }); }
+            setTimeout(function () { add(answer(text), false); }, 350);
+        }
+        function toggle(open) {
+            box.classList.toggle('open', open);
+            btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            if (open && !started) {
+                started = true;
+                add('Assalam o Alaikum! Main <b>TL AI</b>, Talha Labs ka automatic assistant hoon. Main timing, location, services aur rabta ki maloomat de sakta hoon. Main bimari ya report ke baare mein medical salah nahi de sakta. Neeche diye gaye options mein se chunein.', false);
+                CHIPS.forEach(function (c) {
+                    var b = document.createElement('button');
+                    b.type = 'button'; b.textContent = c[0];
+                    b.addEventListener('click', function () { ask(c[1], c[0]); });
+                    chips.appendChild(b);
+                });
+                if (window.gtag) { gtag('event', 'tl_ai_open'); }
+            }
+        }
+        btn.addEventListener('click', function () { toggle(!box.classList.contains('open')); });
+        document.getElementById('tlai-close').addEventListener('click', function () { toggle(false); });
+    })();
     </script>
 </body>
 </html>
