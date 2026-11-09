@@ -499,6 +499,20 @@
         #tlai-chips{padding:8px 10px 10px;display:flex;flex-wrap:wrap;gap:6px;background:#fff;border-top:1px solid #d1fae5;max-height:44%;overflow-y:auto}
         #tlai-chips button{border:1px solid #16a34a;background:#fff;color:#15803d;border-radius:14px;padding:5px 11px;font-size:13px;cursor:pointer}
         #tlai-chips button:hover{background:#dcfce7}
+    
+        /* Compact floating buttons on phones: icons only, so they do not cover the screen */
+        @media (max-width: 640px) {
+            #tlai-btn { min-width:0; width:50px; height:50px; padding:0; border-radius:50%; justify-content:center; gap:0; right:12px; bottom:calc(74px + env(safe-area-inset-bottom,0px)); }
+            #tlai-btn > span:last-child { display:none; }
+            #tlai-btn > span:first-child { width:46px !important; height:46px !important; }
+            a[aria-label^="Chat with Talha Labs on WhatsApp"] { min-width:0 !important; width:50px !important; height:50px !important; padding:0 !important; border-radius:50% !important; background:#25D366 !important; justify-content:center !important; gap:0 !important; right:12px !important; bottom:calc(12px + env(safe-area-inset-bottom,0px)) !important; }
+            a[aria-label^="Chat with Talha Labs on WhatsApp"] > span:last-child { display:none !important; }
+            a[aria-label^="Chat with Talha Labs on WhatsApp"] > span:first-child { width:100% !important; height:100% !important; }
+            #tlai-box { right:12px; width:calc(100vw - 24px); bottom:calc(134px + env(safe-area-inset-bottom,0px)); height:min(480px, calc(100vh - 180px)); }
+            body.rt-bar-on a[aria-label^="Chat with Talha Labs on WhatsApp"] { bottom:calc(76px + env(safe-area-inset-bottom,0px)) !important; }
+            body.rt-bar-on #tlai-btn { bottom:calc(138px + env(safe-area-inset-bottom,0px)); }
+            body.rt-bar-on #tlai-box { bottom:calc(198px + env(safe-area-inset-bottom,0px)); height:min(480px, calc(100vh - 250px)); }
+        }
     </style>
     <button id="tlai-btn" type="button" aria-label="Open TL AI assistant" aria-expanded="false">
         <span style="width:44px;height:44px;border-radius:50%;overflow:hidden;background:#fff;display:inline-block;flex-shrink:0"><img src="taha.jpg" alt="" width="44" height="44" style="display:block;width:100%;height:100%;transform:scale(1.07)"></span>
