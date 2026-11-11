@@ -63,156 +63,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Include Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-            background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%);
-        }
-        .container {
-            max-width: 1200px;
-        }
-        /* Custom scrollbar styles */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f5e9;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 5px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8;
-        }
-        /* Animated underline for nav links */
-        .nav-underline {
-            position: relative;
-            overflow: hidden;
-            transition: color 0.3s;
-        }
-        .nav-underline::after {
-            content: "";
-            display: block;
-            position: absolute;
-            left: 0;
-            bottom: -2px;
-            width: 100%;
-            height: 2.5px;
-            background: linear-gradient(90deg, #16a34a 0%, #22d3ee 100%);
-            transform: scaleX(0);
-            transition: transform 0.3s cubic-bezier(.4,0,.2,1);
-            transform-origin: left;
-        }
-        .nav-underline:hover::after, .nav-underline.active::after {
-            transform: scaleX(1);
-        }
-        .nav-underline:hover, .nav-underline.active {
-            color: #16a34a !important;
-            text-shadow: 0 2px 8px #16a34a33;
-            transition: color 0.3s, text-shadow 0.3s;
-        }
-        /* Navigation bar slide-in animation */
-        .nav-animate {
-            animation: navSlideIn 0.5s cubic-bezier(.4,0,.2,1);
-        }
-        @keyframes navSlideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-40px) scale(0.98);
-            }
-            to {
-                opacity: 1;
-                transform: none;
-            }
-        }
-        /* Mobile menu fade-in animation */
-        #mobile-menu {
-            transition: opacity 0.4s, transform 0.4s;
-        }
-        #mobile-menu:not(.hidden) {
-            opacity: 1;
-            transform: translateY(0);
-            animation: mobileMenuFadeIn 0.5s;
-        }
-        @keyframes mobileMenuFadeIn {
-            from { opacity: 0; transform: translateY(-20px);}
-            to { opacity: 1; transform: none;}
-        }
-        /* Logo pulse animation */
-        .logo-animate {
-            animation: pulseLogo 2.5s infinite;
-        }
-        @keyframes pulseLogo {
-            0%, 100% { box-shadow: 0 0 0 0 #16a34a44; }
-            50% { box-shadow: 0 0 0 16px #16a34a22; }
-        }
-        /* Card hover effect */
-        .service-card {
-            transition: transform 0.25s cubic-bezier(.4,0,.2,1), box-shadow 0.25s cubic-bezier(.4,0,.2,1);
-        }
-        .service-card:hover {
-            transform: translateY(-12px) scale(1.04) rotate(-1deg);
-            box-shadow: 0 10px 32px rgba(22,163,74,0.15), 0 2px 8px rgba(0,0,0,0.08);
-            background: linear-gradient(120deg, #f0fdf4 60%, #bbf7d0 100%);
-        }
-        /* Animated HR */
-        .hr-animated {
-            border: none;
-            height: 4px;
-            width: 180px;
-            margin: 0 auto 32px auto;
-            background: linear-gradient(90deg, #16a34a 0%, #22d3ee 100%);
-            border-radius: 2px;
-            position: relative;
-            overflow: hidden;
-        }
-        .hr-animated::before {
-            content: "";
-            position: absolute;
-            left: -40px;
-            top: 0;
-            width: 40px;
-            height: 100%;
-            background: linear-gradient(90deg, #fff6, #16a34a 60%, #fff0);
-            animation: hr-glow 2s infinite linear;
-        }
-        @keyframes hr-glow {
-            0% { left: -40px; }
-            100% { left: 180px; }
-        }
-        /* Button hover effect */
-        .btn-animate {
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .btn-animate:hover {
-            transform: scale(1.08) translateY(-2px);
-            box-shadow: 0 8px 24px #16a34a33;
-        }
-        /* Section fade-in animation */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(40px);
-            animation: fadeInUp 0.5s ease-out forwards;
-        }
-        .fade-in.delay-1 { animation-delay: 0s; }
-        .fade-in.delay-2 { animation-delay: 0.05s; }
-        .fade-in.delay-3 { animation-delay: 0.1s; }
-        .fade-in.delay-4 { animation-delay: 0.15s; }
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: none;
-            }
-        }
-    
-        /* Respect users who prefer less motion */
-        @media (prefers-reduced-motion: reduce) {
-            .fade-in, .team-card { opacity: 1 !important; transform: none !important; animation: none !important; }
-            .animate-bounce, .animate-pulse, .logo-animate { animation: none !important; }
-        }
-    </style>
+    <link rel="stylesheet" href="/assets/css/home.css">
 </head>
 <body class="bg-gray-50 text-gray-800">
 
@@ -220,7 +71,7 @@
     <header class="bg-white shadow-sm sticky top-0 z-50 nav-animate">
         <nav class="container mx-auto px-4 py-4 flex items-center justify-between" aria-label="Main navigation">
             <div class="flex items-center space-x-2">
-                <img src="taha.jpg" alt="Talha Labs logo" width="40" height="40" class="h-10 w-auto rounded-full logo-animate">
+                <img src="/assets/images/taha.jpg" alt="Talha Labs logo" width="40" height="40" class="h-10 w-auto rounded-full logo-animate">
                 <a href="index.html" class="text-2xl font-bold text-gray-900">Talha Labs</a>
             </div>
             <div class="hidden lg:flex space-x-6">
@@ -251,7 +102,7 @@
 
     <!-- Centered Logo Section -->
     <section class="bg-gray-50 py-12 flex items-center justify-center fade-in delay-1">
-        <img src="taha.jpg" alt="Talha Labs – diagnostic laboratory in Sadiqabad" width="192" height="192" class="w-48 h-auto rounded-full shadow-2xl transition-all duration-500 hover:scale-110 hover:shadow-2xl hover:rotate-3 logo-animate">
+        <img src="/assets/images/taha.jpg" alt="Talha Labs – diagnostic laboratory in Sadiqabad" width="192" height="192" class="w-48 h-auto rounded-full shadow-2xl transition-all duration-500 hover:scale-110 hover:shadow-2xl hover:rotate-3 logo-animate">
     </section>
 
     <main class="space-y-20">
@@ -393,7 +244,7 @@
         <div class="container mx-auto px-4 flex flex-col md:flex-row items-center md:items-start justify-between gap-8">
             <!-- Logo and Lab Name -->
             <div class="flex flex-col items-center md:items-start mb-8 md:mb-0">
-                <img src="taha.jpg" alt="Talha Labs logo" width="80" height="80" class="h-20 w-20 rounded-full mb-4 shadow-lg border-4 border-green-300 logo-animate">
+                <img src="/assets/images/taha.jpg" alt="Talha Labs logo" width="80" height="80" class="h-20 w-20 rounded-full mb-4 shadow-lg border-4 border-green-300 logo-animate">
                 <span class="text-3xl font-bold">Talha Labs</span>
                 <span class="text-green-700 mt-1">Your Trusted Diagnostic Partner in Sadiqabad</span>
             </div>
@@ -434,39 +285,7 @@
     </footer>
 
     <!-- JavaScript for Mobile Menu Toggle and fade-in on scroll -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-                if (!mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.style.opacity = '1';
-                    mobileMenu.style.transform = 'translateY(0)';
-                } else {
-                    mobileMenu.style.opacity = '0';
-                    mobileMenu.style.transform = 'translateY(-16px)';
-                }
-            });
-
-            // Fade-in animation on scroll
-            const fadeEls = document.querySelectorAll('.fade-in');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.animationPlayState = 'running';
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.05, rootMargin: '0px 0px 60px 0px' });
-
-            fadeEls.forEach(el => {
-                el.style.animationPlayState = 'paused';
-                observer.observe(el);
-            });
-        });
-    </script>
+    <script src="/assets/js/navigation.js"></script>
 
     <!-- WhatsApp floating button -->
     <a href="https://wa.me/923006700196?text=Assalam%20o%20Alaikum%2C%20mujhe%20Talha%20Labs%20se%20maloomat%20chahiye." target="_blank" rel="noopener"
@@ -480,205 +299,21 @@
     </a>
 
     <!-- Google Analytics: paste your Measurement ID (looks like G-XXXXXXXXXX) between the quotes below -->
-    <script>
-        (function () {
-            var GA_ID = 'G-9M13D6TELP';
-            if (!GA_ID) return;
-            var s = document.createElement('script');
-            s.async = true;
-            s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
-            document.head.appendChild(s);
-            window.dataLayer = window.dataLayer || [];
-            window.gtag = function () { dataLayer.push(arguments); };
-            gtag('js', new Date());
-            gtag('config', GA_ID);
-            document.addEventListener('click', function (e) {
-                var a = e.target.closest('a');
-                if (!a) return;
-                var h = a.getAttribute('href') || '';
-                if (h.indexOf('wa.me') > -1) gtag('event', 'whatsapp_click');
-                else if (h.indexOf('tel:') === 0) gtag('event', 'phone_click');
-            });
-        })();
-    </script>
+    <script src="/assets/js/analytics.js"></script>
 
     <!-- TL AI assistant (rule-based auto-reply bot) -->
-    <style>
-        #tlai-btn{position:fixed;right:16px;bottom:calc(84px + env(safe-area-inset-bottom,0px));z-index:61;height:56px;min-width:152px;padding:0 20px 0 6px;border-radius:28px;border:0;background:#16a34a;color:#fff;font:600 15px 'Inter',sans-serif;display:flex;align-items:center;gap:10px;box-shadow:0 4px 14px rgba(0,0,0,.25);cursor:pointer;transition:transform .2s}
-        #tlai-btn:hover{transform:scale(1.05)}
-        #tlai-box{position:fixed;right:16px;bottom:calc(150px + env(safe-area-inset-bottom,0px));z-index:62;width:min(360px,calc(100vw - 32px));height:min(480px,calc(100vh - 180px));background:#fff;border-radius:18px;box-shadow:0 10px 40px rgba(0,0,0,.28);display:none;flex-direction:column;overflow:hidden;font-family:'Inter',sans-serif}
-        #tlai-box.open{display:flex}
-        .tlai-h{background:#16a34a;color:#fff;padding:12px 14px;display:flex;align-items:center;justify-content:space-between}
-        .tlai-h b{font-size:16px}.tlai-h small{display:block;font-size:11px;opacity:.9}
-        .tlai-x{background:none;border:0;color:#fff;font-size:24px;line-height:1;cursor:pointer}
-        #tlai-msgs{flex:1;overflow-y:auto;padding:12px;background:#f0fdf4}
-        .tlai-m{max-width:88%;padding:9px 12px;border-radius:14px;margin-bottom:8px;font-size:14px;line-height:1.45;color:#1f2937;word-wrap:break-word}
-        .tlai-bot{background:#fff;border:1px solid #d1fae5}
-        .tlai-me{background:#16a34a;color:#fff;margin-left:auto}
-        .tlai-m a{color:#15803d;text-decoration:underline}
-        .tlai-me a{color:#fff}
-        #tlai-chips{padding:8px 10px 10px;display:flex;flex-wrap:wrap;gap:6px;background:#fff;border-top:1px solid #d1fae5;max-height:32%;overflow-y:auto}
-        #tlai-chips button{border:1px solid #16a34a;background:#fff;color:#15803d;border-radius:14px;padding:5px 11px;font-size:13px;cursor:pointer}
-        #tlai-chips button:hover{background:#dcfce7}
-        .tlai-f{display:flex;gap:8px;padding:10px;background:#fff;border-top:1px solid #d1fae5}
-        #tlai-in{flex:1;min-width:0;border:1px solid #d1d5db;border-radius:20px;padding:8px 14px;font-size:14px;outline:none}
-        #tlai-in:focus{border-color:#16a34a}
-        #tlai-send{border:0;background:#16a34a;color:#fff;border-radius:20px;padding:0 16px;font-weight:600;cursor:pointer}
-        #tlai-send:disabled,#tlai-in:disabled{opacity:.6;cursor:not-allowed}
-        .tlai-ai{white-space:pre-wrap}
-        .tlai-note{font-size:11px;color:#6b7280;padding:0 12px 8px;background:#fff}
-    
-        /* Compact floating buttons on phones: icons only, so they do not cover the screen */
-        @media (max-width: 640px) {
-            #tlai-btn { min-width:0; width:50px; height:50px; padding:0; border-radius:50%; justify-content:center; gap:0; right:12px; bottom:calc(74px + env(safe-area-inset-bottom,0px)); }
-            #tlai-btn > span:last-child { display:none; }
-            #tlai-btn > span:first-child { width:46px !important; height:46px !important; }
-            a[aria-label^="Chat with Talha Labs on WhatsApp"] { min-width:0 !important; width:50px !important; height:50px !important; padding:0 !important; border-radius:50% !important; background:#25D366 !important; justify-content:center !important; gap:0 !important; right:12px !important; bottom:calc(12px + env(safe-area-inset-bottom,0px)) !important; }
-            a[aria-label^="Chat with Talha Labs on WhatsApp"] > span:last-child { display:none !important; }
-            a[aria-label^="Chat with Talha Labs on WhatsApp"] > span:first-child { width:100% !important; height:100% !important; }
-            #tlai-box { right:12px; width:calc(100vw - 24px); bottom:calc(134px + env(safe-area-inset-bottom,0px)); height:min(480px, calc(100vh - 180px)); }
-            body.rt-bar-on a[aria-label^="Chat with Talha Labs on WhatsApp"] { bottom:calc(76px + env(safe-area-inset-bottom,0px)) !important; }
-            body.rt-bar-on #tlai-btn { bottom:calc(138px + env(safe-area-inset-bottom,0px)); }
-            body.rt-bar-on #tlai-box { bottom:calc(198px + env(safe-area-inset-bottom,0px)); height:min(480px, calc(100vh - 250px)); }
-        }
-    </style>
+    <link rel="stylesheet" href="/assets/css/assistant.css">
     <button id="tlai-btn" type="button" aria-label="Open TL AI assistant" aria-expanded="false">
-        <span style="width:44px;height:44px;border-radius:50%;overflow:hidden;background:#fff;display:inline-block;flex-shrink:0"><img src="taha.jpg" alt="" width="44" height="44" style="display:block;width:100%;height:100%;transform:scale(1.07)"></span>
+        <span style="width:44px;height:44px;border-radius:50%;overflow:hidden;background:#fff;display:inline-block;flex-shrink:0"><img src="/assets/images/taha.jpg" alt="" width="44" height="44" style="display:block;width:100%;height:100%;transform:scale(1.07)"></span>
         <span>TL AI</span>
     </button>
     <div id="tlai-box" role="dialog" aria-label="TL AI assistant">
-        <div class="tlai-h"><div style="display:flex;align-items:center;gap:10px"><span style="width:36px;height:36px;border-radius:50%;overflow:hidden;background:#fff;display:inline-block;flex-shrink:0"><img src="taha.jpg" alt="" width="36" height="36" style="display:block;width:100%;height:100%;transform:scale(1.07)"></span><div><b>TL AI</b><small>Talha Labs AI assistant</small></div></div><button class="tlai-x" type="button" id="tlai-close" aria-label="Close chat">&times;</button></div>
+        <div class="tlai-h"><div style="display:flex;align-items:center;gap:10px"><span style="width:36px;height:36px;border-radius:50%;overflow:hidden;background:#fff;display:inline-block;flex-shrink:0"><img src="/assets/images/taha.jpg" alt="" width="36" height="36" style="display:block;width:100%;height:100%;transform:scale(1.07)"></span><div><b>TL AI</b><small>Talha Labs AI assistant</small></div></div><button class="tlai-x" type="button" id="tlai-close" aria-label="Close chat">&times;</button></div>
         <div id="tlai-msgs"></div>
         <div id="tlai-chips"></div>
         <div class="tlai-f"><input id="tlai-in" type="text" maxlength="300" placeholder="Apna sawal likhein..." aria-label="Type your question" autocomplete="off"><button id="tlai-send" type="button">Send</button></div>
         <div class="tlai-note">AI se jawab ghalat ho sakte hain. Apni zaati ya medical tafseel na likhein.</div>
     </div>
-    <script>
-    (function () {
-        var WA = 'https://wa.me/923006700196';
-        var WAL = '<a href="' + WA + '" target="_blank" rel="noopener">WhatsApp par rabta karein</a>';
-        var KB = [
-            { k: ['dawai', 'dawa ', 'medicine', 'treatment', 'ilaj', 'bimari', 'symptom', 'normal range', 'report theek', 'diagnos', ' dard ', ' pain ', 'bukhar', ' fever '],
-              a: 'Main bimari, dawai ya report ke natayej ke baare mein medical salah nahi de sakta. Is ke liye apne doctor se mashwara karein.' },
-            { k: ['rate', 'price', 'charges', ' fee ', ' cost ', 'kitne paise', 'qeemat', 'kitna ', 'ریٹ', 'قیمت'],
-              a: 'Test ke rate test ke mutabiq hote hain. Rate janne ke liye test ka naam WhatsApp par bhej dein: ' + WAL + '.' },
-            { k: ['khali pet', 'fasting', 'empty stomach', 'bhooka'],
-              a: 'Kuch tests (jaise blood sugar ya lipid profile) ke liye khali pet aana ho sakta hai. Aap ke test ke liye sahi hidayat janne ke liye ' + WAL + ' ya apne doctor se poochein.' },
-            { k: ['home', 'ghar', 'sampling', 'sample collection'],
-              a: 'Ji, <b>home sampling</b> available hai: ghar par safe aur hygienic sample collection. Ilaqa aur waqt ke liye ' + WAL + '.' },
-            { k: ['report', 'result', 'kitni der', 'delivery', 'رپورٹ'],
-              a: 'Reports digital taur par <b>WhatsApp ya email</b> par bhi mil sakti hain. Kisi khaas test ki report kitni der mein milti hai, ye test par depend karta hai, uske liye ' + WAL + '.' },
-            { k: ['time', 'timing', 'open', 'close', 'kab ', 'khula', 'khulta', 'hours', 'waqt', 'baje', 'وقت', 'ٹائم'],
-              a: 'Talha Labs roz <b>subah 7:00 se raat 9:00 baje</b> tak khula hai (haftay ke saaton din).' },
-            { k: ['address', 'location', 'where', 'kahan', 'jagah', 'map', ' pata ', 'direction', 'پتہ', 'ایڈریس'],
-              a: 'Hamara address: <b>Hospital Road, Near Telephone Exchange, Sadiqabad</b>.<br><a href="https://maps.app.goo.gl/Wy42WbfJg7LeZgX67" target="_blank" rel="noopener">Google Maps par dekhein</a>' },
-            { k: ['phone', 'number', 'call', 'contact', 'whatsapp', 'rabta', 'email', 'mail', 'فون', 'نمبر'],
-              a: 'Cell/WhatsApp: <a href="tel:+923006700196">0300-6700196</a><br>Landline: <a href="tel:+92685701210">068-5701210</a><br>Email: <a href="mailto:talhalabs78@gmail.com">talhalabs78@gmail.com</a><br>' + WAL },
-            { k: ['appointment', 'booking', 'book ', 'time lena'],
-              a: 'Booking aur home sampling ke liye ' + WAL + ' ya <a href="tel:+923006700196">0300-6700196</a> par call karein.' },
-            { k: ['doctor', 'pathologist', 'team', 'kab se', 'since', 'founder', 'owner', 'anwar'],
-              a: 'Talha Labs <b>2003</b> se khidmat de raha hai. Hamari team mein Dr. Khalid Mehmood (Consultant Pathologist) aur Prof. Dr. M Rafique Cheema (CEO / Consultant Hematologist) shamil hain. <a href="about.html">Team dekhein</a>' },
-            { k: ['cbc', 'lft', 'kft', 'liver', 'kidney', 'thyroid', 'hba1c', 'vitamin', 'hormone', 'sugar', 'lipid', 'dengue', 'hepatitis', 'hiv', 'screening', 'pfa'],
-              a: 'Ji, ye test hamari services mein shamil hai. Rate aur report ke waqt ke liye ' + WAL + '. <a href="services.html">Poori list dekhein</a>' },
-            { k: ['service', 'kon kon', 'kya kya', 'tests', 'list', 'ٹیسٹ'],
-              a: 'Hamari services: CBC, Liver aur Kidney function tests, Thyroid profile, Blood sugar aur Lipid profile, HbA1c, Vitamin D, Hormones test, Medical screening (PFA), Home sampling aur Digital reports. <a href="services.html">Poori list dekhein</a>' },
-            { k: ['thank', 'shukria', 'shukriya', 'jazak'],
-              a: 'Khushi hui madad kar ke. Koi aur sawal ho to poochein.' },
-            { k: ['salam', 'hello', ' hi ', ' hey ', 'aoa'],
-              a: 'Wa Alaikum Assalam! Aap timing, location, services ya rabta ke baare mein poochh sakte hain.' }
-        ];
-        var FALLBACK = 'Maaf kijiye, mujhe is sawal ka jawab nahi pata. Neeche diye gaye options dekhein, ya hamari team se baat karein: ' + WAL + '.';
-        var CHIPS = [['Timing', 'timing'], ['Location', 'location'], ['Phone / WhatsApp', 'phone'], ['Email', 'email'], ['Services', 'services'], ['Home sampling', 'home sampling'], ['Reports', 'report'], ['Rates', 'rate'], ['Booking', 'booking'], ['Khali pet (fasting)', 'fasting'], ['Doctors / Team', 'doctor'], ['CBC', 'cbc'], ['Thyroid', 'thyroid'], ['Vitamin D', 'vitamin'], ['HbA1c', 'hba1c'], ['Liver / Kidney', 'liver'], ['Blood sugar', 'sugar'], ['Hormones', 'hormone'], ['Dengue / Hepatitis', 'dengue'], ['Medical screening', 'screening'], ['Bimari ki salah', 'dawai']];
-
-        var btn = document.getElementById('tlai-btn'), box = document.getElementById('tlai-box'),
-            msgs = document.getElementById('tlai-msgs'), chips = document.getElementById('tlai-chips'),
-            started = false;
-
-        function add(content, me) {
-            var d = document.createElement('div');
-            d.className = 'tlai-m ' + (me ? 'tlai-me' : 'tlai-bot');
-            if (me) { d.textContent = content; } else { d.innerHTML = content; }
-            msgs.appendChild(d);
-            msgs.scrollTop = msgs.scrollHeight;
-            return d;
-        }
-        function answer(text) {
-            var t = ' ' + text.toLowerCase().replace(/[.,!?;:()"'\/\\-]/g, ' ') + ' ';
-            for (var i = 0; i < KB.length; i++) {
-                for (var j = 0; j < KB[i].k.length; j++) {
-                    if (t.indexOf(KB[i].k[j]) > -1) return KB[i].a;
-                }
-            }
-            return FALLBACK;
-        }
-        function ask(text, label) {
-            text = (text || '').replace(/^\s+|\s+$/g, '');
-            if (!text) return;
-            add(label || text, true);
-            if (window.gtag) { gtag('event', 'tl_ai_question', { topic: text }); }
-            setTimeout(function () { add(answer(text), false); }, 350);
-        }
-        function toggle(open) {
-            box.classList.toggle('open', open);
-            btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-            if (open && !started) {
-                started = true;
-                add('Assalam o Alaikum! Main <b>TL AI</b> hoon, Talha Labs ka AI assistant. Aap neeche apna sawal likh sakte hain ya options chun sakte hain. Main timing, location, services aur rabta ki maloomat de sakta hoon. Main bimari, dawai ya report ke natayej ke baare mein medical salah nahi de sakta.', false);
-                CHIPS.forEach(function (c) {
-                    var b = document.createElement('button');
-                    b.type = 'button'; b.textContent = c[0];
-                    b.addEventListener('click', function () { ask(c[1], c[0]); });
-                    chips.appendChild(b);
-                });
-                if (window.gtag) { gtag('event', 'tl_ai_open'); }
-            }
-        }
-        var inp = document.getElementById('tlai-in'), sendBtn = document.getElementById('tlai-send');
-        var convo = [], busy = false, asked = 0, MAX_Q = 15;
-        function askAI() {
-            var text = (inp.value || '').replace(/^\s+|\s+$/g, '');
-            if (!text || busy) { return; }
-            inp.value = '';
-            if (asked >= MAX_Q) {
-                add('Aap ne kaafi sawal poochh liye hain. Mazeed madad ke liye hamari team se rabta karein: ' + WAL + '.', false);
-                return;
-            }
-            asked++;
-            add(text, true);
-            busy = true; inp.disabled = true; sendBtn.disabled = true;
-            var wait = add('...', false);
-            if (window.gtag) { gtag('event', 'tl_ai_typed_question'); }
-            var ctrl = ('AbortController' in window) ? new AbortController() : null;
-            var timer = setTimeout(function () { if (ctrl) { ctrl.abort(); } }, 9500);
-            fetch('/api/chat', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ messages: convo.concat([{ role: 'user', content: text }]).slice(-6) }),
-                signal: ctrl ? ctrl.signal : undefined
-            })
-            .then(function (r) { if (!r.ok) { throw new Error('ai'); } return r.json(); })
-            .then(function (j) {
-                if (!j || !j.reply) { throw new Error('ai'); }
-                wait.className = 'tlai-m tlai-bot tlai-ai';
-                wait.textContent = j.reply;
-                convo.push({ role: 'user', content: text }, { role: 'assistant', content: j.reply });
-                convo = convo.slice(-6);
-            })
-            .catch(function () {
-                wait.innerHTML = answer(text); // built-in answers when the AI is not available
-            })
-            .then(function () {
-                clearTimeout(timer);
-                busy = false; inp.disabled = false; sendBtn.disabled = false;
-                msgs.scrollTop = msgs.scrollHeight;
-                inp.focus();
-            });
-        }
-        sendBtn.addEventListener('click', askAI);
-        inp.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); askAI(); } });
-        btn.addEventListener('click', function () { toggle(!box.classList.contains('open')); });
-        document.getElementById('tlai-close').addEventListener('click', function () { toggle(false); });
-    })();
-    </script>
+    <script src="/assets/js/tl-ai.js"></script>
 </body>
 </html>

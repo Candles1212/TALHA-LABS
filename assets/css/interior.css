@@ -1,0 +1,169 @@
+
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%);
+        }
+        .container {
+            max-width: 1200px;
+        }
+        /* Custom scrollbar styles */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5e9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        /* Animated underline for nav links */
+        .nav-underline {
+            position: relative;
+            overflow: hidden;
+            transition: color 0.3s;
+        }
+        .nav-underline::after {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 2.5px;
+            background: linear-gradient(90deg, #16a34a 0%, #22d3ee 100%);
+            transform: scaleX(0);
+            transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+            transform-origin: left;
+        }
+        .nav-underline:hover::after, .nav-underline.active::after {
+            transform: scaleX(1);
+        }
+        .nav-underline:hover, .nav-underline.active {
+            color: #16a34a !important;
+            text-shadow: 0 2px 8px #16a34a33;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+        /* Navigation bar slide-in animation */
+        .nav-animate {
+            animation: navSlideIn 0.5s cubic-bezier(.4,0,.2,1);
+        }
+        @keyframes navSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-40px) scale(0.98);
+            }
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+        /* Mobile menu fade-in animation */
+        #mobile-menu {
+            transition: opacity 0.4s, transform 0.4s;
+        }
+        #mobile-menu:not(.hidden) {
+            opacity: 1;
+            transform: translateY(0);
+            animation: mobileMenuFadeIn 0.5s;
+        }
+        @keyframes mobileMenuFadeIn {
+            from { opacity: 0; transform: translateY(-20px);}
+            to { opacity: 1; transform: none;}
+        }
+        /* Logo pulse animation */
+        .logo-animate {
+            animation: pulseLogo 2.5s infinite;
+        }
+        @keyframes pulseLogo {
+            0%, 100% { box-shadow: 0 0 0 0 #16a34a44; }
+            50% { box-shadow: 0 0 0 16px #16a34a22; }
+        }
+        /* Card hover effect */
+        .service-card {
+            transition: transform 0.25s cubic-bezier(.4,0,.2,1), box-shadow 0.25s cubic-bezier(.4,0,.2,1);
+        }
+        .service-card:hover {
+            transform: translateY(-12px) scale(1.04) rotate(-1deg);
+            box-shadow: 0 10px 32px rgba(22,163,74,0.15), 0 2px 8px rgba(0,0,0,0.08);
+            background: linear-gradient(120deg, #f0fdf4 60%, #bbf7d0 100%);
+        }
+        /* Animated HR */
+        .hr-animated {
+            border: none;
+            height: 4px;
+            width: 180px;
+            margin: 0 auto 32px auto;
+            background: linear-gradient(90deg, #16a34a 0%, #22d3ee 100%);
+            border-radius: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hr-animated::before {
+            content: "";
+            position: absolute;
+            left: -40px;
+            top: 0;
+            width: 40px;
+            height: 100%;
+            background: linear-gradient(90deg, #fff6, #16a34a 60%, #fff0);
+            animation: hr-glow 2s infinite linear;
+        }
+        @keyframes hr-glow {
+            0% { left: -40px; }
+            100% { left: 180px; }
+        }
+        /* Button hover effect */
+        .btn-animate {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-animate:hover {
+            transform: scale(1.08) translateY(-2px);
+            box-shadow: 0 8px 24px #16a34a33;
+        }
+        /* Section fade-in animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+        .fade-in.delay-1 { animation-delay: 0s; }
+        .fade-in.delay-2 { animation-delay: 0.05s; }
+        .fade-in.delay-3 { animation-delay: 0.1s; }
+        .fade-in.delay-4 { animation-delay: 0.15s; }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    
+        /* Team card animation and effect */
+        .team-card {
+            transition: transform 0.3s cubic-bezier(.4,0,.2,1), box-shadow 0.3s cubic-bezier(.4,0,.2,1), background 0.3s cubic-bezier(.4,0,.2,1);
+            opacity: 0;
+            transform: translateY(40px) scale(0.98);
+            animation: fadeInUpBox 0.6s ease-out forwards;
+            background: linear-gradient(120deg, #f0fdf4 80%, #bbf7d0 100%);
+        }
+        .team-card:hover {
+            transform: translateY(-10px) scale(1.04) !important;
+            box-shadow: 0 10px 32px rgba(22,163,74,0.15), 0 2px 8px rgba(0,0,0,0.08);
+            background: linear-gradient(120deg, #bbf7d0 60%, #f0fdf4 100%);
+        }
+        .team-card.delay-1 { animation-delay: 0s; }
+        .team-card.delay-2 { animation-delay: 0.05s; }
+        .team-card.delay-3 { animation-delay: 0.1s; }
+        .team-card.delay-4 { animation-delay: 0.15s; }
+        @keyframes fadeInUpBox { to { opacity: 1; transform: none; } }
+    
+        /* Respect users who prefer less motion */
+        @media (prefers-reduced-motion: reduce) {
+            .fade-in, .team-card { opacity: 1 !important; transform: none !important; animation: none !important; }
+            .animate-bounce, .animate-pulse, .logo-animate { animation: none !important; }
+        }
+    
