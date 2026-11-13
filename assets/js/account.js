@@ -116,6 +116,19 @@ if (!SUPABASE_URL || !SUPABASE_ANON_KEY || SUPABASE_URL.includes('PASTE_YOUR_') 
       sendWhatsApp(['TALHA LABS — REQUEST FOLLOW-UP','Name: ' + data.get('name'),'Reference: ' + (data.get('reference') || 'Not provided'),'Contact: ' + data.get('phone'),'Account email: ' + (profileEmail.textContent || ''),'Please help me check the status of my request.']);
       status('WhatsApp opened with your follow-up. The laboratory team will need to confirm the status.', 'success');
     });
+    $('customer-report-form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const data = new FormData(event.currentTarget);
+      sendWhatsApp([
+        'TALHA LABS — REPORT REQUEST',
+        'Name on receipt: ' + data.get('name'),
+        'Contact number: ' + data.get('phone'),
+        'Receipt / lab reference: ' + (data.get('reference') || 'Not provided'),
+        'Portal account email: ' + (profileEmail.textContent || ''),
+        'I will attach my Talha LABS receipt screenshot in this WhatsApp chat. Please verify it and advise me about my report.'
+      ]);
+      status('WhatsApp opened with your report request. Attach the receipt screenshot in WhatsApp and press Send. The laboratory must verify it before releasing a report.', 'success');
+    });
     $('customer-password-reset').addEventListener('click', async () => {
       const email = profileEmail.textContent;
       if (!validEmail(email)) return status('Your account email could not be read. Please sign in again.', 'error');
