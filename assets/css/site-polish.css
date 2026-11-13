@@ -177,3 +177,73 @@ input,select,textarea{max-width:100%;font:inherit}
          .tl-selection-panel,.tl-check-grid label,.tl-info-grid article,
          .tl-enquiry-form,.tl-faq-list details){border-left-width:4px!important}
 }
+
+
+/* Colourful animated icon refresh — services, departments and feature icons */
+@keyframes tl-icon-float{
+  0%,100%{transform:translateY(0) rotate(0deg)}
+  50%{transform:translateY(-6px) rotate(2deg)}
+}
+@keyframes tl-icon-glow{
+  0%,100%{box-shadow:0 8px 20px rgba(28,91,130,.12),inset 0 1px 0 rgba(255,255,255,.85)}
+  50%{box-shadow:0 12px 28px rgba(28,91,130,.22),0 0 0 6px rgba(76,201,190,.09),inset 0 1px 0 rgba(255,255,255,.95)}
+}
+/* Large service icons: colourful soft-gradient medallions */
+main .service-card>img{
+  box-sizing:content-box;width:68px;height:68px;object-fit:contain;
+  padding:13px;margin:0 auto 18px!important;border:1px solid rgba(255,255,255,.9);
+  border-radius:23px;
+  background:linear-gradient(145deg,#E7F2FF 0%,#F2ECFF 48%,#E5FAF3 100%);
+  filter:drop-shadow(0 5px 8px rgba(39,74,112,.13));
+  animation:tl-icon-float 4.2s ease-in-out infinite,tl-icon-glow 4.2s ease-in-out infinite;
+  transition:transform .28s ease,filter .28s ease;
+}
+main .service-card:nth-child(3n+2)>img{background:linear-gradient(145deg,#E2F8F1,#E7F2FF 58%,#F4EDFF)}
+main .service-card:nth-child(3n)>img{background:linear-gradient(145deg,#FFF1DF,#FCEBFA 55%,#E9F5FF)}
+main .service-card:hover>img{transform:translateY(-7px) scale(1.08) rotate(-4deg);filter:drop-shadow(0 10px 12px rgba(39,74,112,.2))}
+main .service-card>span:has(svg){
+  display:grid;place-items:center;width:94px;height:94px;margin:0 auto 18px!important;
+  border:1px solid rgba(255,255,255,.9);border-radius:25px;
+  background:linear-gradient(145deg,#E4F7F2,#E8F0FF 55%,#F5EAFE);
+  box-shadow:0 8px 20px rgba(28,91,130,.12);
+  animation:tl-icon-float 4.5s ease-in-out infinite;
+}
+main .service-card>span svg{width:58px;height:58px;filter:drop-shadow(0 4px 5px rgba(31,91,115,.18));stroke:#168C91!important}
+main .service-card:nth-child(3n+2)>span:has(svg){background:linear-gradient(145deg,#FFF1DF,#FCEBFA 55%,#E9F5FF)}
+main .service-card:nth-child(3n)>span:has(svg){background:linear-gradient(145deg,#E7F2FF,#E4F7F2 55%,#F4EDFF)}
+/* Department cards get clear, subject-specific visual markers */
+.tl-department-grid article{position:relative;overflow:hidden;padding-top:26px!important}
+.tl-department-grid article::before{
+  display:grid;place-items:center;width:58px;height:58px;margin:0 0 16px;
+  border:1px solid rgba(255,255,255,.9);border-radius:19px;
+  font-size:29px;line-height:1;
+  background:linear-gradient(145deg,#E4F0FF,#F2EAFE);
+  box-shadow:0 8px 18px rgba(35,78,130,.12);
+  animation:tl-icon-float 4.8s ease-in-out infinite;
+}
+.tl-department-grid article:nth-child(1)::before{content:"🩸";background:linear-gradient(145deg,#FFE8EC,#FFF1F0)}
+.tl-department-grid article:nth-child(2)::before{content:"⚗️";background:linear-gradient(145deg,#E1F8F1,#E6F0FF)}
+.tl-department-grid article:nth-child(3)::before{content:"🧬";background:linear-gradient(145deg,#F0E9FF,#E5F4FF)}
+/* Expandable science section and homepage feature icons */
+.tl-deep-icon,.tl-icon{
+  display:inline-grid;place-items:center;flex:0 0 auto;
+  width:54px;height:54px;border:1px solid rgba(255,255,255,.88);
+  border-radius:18px;font-size:27px;line-height:1;
+  background:linear-gradient(145deg,#E5F2FF,#F0E9FF 52%,#E3F8F1);
+  box-shadow:0 8px 20px rgba(37,78,130,.13);
+  animation:tl-icon-float 4.4s ease-in-out infinite;
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+.tl-deep-card summary:hover .tl-deep-icon,.tl-icon:hover{transform:translateY(-4px) scale(1.07) rotate(-4deg);box-shadow:0 12px 25px rgba(37,78,130,.2)}
+.tl-deep-card:nth-child(3n+2) .tl-deep-icon{background:linear-gradient(145deg,#FFE9ED,#FFF2E0)}
+.tl-deep-card:nth-child(3n) .tl-deep-icon{background:linear-gradient(145deg,#E0F7F0,#E5EEFF)}
+/* Small decorative/service pictograms and inline feature SVGs */
+.tl-services-hero-note>span,.tl-services-hero-actions [aria-hidden="true"]{
+  color:#D18A32;text-shadow:0 3px 10px rgba(209,138,50,.22)
+}
+@media(prefers-reduced-motion:reduce){
+  main .service-card>img,main .service-card>span:has(svg),
+  .tl-department-grid article::before,.tl-deep-icon,.tl-icon{
+    animation:none!important;transition:none!important
+  }
+}
