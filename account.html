@@ -42,12 +42,16 @@
           <label for="signup-password">Create password</label><input id="signup-password" name="password" type="password" autocomplete="new-password" minlength="12" required>
           <p class="tl-auth-hint">Use at least 12 characters. A long, unique passphrase is recommended.</p>
           <label for="signup-confirm">Confirm password</label><input id="signup-confirm" name="confirm" type="password" autocomplete="new-password" minlength="12" required>
-          <button class="tl-auth-submit" type="submit">Create account</button><p class="tl-auth-hint">Email verification is required before the account can be used.</p>
+          <button class="tl-auth-submit" type="submit">Create account</button>
+          <p class="tl-auth-hint">Email verification is required before the account can be used.</p>
+          <p class="tl-auth-hint">Verification emails are delivered by Supabase's shared email service for Talha Labs, so the sender may appear as Supabase. Only open the verification link if you just created an account on this Talha Labs website. Check your spam or junk folder if you cannot find the email.</p>
         </form>
         <form id="reset-form" class="tl-auth-form" hidden>
           <h2>Reset your password</h2><p>Enter your account email. If an account exists, you’ll receive a secure reset link.</p>
           <label for="reset-email">Email address</label><input id="reset-email" name="email" type="email" autocomplete="email" required maxlength="254">
-          <button class="tl-auth-submit" type="submit">Send reset link</button><button class="tl-auth-text-button" type="button" data-show-login>Back to login</button>
+          <button class="tl-auth-submit" type="submit">Send reset link</button>
+          <p class="tl-auth-hint">Password-reset emails are also delivered by Supabase's shared email service for Talha Labs, so the sender may appear as Supabase.</p>
+          <button class="tl-auth-text-button" type="button" data-show-login>Back to login</button>
         </form>
         <form id="new-password-form" class="tl-auth-form" hidden>
           <h2>Choose a new password</h2><label for="new-password">New password</label><input id="new-password" name="password" type="password" autocomplete="new-password" minlength="12" required>
