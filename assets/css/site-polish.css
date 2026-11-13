@@ -247,3 +247,28 @@ main .service-card:nth-child(3n)>span:has(svg){background:linear-gradient(145deg
     animation:none!important;transition:none!important
   }
 }
+
+
+/* Homepage icon redesign: distinct medical SVGs with the same floating glow motion */
+#main-content#main-content .service-card .flex-shrink-0:has(svg){
+  width:76px!important;height:76px!important;flex:0 0 76px;
+  border:1px solid rgba(255,255,255,.95);
+  border-radius:24px!important;
+  background:linear-gradient(145deg,#EAF3FF 0%,#F4EDFF 52%,#E4FAF2 100%)!important;
+  box-shadow:0 9px 22px rgba(35,78,130,.14),inset 0 1px 0 rgba(255,255,255,.95);
+  animation:tl-icon-float 4.4s ease-in-out infinite,tl-icon-glow 4.4s ease-in-out infinite;
+  transition:transform .28s ease,box-shadow .28s ease;
+}
+#main-content .service-card:nth-of-type(1) .flex-shrink-0:has(svg){background:linear-gradient(145deg,#FFE8ED,#FFF2F0)!important}
+#main-content .service-card:nth-of-type(2) .flex-shrink-0:has(svg){background:linear-gradient(145deg,#E0F8F0,#EAF2FF)!important}
+#main-content .service-card:nth-of-type(3) .flex-shrink-0:has(svg){background:linear-gradient(145deg,#F0E9FF,#E6F5FF)!important}
+#main-content .service-card .flex-shrink-0 svg{width:43px!important;height:43px!important;filter:drop-shadow(0 4px 5px rgba(31,91,115,.16))}
+#main-content .service-card:hover .flex-shrink-0:has(svg){transform:translateY(-7px) scale(1.08) rotate(-4deg)}
+.tl-icon svg{width:27px;height:27px;fill:none;stroke:#267D91;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 2px 3px rgba(37,78,130,.12))}
+.tl-trust-card:nth-child(1) .tl-icon{background:linear-gradient(145deg,#E6EDFF,#F2E9FF)}
+.tl-trust-card:nth-child(2) .tl-icon{background:linear-gradient(145deg,#E0F8F0,#E7F2FF)}
+.tl-trust-card:nth-child(3) .tl-icon{background:linear-gradient(145deg,#FFF0DF,#FFEAF0)}
+.tl-trust-card:nth-child(4) .tl-icon{background:linear-gradient(145deg,#E9E5FF,#E4F7FF)}
+@media(prefers-reduced-motion:reduce){
+ #main-content .service-card .flex-shrink-0:has(svg){animation:none!important;transition:none!important}
+}
