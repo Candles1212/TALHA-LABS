@@ -1,60 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Optional Customer Portal | Talha Labs</title>
-  <meta name="description" content="Optional Talha Labs customer portal information.">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Account | Talha Labs</title>
+  <meta name="description" content="Optional secure customer sign-in for Talha Labs. Public website pages remain open without an account.">
   <meta name="robots" content="noindex, nofollow">
   <link rel="canonical" href="https://talhalabs.vercel.app/account.html">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="/assets/css/interior.css">
-  <link rel="stylesheet" href="/assets/css/brand-refresh.css">
-  <link rel="stylesheet" href="/assets/css/site-polish.css">
+  <link rel="stylesheet" href="/assets/css/interior.css"><link rel="stylesheet" href="/assets/css/brand-refresh.css"><link rel="stylesheet" href="/assets/css/site-polish.css">
   <link rel="icon" type="image/jpeg" href="/assets/images/taha.jpg?v=1">
 </head>
 <body class="bg-gray-50 text-gray-800">
   <a class="tl-skip-link" href="#main-content">Skip to main content</a>
-  <header class="bg-white shadow-sm sticky top-0 z-50">
-    <nav class="container mx-auto px-4 py-4 flex items-center justify-between" aria-label="Account navigation">
-      <a href="index.html" class="flex items-center gap-3 text-xl font-extrabold text-gray-900">
-        <img src="/assets/images/taha.jpg" alt="Talha Labs logo" width="42" height="42" class="rounded-full">
-        Talha Labs
-      </a>
-      <a href="index.html" class="text-sm font-bold text-teal-700 hover:underline">Back to website</a>
-    </nav>
-  </header>
-  <main id="main-content" class="tl-account-page">
-    <div class="tl-account-shell">
-      <a class="tl-account-back" href="index.html">← Back to Talha Labs</a>
-      <section class="tl-account-card" aria-labelledby="account-title">
-        <div class="tl-account-card-head">
-          <span class="tl-account-mark" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M12 3 19 6v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3Z"/><path d="m9 12 2 2 4-4"/></svg>
-          </span>
-          <h1 id="account-title">Talha Labs Customer Portal</h1>
-          <p>Customer login is optional. All public website pages remain available without signing in.</p>
+  <header class="bg-white shadow-sm sticky top-0 z-50"><nav class="container mx-auto px-4 py-4 flex items-center justify-between" aria-label="Account navigation">
+    <a href="index.html" class="flex items-center gap-3 text-xl font-extrabold text-gray-900"><img src="/assets/images/taha.jpg" alt="Talha Labs logo" width="42" height="42" class="rounded-full">Talha Labs</a>
+    <a href="index.html" class="text-sm font-bold text-teal-700 hover:underline">Back to website</a>
+  </nav></header>
+  <main id="main-content" class="tl-account-page"><div class="tl-account-shell">
+    <a class="tl-account-back" href="index.html">← Back to Talha Labs</a>
+    <section class="tl-account-card tl-auth-card" aria-labelledby="account-title">
+      <div class="tl-account-card-head">
+        <span class="tl-account-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 19 6v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+        <h1 id="account-title">Customer Account</h1>
+        <p>Sign-in is optional. All public Talha Labs pages remain available without an account.</p>
+      </div>
+      <div id="auth-status" class="tl-auth-status" role="status" aria-live="polite">Checking secure sign-in configuration…</div>
+      <div id="auth-forms" class="tl-auth-content" hidden>
+        <div class="tl-auth-tabs" role="tablist" aria-label="Account actions">
+          <button type="button" class="tl-auth-tab is-active" data-auth-tab="login" role="tab" aria-selected="true">Log in</button>
+          <button type="button" class="tl-auth-tab" data-auth-tab="signup" role="tab" aria-selected="false">Create account</button>
         </div>
-        <div class="tl-account-content">
-          <article class="tl-account-option tl-account-option--customer">
-            <span class="tl-account-option-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c.7-3.4 3.1-5 7-5s6.3 1.6 7 5"/></svg>
-            </span>
-            <h2>Customer Account <span class="text-sm font-semibold text-blue-700">(Optional)</span></h2>
-            <p>A secure sign-in area for customer services is planned. It will only be enabled after authentication and privacy protections are configured.</p>
-            <span class="inline-flex mt-3 rounded-full bg-blue-50 px-3 py-2 text-sm font-bold text-blue-800">Portal setup in progress</span>
-          </article>
-        </div>
-        <div class="tl-account-notice" role="note">
-          <strong>Security notice:</strong> Customer sign-in is not active yet. This page does not accept passwords or store medical reports. Please do not send passwords, identity documents or medical reports through this page.
-        </div>
-      </section>
-      <p class="mt-5 text-center text-sm text-slate-600">Need general information? <a class="font-bold text-teal-800 underline" href="https://wa.me/923006700196?text=Assalam%20o%20Alaikum%2C%20I%20would%20like%20information%20about%20the%20Talha%20Labs%20customer%20portal." target="_blank" rel="noopener noreferrer">Contact Talha Labs</a>.</p>
-    </div>
-  </main>
+        <form id="login-form" class="tl-auth-form" autocomplete="on">
+          <h2>Welcome back</h2><label for="login-email">Email address</label><input id="login-email" name="email" type="email" autocomplete="username" required maxlength="254">
+          <label for="login-password">Password</label><input id="login-password" name="password" type="password" autocomplete="current-password" required>
+          <button class="tl-auth-submit" type="submit">Log in securely</button><button class="tl-auth-text-button" type="button" data-show-reset>Forgot password?</button>
+        </form>
+        <form id="signup-form" class="tl-auth-form" autocomplete="on" hidden>
+          <h2>Create your account</h2><label for="signup-email">Email address</label><input id="signup-email" name="email" type="email" autocomplete="email" required maxlength="254">
+          <label for="signup-password">Create password</label><input id="signup-password" name="password" type="password" autocomplete="new-password" minlength="12" required>
+          <p class="tl-auth-hint">Use at least 12 characters. A long, unique passphrase is recommended.</p>
+          <label for="signup-confirm">Confirm password</label><input id="signup-confirm" name="confirm" type="password" autocomplete="new-password" minlength="12" required>
+          <button class="tl-auth-submit" type="submit">Create account</button><p class="tl-auth-hint">Email verification is required before the account can be used.</p>
+        </form>
+        <form id="reset-form" class="tl-auth-form" hidden>
+          <h2>Reset your password</h2><p>Enter your account email. If an account exists, you’ll receive a secure reset link.</p>
+          <label for="reset-email">Email address</label><input id="reset-email" name="email" type="email" autocomplete="email" required maxlength="254">
+          <button class="tl-auth-submit" type="submit">Send reset link</button><button class="tl-auth-text-button" type="button" data-show-login>Back to login</button>
+        </form>
+        <form id="new-password-form" class="tl-auth-form" hidden>
+          <h2>Choose a new password</h2><label for="new-password">New password</label><input id="new-password" name="password" type="password" autocomplete="new-password" minlength="12" required>
+          <label for="new-password-confirm">Confirm new password</label><input id="new-password-confirm" name="confirm" type="password" autocomplete="new-password" minlength="12" required>
+          <button class="tl-auth-submit" type="submit">Update password</button>
+        </form>
+        <section id="signed-in-panel" class="tl-auth-form" hidden aria-live="polite">
+          <h2>You’re signed in</h2><p id="signed-in-email" class="tl-auth-user-email"></p>
+          <p class="tl-auth-hint">This account currently provides sign-in only. It does not display, upload or store laboratory reports.</p>
+          <button id="logout-button" class="tl-auth-submit" type="button">Log out</button>
+        </section>
+      </div>
+      <div class="tl-account-notice" role="note"><strong>Privacy and security:</strong> Passwords are handled by Supabase Authentication and are not stored in Talha Labs website files. Never share your password. This portal does not collect medical reports, test results, identity documents or payment details.</div>
+    </section>
+    <p class="mt-5 text-center text-sm text-slate-600">Need general information? <a class="font-bold text-teal-800 underline" href="https://wa.me/923006700196" target="_blank" rel="noopener noreferrer">Contact Talha Labs</a>. Or <a class="font-bold text-teal-800 underline" href="index.html">continue browsing the public website</a>.</p>
+  </div></main>
   <footer class="bg-green-900 py-5 text-center text-sm text-white">© 2026 Talha Labs. All rights reserved.</footer>
-</body>
-</html>
+  <script type="module" src="/assets/js/account.js"></script>
+</body></html>
