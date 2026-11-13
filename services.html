@@ -16,12 +16,12 @@
     <meta property="og:title" content="Lab Tests &amp; Services in Sadiqabad | Talha Labs">
     <meta property="og:description" content="Blood tests, CBC, thyroid, HbA1c, Vitamin D, hormones, medical screening and home sampling in Sadiqabad. Fast digital reports. Call Talha Labs 0300 6700196.">
     <meta property="og:url" content="https://talhalabs.vercel.app/services.html">
-    <meta property="og:image" content="https://talhalabs.vercel.app/taha.jpg">
+    <meta property="og:image" content="https://talhalabs.vercel.app/assets/images/taha.jpg">
     <meta property="og:locale" content="en_PK">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Lab Tests &amp; Services in Sadiqabad | Talha Labs">
     <meta name="twitter:description" content="Blood tests, CBC, thyroid, HbA1c, Vitamin D, hormones, medical screening and home sampling in Sadiqabad. Fast digital reports. Call Talha Labs 0300 6700196.">
-    <meta name="twitter:image" content="https://talhalabs.vercel.app/taha.jpg">
+    <meta name="twitter:image" content="https://talhalabs.vercel.app/assets/images/taha.jpg">
     <script type="application/ld+json">
 [
   {
@@ -29,7 +29,7 @@
     "@type": "MedicalBusiness",
     "name": "Talha Labs",
     "url": "https://talhalabs.vercel.app/",
-    "image": "https://talhalabs.vercel.app/taha.jpg",
+    "image": "https://talhalabs.vercel.app/assets/images/taha.jpg",
     "telephone": "+923006700196",
     "email": "talhalabs78@gmail.com",
     "address": {
@@ -145,6 +145,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/assets/css/interior.css">
+    <link rel="stylesheet" href="/assets/css/brand-refresh.css">
+    <link rel="stylesheet" href="/assets/css/interactive-tools.css">
 </head>
 <body class="bg-gray-50 text-gray-800">
 
@@ -181,12 +183,30 @@
         </div>
     </header>
 
-    <main class="container mx-auto px-4 py-16 fade-in delay-1">
-        <h1 class="text-4xl font-bold text-center text-gray-900 mb-4">Our Services</h1>
-        <hr class="hr-animated mb-8">
-        <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">Talha Labs offers blood tests, thyroid and hormone profiles, HbA1c, Vitamin D, medical screening and home sample collection in Sadiqabad, with fast and accurate reports.</p>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <div class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center service-card">
+    <main class="container mx-auto px-4 py-12 md:py-16 fade-in delay-1 tl-services-page">
+        <section class="tl-services-hero">
+            <div class="tl-services-hero-copy">
+                <span class="tl-eyebrow">TALHA LABS · DIAGNOSTIC SERVICES</span>
+                <h1>Diagnostics made clearer.</h1>
+                <p>Explore laboratory testing, patient support and the science behind common diagnostic departments. Find a service, learn what it measures and contact our team to confirm availability and preparation.</p>
+                <div class="tl-services-hero-actions">
+                    <a href="#tl-service-grid" class="tl-btn-primary">Explore services <span aria-hidden="true">↘</span></a>
+                    <a href="rates.html" class="tl-services-text-link">View test rates <span aria-hidden="true">→</span></a>
+                </div>
+                <div class="tl-services-hero-note"><span aria-hidden="true">✦</span> Clear information. Thoughtful care. Reliable diagnostics.</div>
+            </div>
+            <div class="tl-services-hero-art" aria-hidden="true">
+                <div class="tl-orbit tl-orbit-one"></div><div class="tl-orbit tl-orbit-two"></div>
+                <div class="tl-lab-symbol"><span>＋</span><b>TL</b><small>LAB SERVICES</small></div>
+                <span class="tl-float-chip tl-chip-one">Hematology</span><span class="tl-float-chip tl-chip-two">Biochemistry</span><span class="tl-float-chip tl-chip-three">Serology</span>
+            </div>
+        </section>
+        <div class="tl-services-heading">
+            <div><span class="tl-eyebrow">WHAT WE OFFER</span><h2>Explore our services</h2></div>
+            <p>Browse the services below. For individual test recommendations, please consult your healthcare professional.</p>
+        </div>
+        <div id="tl-service-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div data-service-card class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center service-card">
                 <img src="https://img.icons8.com/color/96/000000/test-tube.png" alt="Blood and urine lab tests in Sadiqabad" width="96" height="96" class="mb-4">
                 <h2 class="text-2xl font-semibold mb-2 text-green-700">Comprehensive Lab Tests</h2>
                 <p class="text-gray-700 mb-4">Blood, urine, and other diagnostic tests performed with accuracy and care.</p>
@@ -198,7 +218,7 @@
                     <li>Blood Sugar &amp; Lipid Profile</li>
                 </ul>
             </div>
-            <div class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center service-card">
+            <div data-service-card class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center service-card">
                 <img src="https://img.icons8.com/color/96/000000/medical-mobile-app.png" alt="Home sample collection service" width="96" height="96" class="mb-4">
                 <h2 class="text-2xl font-semibold mb-2 text-green-700">Home Sampling</h2>
                 <p class="text-gray-700 mb-4">Book a home visit for sample collection at your convenience.</p>
@@ -208,7 +228,7 @@
                     <li>Quick report delivery</li>
                 </ul>
             </div>
-            <div class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center service-card">
+            <div data-service-card class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center service-card">
                 <img src="https://img.icons8.com/fluency/96/sun.png" alt="Vitamin D test" width="96" height="96" class="mb-4">
                 <h2 class="text-2xl font-semibold mb-2 text-green-700">Vitamin D Test</h2>
                 <p class="text-gray-700 mb-4">Check your Vitamin D levels for bone health and overall wellness.</p>
@@ -218,7 +238,7 @@
                     <li>Expert interpretation</li>
                 </ul>
             </div>
-            <div class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center service-card">
+            <div data-service-card class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center service-card">
                 <img src="https://img.icons8.com/color/96/000000/health-checkup.png" alt="Medical screening PFA" width="96" height="96" class="mb-4">
                 <h2 class="text-2xl font-semibold mb-2 text-green-700">Medical Screening (PFA)</h2>
                 <p class="text-gray-700 mb-4">Pre-employment and annual medical screening for organizations.</p>
@@ -228,7 +248,7 @@
                     <li>Health Certificates</li>
                 </ul>
             </div>
-            <div class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center service-card">
+            <div data-service-card class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center service-card">
                 <span class="mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="#16a34a" stroke-width="2" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2" stroke-width="2" fill="white"/><path d="M9 7h6M9 11h6M9 15h4" stroke-width="2" stroke-linecap="round"/></svg></span>
                 <h2 class="text-2xl font-semibold mb-2 text-green-700">Digital Reports</h2>
                 <p class="text-gray-700 mb-4">Receive your test results online via email or WhatsApp.</p>
@@ -237,7 +257,7 @@
                     <li>Easy access &amp; download</li>
                 </ul>
             </div>
-            <div class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center service-card">
+            <div data-service-card class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center service-card">
                 <img src="https://img.icons8.com/color/96/000000/doctor-male.png" alt="Consultation with pathologist" width="96" height="96" class="mb-4">
                 <h2 class="text-2xl font-semibold mb-2 text-green-700">Consultation</h2>
                 <p class="text-gray-700 mb-4">Expert advice from qualified pathologists and medical professionals.</p>
@@ -247,7 +267,7 @@
                     <li>Follow-up support</li>
                 </ul>
             </div>
-            <div class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center service-card">
+            <div data-service-card class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center service-card">
                 <img src="https://img.icons8.com/color/96/diabetes.png" alt="HbA1c test for diabetes" width="96" height="96" class="mb-4">
                 <h2 class="text-2xl font-semibold mb-2 text-green-700">HbA1c Test</h2>
                 <p class="text-gray-700 mb-4">Monitor your average blood sugar levels over the past 2-3 months.</p>
@@ -257,7 +277,7 @@
                     <li>Quick results</li>
                 </ul>
             </div>
-            <div class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center service-card">
+            <div data-service-card class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center service-card">
                 <span class="mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="#16a34a" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3l7 4v5c0 5.25-3.5 9.74-7 11-3.5-1.26-7-5.75-7-11V7l7-4z"/></svg></span>
                 <h2 class="text-2xl font-semibold mb-2 text-green-700">Thyroid Profile</h2>
                 <p class="text-gray-700 mb-4">Assess your thyroid function for overall metabolic health.</p>
@@ -267,7 +287,7 @@
                     <li>Expert consultation</li>
                 </ul>
             </div>
-            <div class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center service-card">
+            <div data-service-card class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center service-card">
                 <span class="mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="#16a34a" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="white"/><circle cx="19" cy="5" r="2" fill="white"/><circle cx="5" cy="19" r="2" fill="white"/><line x1="13.5" y1="10.5" x2="17" y2="7"/><line x1="10.5" y1="13.5" x2="7" y2="17"/></svg></span>
                 <h2 class="text-2xl font-semibold mb-2 text-green-700">Hormones Test</h2>
                 <p class="text-gray-700 mb-4">Comprehensive hormone testing for men and women.</p>
@@ -278,6 +298,84 @@
                 </ul>
             </div>
         </div>
+    
+        <section class="tl-service-tools">
+          <div class="tl-service-toolbar"><div><span class="tl-eyebrow">FIND A SERVICE</span><h2>What test or service are you looking for?</h2><p>Search the listed services by test name or department.</p></div>
+            <label class="tl-search-wrap"><span class="sr-only">Search laboratory services</span><input id="tl-service-search" type="search" placeholder="Search CBC, thyroid, vitamin D..." autocomplete="off"><span>⌕</span></label>
+          </div>
+          <div class="tl-filter-row"><button class="is-active" data-filter="all" type="button">All services</button><button data-filter="blood" type="button">Blood tests</button><button data-filter="profiles" type="button">Profiles</button><button data-filter="support" type="button">Patient support</button></div>
+          <p class="tl-results-count" id="tl-service-count" aria-live="polite">Showing all listed services</p>
+        </section>
+        <section class="tl-service-explain"><div class="tl-section-intro"><span class="tl-eyebrow">UNDERSTANDING THE DEPARTMENTS</span><h2>Different tests answer different questions.</h2><p>Your doctor chooses tests based on your health history and clinical needs. These short descriptions are general information only.</p></div>
+          <div class="tl-department-grid">
+            <article id="hematology"><span>HEMATOLOGY</span><h3>Blood cell analysis</h3><p>Hematology examines blood cells and related components. A CBC is a commonly requested test in this department.</p></article>
+            <article id="biochemistry"><span>BIOCHEMISTRY</span><h3>Chemical markers</h3><p>Biochemistry tests measure substances in blood and other samples, including markers used to assess liver, kidney and metabolic health.</p></article>
+            <article id="serology"><span>SEROLOGY</span><h3>Antigens and antibodies</h3><p>Serology tests look for selected antigens or antibodies and may support a clinician's assessment of certain infections.</p></article>
+          </div>
+        </section>
+ 
+        <section class="tl-deep-dive">
+          <div class="tl-section-intro"><span class="tl-eyebrow">EXPLORE THE SCIENCE</span><h2>Go beyond the test name.</h2><p>Open a department to explore what it studies, common tests, what results may help clinicians assess, and useful questions to ask before testing.</p></div>
+          <div class="tl-deep-grid">
+            <details class="tl-deep-card" id="biochemistry-details">
+              <summary><span class="tl-deep-icon">⚗</span><span><small>DEPARTMENT 01</small><b>Clinical Biochemistry</b><em>Explore liver, kidney, glucose, lipid and metabolic markers</em></span><i>＋</i></summary>
+              <div class="tl-deep-content">
+                <p class="tl-deep-lead">Clinical biochemistry measures chemical substances in blood, urine and other body fluids. These measurements can help clinicians assess organ function, metabolism and changes over time.</p>
+                <h4>Common test groups</h4>
+                <div class="tl-info-grid">
+                  <article><b>Liver Function Tests (LFTs)</b><p>May include ALT, AST, ALP, bilirubin, albumin and other markers depending on the panel. They help assess patterns related to liver-cell irritation, bile flow and protein production.</p><small>Useful question: Which exact markers are included in this laboratory's LFT panel?</small></article>
+                  <article><b>Kidney Function Tests (KFTs)</b><p>Common measurements include creatinine, urea and electrolytes. Estimated filtration measures may be calculated by a clinician using results and patient information.</p><small>Useful question: Does the requested panel include electrolytes and eGFR?</small></article>
+                  <article><b>Blood glucose</b><p>Glucose testing measures the amount of sugar in the blood at the time of collection. Fasting and random glucose tests answer different clinical questions.</p><small>Useful question: Should this sample be fasting, and for how long?</small></article>
+                  <article><b>HbA1c</b><p>HbA1c reflects average blood-glucose exposure over roughly the previous 2–3 months. It is used by clinicians in diabetes screening and monitoring.</p><small>Preparation: Fasting is generally not required, but follow the requesting clinician's instructions.</small></article>
+                  <article><b>Lipid profile</b><p>Usually reports total cholesterol, HDL cholesterol, LDL cholesterol and triglycerides. The result helps clinicians evaluate cardiovascular risk alongside other factors.</p><small>Useful question: Does my clinician require fasting for this particular lipid test?</small></article>
+                  <article><b>Electrolytes</b><p>Measurements such as sodium, potassium and chloride help assess fluid and electrolyte balance. Interpretation depends on symptoms, medicines and other results.</p><small>Useful question: Are electrolytes included in my requested KFT or ordered separately?</small></article>
+                </div>
+                <h4>How to understand a report</h4><p>Compare each value with the reference interval printed by the performing laboratory. A result outside that interval does not automatically establish a disease; age, symptoms, medicines, sample quality and clinical history matter.</p>
+                <h4>Before your sample</h4><ul><li>Confirm fasting requirements for the exact tests ordered.</li><li>Tell the healthcare professional about medicines and supplements; do not stop them unless your clinician instructs you.</li><li>Ask when and how results will be delivered.</li></ul>
+              </div>
+            </details>
+            <details class="tl-deep-card" id="hematology-details">
+              <summary><span class="tl-deep-icon">🩸</span><span><small>DEPARTMENT 02</small><b>Hematology</b><em>Explore blood cells, haemoglobin and clotting</em></span><i>＋</i></summary>
+              <div class="tl-deep-content">
+                <p class="tl-deep-lead">Hematology studies blood and blood-forming tissues. Blood-cell measurements can help clinicians investigate issues such as anaemia, infection, inflammation and bleeding or clotting concerns.</p>
+                <div class="tl-info-grid">
+                  <article><b>Complete Blood Count (CBC)</b><p>Typically includes red blood cell count, haemoglobin, haematocrit, white blood cell count and platelet count. Some reports also include red-cell indices and a differential count.</p></article>
+                  <article><b>Haemoglobin</b><p>Haemoglobin is the oxygen-carrying protein in red blood cells. Its level is interpreted with other CBC values and the patient's clinical context.</p></article>
+                  <article><b>White blood cells</b><p>White blood cells are part of the immune system. A differential may show different white-cell types and can support further clinical assessment.</p></article>
+                  <article><b>Platelets</b><p>Platelets help blood clot. Their count is considered with symptoms, medicines and other coagulation investigations when needed.</p></article>
+                </div>
+                <h4>What can affect results?</h4><p>Hydration, recent illness, medicines, pregnancy, altitude and many other factors may influence blood counts. A clinician interprets patterns rather than relying on a single number.</p>
+                <h4>Questions to ask</h4><ul><li>Does the CBC include a differential count?</li><li>Is a peripheral blood film required by the clinician?</li><li>When should a repeat test or clinical review be considered?</li></ul>
+              </div>
+            </details>
+            <details class="tl-deep-card" id="serology-details">
+              <summary><span class="tl-deep-icon">◎</span><span><small>DEPARTMENT 03</small><b>Serology &amp; Immunology</b><em>Explore antibodies, antigens and immune responses</em></span><i>＋</i></summary>
+              <div class="tl-deep-content">
+                <p class="tl-deep-lead">Serology tests examine components of the immune response, often by detecting specific antibodies or antigens. The meaning of a result depends on the test method, timing and clinical context.</p>
+                <div class="tl-info-grid">
+                  <article><b>Antibodies</b><p>Antibodies are proteins made by the immune system in response to a target. Different antibody classes can provide different clues, but do not always prove active infection.</p></article>
+                  <article><b>Antigens</b><p>Antigens are target substances that some tests detect directly. A positive or negative result must be interpreted using the specific assay and its limitations.</p></article>
+                  <article><b>Screening tests</b><p>Some tests are designed for screening and may require confirmatory testing. Follow the clinician's advice about next steps.</p></article>
+                </div>
+                <h4>Important to know</h4><p>Test sensitivity, specificity, the time since exposure or symptoms, and prior vaccination or infection can affect interpretation. A laboratory result alone is not a complete diagnosis.</p>
+              </div>
+            </details>
+            <details class="tl-deep-card" id="endocrine-details">
+              <summary><span class="tl-deep-icon">◈</span><span><small>DEPARTMENT 04</small><b>Hormones &amp; Endocrinology</b><em>Explore thyroid and other hormone tests</em></span><i>＋</i></summary>
+              <div class="tl-deep-content">
+                <p class="tl-deep-lead">Hormones are chemical messengers that help regulate metabolism, growth, reproduction and many body processes. Hormone results may vary with time of day, medicines, age and other factors.</p>
+                <div class="tl-info-grid">
+                  <article><b>Thyroid profile (TSH, T4, T3)</b><p>TSH is commonly used to assess thyroid regulation. Free or total T4 and T3 may be added depending on the clinical question.</p></article>
+                  <article><b>Reproductive hormones</b><p>Tests such as oestradiol, progesterone, testosterone, LH and FSH are selected according to the clinical question. Timing within a menstrual cycle may matter for some tests.</p></article>
+                  <article><b>Vitamin D</b><p>The 25-hydroxy vitamin D test is commonly used to assess vitamin D status. Interpretation depends on clinical context and the laboratory's reference guidance.</p></article>
+                </div>
+                <h4>Before testing</h4><p>Ask whether the sample needs a particular collection time or cycle day, and tell your clinician about hormone medicines or supplements.</p>
+              </div>
+            </details>
+          </div>
+          <p class="tl-education-note"><b>Educational information only:</b> This guide explains common laboratory concepts. It does not replace a doctor's advice, establish a diagnosis or confirm which tests an individual needs. Test availability and exact panels must be confirmed with Talha Labs.</p>
+        </section>
+        <section class="tl-action-panel"><div class="container mx-auto px-4"><div><span class="tl-eyebrow">NOT SURE WHICH TEST TO ASK ABOUT?</span><h2>Send your test enquiry directly.</h2><p>Share the test name with the team to confirm availability, preparation and current rates.</p></div><div class="tl-action-buttons"><a class="tl-btn-primary" href="rates.html">Build a test enquiry</a><a class="tl-btn-secondary" href="https://wa.me/923006700196" target="_blank" rel="noopener">WhatsApp</a></div></div></section>
     </main>
 
     <!-- Decorative HR with text above footer -->
@@ -363,5 +461,6 @@
         <div class="tlai-note">AI se jawab ghalat ho sakte hain. Apni zaati ya medical tafseel na likhein.</div>
     </div>
     <script src="/assets/js/tl-ai.js"></script>
+    <script src="/assets/js/interactive-tools.js" defer></script>
 </body>
 </html>
