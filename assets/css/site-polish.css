@@ -81,3 +81,64 @@ input,select,textarea{max-width:100%;font:inherit}
  .tl-story-year{width:76px;height:76px;font-size:1.35rem;border-radius:15px}
  .tl-story-card p{font-size:.92rem;line-height:1.65}
 }
+
+
+/* Shared simple-box design across Talha LABS pages */
+:where(
+  .team-card,
+  main .service-card,
+  .tl-trust-card,
+  .tl-journey-grid article,
+  .tl-values-grid article,
+  .tl-specialty-grid a,
+  .tl-department-grid article,
+  .tl-info-grid article,
+  .tl-check-grid label,
+  .tl-selection-panel,
+  .tl-test-picker,
+  .tl-enquiry-form,
+  .tl-faq-list details,
+  .tl-story-card
+){
+  border:1px solid #DCEBE7!important;
+  border-radius:18px!important;
+  box-shadow:0 10px 28px rgba(15,55,65,.065)!important;
+}
+:where(
+  .team-card,
+  main .service-card,
+  .tl-trust-card,
+  .tl-journey-grid article,
+  .tl-values-grid article,
+  .tl-specialty-grid a,
+  .tl-department-grid article,
+  .tl-info-grid article,
+  .tl-check-grid label
+){
+  background:linear-gradient(145deg,#FFFFFF 0%,#FBFDFC 72%,#F3F9F7 100%)!important;
+  transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;
+}
+:where(
+  .team-card,
+  main .service-card,
+  .tl-trust-card,
+  .tl-journey-grid article,
+  .tl-values-grid article,
+  .tl-specialty-grid a,
+  .tl-department-grid article
+):hover{
+  transform:translateY(-4px)!important;
+  border-color:#A8D5CC!important;
+  box-shadow:0 16px 34px rgba(15,55,65,.11)!important;
+}
+:where(.tl-selection-panel,.tl-test-picker,.tl-enquiry-form){
+  background:linear-gradient(145deg,#FFFFFF 0%,#F8FCFA 100%)!important;
+}
+.tl-faq-list details{background:#fff!important}
+.tl-info-grid article{background:linear-gradient(145deg,#fff,#F6FAF8)!important}
+.tl-check-grid label{background:#fff!important}
+@media(max-width:640px){
+  :where(.team-card,main .service-card,.tl-trust-card,.tl-journey-grid article,.tl-values-grid article,.tl-specialty-grid a,.tl-department-grid article,.tl-selection-panel,.tl-test-picker,.tl-enquiry-form){
+    border-radius:16px!important;
+  }
+}
