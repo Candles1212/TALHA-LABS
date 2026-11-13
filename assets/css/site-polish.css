@@ -348,3 +348,6 @@ main .service-card:nth-child(3n)>span:has(svg){background:linear-gradient(145deg
 .tl-account-back{display:inline-block;margin:0 0 18px;color:#236B68;font-weight:750;text-decoration:none}
 @media(max-width:680px){.tl-access-actions{flex-direction:column;align-items:stretch}.tl-access-actions a{width:100%}.tl-account-content{grid-template-columns:1fr;padding:18px}.tl-account-card-head{padding:30px 20px 24px}.tl-account-notice{margin:0 18px 18px}.tl-account-option{padding:20px}.tl-account-page{padding:30px 12px 52px}}
 @media(prefers-reduced-motion:reduce){.tl-access-primary,.tl-access-secondary{transition:none!important}}
+
+/* Center the single optional customer-account panel */
+.tl-account-content:has(.tl-account-option:only-child){grid-template-columns:minmax(0,620px);justify-content:center}
