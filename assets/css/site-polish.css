@@ -316,3 +316,35 @@ main .service-card:nth-child(3n)>span:has(svg){background:linear-gradient(145deg
 .tl-health-prep-section>.container>.tl-btn-primary{display:table;margin:18px auto 0}
 @media(max-width:640px){.tl-health-hero{margin:14px 8px 0;padding:46px 12px!important;border-radius:23px}.tl-health-hero-actions{flex-direction:column;align-items:stretch}.tl-health-pill{justify-content:center}.tl-health-tip-card{padding:22px!important}.tl-health-tip-icon{width:52px;height:52px}}
 @media(prefers-reduced-motion:reduce){.tl-health-hero-orb,.tl-health-tip-icon,.tl-career-icon{animation:none!important}.tl-health-pill{transition:none!important}}
+
+ 
+/* Guest-first access choices on the homepage */
+.tl-access-actions{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:13px;margin-top:24px}
+.tl-access-primary,.tl-access-secondary{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:13px 21px;border-radius:999px;font-weight:800;text-decoration:none;transition:transform .2s ease,box-shadow .2s ease}
+.tl-access-primary{color:#fff!important;background:linear-gradient(120deg,#087F72,#159C91);box-shadow:0 10px 24px rgba(15,118,110,.2)}
+.tl-access-secondary{color:#1D5360!important;background:rgba(255,255,255,.9);border:1px solid #CFE4DF;box-shadow:0 6px 18px rgba(31,70,90,.07)}
+.tl-access-primary:hover,.tl-access-secondary:hover{transform:translateY(-2px);box-shadow:0 13px 26px rgba(31,70,90,.14)}
+.tl-optional-tag{padding:4px 8px;border-radius:999px;background:#E9F5F2;color:#16766E;font-size:.68rem;letter-spacing:.04em}
+.tl-account-page{min-height:calc(100vh - 150px);padding:52px 16px 76px;background:radial-gradient(circle at 8% 8%,rgba(113,214,194,.2),transparent 28%),radial-gradient(circle at 92% 82%,rgba(167,139,250,.16),transparent 30%),linear-gradient(135deg,#F3FAF8,#F5F7FF)}
+.tl-account-shell{width:min(100%,980px);margin:0 auto}
+.tl-account-card{overflow:hidden;border:1px solid #DCEBE7;border-radius:28px;background:rgba(255,255,255,.94);box-shadow:0 22px 60px rgba(31,70,90,.1)}
+.tl-account-card-head{padding:34px 28px 26px;text-align:center;background:linear-gradient(135deg,#E8F8F3,#EEF1FF)}
+.tl-account-mark{display:grid;place-items:center;width:68px;height:68px;margin:0 auto 16px;border:1px solid #CFE8E0;border-radius:22px;background:#fff;color:#0F8178;box-shadow:0 10px 24px rgba(15,118,110,.12)}
+.tl-account-mark svg{width:34px;height:34px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tl-account-card-head h1{margin:0;color:#174653;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:850;letter-spacing:-.04em}
+.tl-account-card-head p{max-width:620px;margin:10px auto 0;color:#5A707A;line-height:1.7}
+.tl-account-content{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:26px}
+.tl-account-option{padding:24px;border:1px solid #DCEBE7;border-radius:20px;background:linear-gradient(145deg,#fff,#F7FBFA)}
+.tl-account-option--guest{border-top:4px solid #32966D}
+.tl-account-option--customer{border-top:4px solid #3976C8}
+.tl-account-option h2{margin:12px 0 8px;color:#174653;font-size:1.2rem;font-weight:850}
+.tl-account-option p{color:#5B6F79;line-height:1.7}
+.tl-account-option-icon{display:grid;place-items:center;width:48px;height:48px;border-radius:16px;background:#E6F6EF;color:#21845E}
+.tl-account-option--customer .tl-account-option-icon{background:#EAF1FF;color:#3976C8}
+.tl-account-option-icon svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.tl-account-action{display:inline-flex;align-items:center;justify-content:center;min-height:46px;margin-top:14px;padding:11px 17px;border-radius:999px;background:#0F8178;color:#fff!important;font-weight:800;text-decoration:none}
+.tl-account-action--light{border:1px solid #CFE0E7;background:#fff;color:#28566A!important}
+.tl-account-notice{margin:0 26px 26px;padding:16px 18px;border:1px solid #E8DDBB;border-radius:16px;background:#FFFBEE;color:#765A20;line-height:1.65}
+.tl-account-back{display:inline-block;margin:0 0 18px;color:#236B68;font-weight:750;text-decoration:none}
+@media(max-width:680px){.tl-access-actions{flex-direction:column;align-items:stretch}.tl-access-actions a{width:100%}.tl-account-content{grid-template-columns:1fr;padding:18px}.tl-account-card-head{padding:30px 20px 24px}.tl-account-notice{margin:0 18px 18px}.tl-account-option{padding:20px}.tl-account-page{padding:30px 12px 52px}}
+@media(prefers-reduced-motion:reduce){.tl-access-primary,.tl-access-secondary{transition:none!important}}
