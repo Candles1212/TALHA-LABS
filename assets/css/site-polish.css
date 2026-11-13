@@ -1,0 +1,38 @@
+/* Talha LABS — responsive, accessible finishing layer */
+:root{--tl-space-1:8px;--tl-space-2:16px;--tl-space-3:24px;--tl-space-4:32px;--tl-space-5:48px;--tl-space-6:64px;--tl-focus:0 0 0 3px rgba(53,54,160,.24)}
+html{scroll-behavior:smooth;scroll-padding-top:92px}
+body{padding-bottom:0!important;overflow-x:clip}
+img,svg,video,canvas{max-width:100%}img{height:auto}
+main{min-width:0}main section{scroll-margin-top:92px}
+:where(h1,h2,h3,h4,p,li,a,button,label){overflow-wrap:break-word}
+:where(button,a,input,select,textarea,summary,[tabindex]):focus-visible{outline:3px solid #A6D343!important;outline-offset:3px!important;box-shadow:var(--tl-focus)}
+a,button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+button:disabled{cursor:not-allowed;opacity:.58}
+input,select,textarea{max-width:100%;font:inherit}
+.tl-skip-link{position:fixed;z-index:2000;top:12px;left:12px;transform:translateY(-160%);padding:12px 18px;border-radius:12px;background:#22236F;color:#fff!important;font-weight:800;text-decoration:none;box-shadow:0 8px 24px rgba(20,30,60,.2)}
+.tl-skip-link:focus{transform:translateY(0)}
+.tl-section-intro{padding-inline:12px}
+.tl-trust-grid,.tl-journey-grid,.tl-specialty-grid,.tl-department-grid,.tl-values-grid{align-items:stretch}
+.tl-trust-card,.tl-journey-grid article,.tl-values-grid article,.tl-department-grid article{min-width:0}
+.tl-deep-card summary{min-width:0}.tl-deep-content{overflow-wrap:anywhere}
+.tl-deep-content a,.tl-section-intro a{color:#30328D;text-decoration:underline;text-underline-offset:3px}
+.tl-action-panel p{max-width:68ch}
+.tl-btn-primary,.tl-btn-secondary{min-height:48px;gap:8px}
+.tl-faq-list summary{line-height:1.5}
+#tl-reading-progress{width:0;will-change:width}#tl-quick-actions{display:none!important}
+@media(max-width:767px){
+ body{padding-bottom:0!important}main.space-y-20{gap:clamp(36px,8vw,52px)}
+ .tl-trust-grid,.tl-journey-grid,.tl-specialty-grid,.tl-department-grid,.tl-values-grid,.tl-check-grid{gap:14px}
+ .tl-action-panel{margin-inline:12px}.tl-action-panel>.container{padding-inline:20px}
+ .tl-enquiry-form{padding:20px}.tl-selection-panel,.tl-test-picker{padding:18px}
+ .tl-rates-hero{padding:54px 18px}.tl-rate-content{padding-top:28px;padding-bottom:48px}
+ .tl-services-page{overflow:clip}.tl-services-hero{width:100%}
+}
+@media(max-width:380px){
+ .tl-services-hero h1{font-size:2.25rem!important}
+ .tl-services-hero-actions{align-items:stretch;flex-direction:column}
+ .tl-services-hero-actions>*{width:100%;justify-content:center;text-align:center}
+ .tl-float-chip{font-size:.68rem;padding:8px 11px}.tl-lab-symbol{width:124px;height:124px}
+}
+@media(hover:none){.tl-trust-card:hover,.tl-specialty-grid a:hover,.tl-values-grid article:hover,.tl-deep-card:hover,#tl-service-grid [data-service-card]:hover{transform:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
