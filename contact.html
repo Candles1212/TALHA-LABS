@@ -76,6 +76,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/assets/css/interior.css">
     <link rel="stylesheet" href="/assets/css/brand-refresh.css">
+    <link rel="stylesheet" href="/assets/css/interactive-tools.css">
 </head>
 <body class="bg-gray-50 text-gray-800">
 
@@ -212,6 +213,15 @@
                 <div class="py-12"></div>
             </div>
         </section>
+    
+        <section class="tl-contact-builder"><div class="container mx-auto px-4"><div class="tl-section-intro"><span class="tl-eyebrow">QUICK ENQUIRY</span><h2>What can we help you with?</h2><p>Prepare a WhatsApp message for the team. Do not include private medical details or test reports in this form.</p></div>
+          <form id="tl-contact-form" class="tl-enquiry-form">
+            <label>Your name (optional)<input id="tl-contact-name" type="text" maxlength="60" placeholder="Your name"></label>
+            <label>Enquiry type<select id="tl-contact-type"><option>Test availability and rates</option><option>Home sample collection</option><option>Appointment enquiry</option><option>Report delivery question</option><option>General information</option></select></label>
+            <label>Message (optional)<textarea id="tl-contact-message" rows="3" maxlength="400" placeholder="Write a short question (no medical records or sensitive details)"></textarea></label>
+            <button class="tl-btn-primary" type="submit">Continue to WhatsApp ↗</button><p id="tl-contact-feedback" aria-live="polite">This opens WhatsApp with your message. Your enquiry is not submitted until you send it there.</p>
+          </form>
+        </div></section>
     </main>
 
     <!-- Decorative HR with text above footer -->
@@ -297,5 +307,6 @@
         <div class="tlai-note">AI se jawab ghalat ho sakte hain. Apni zaati ya medical tafseel na likhein.</div>
     </div>
     <script src="/assets/js/tl-ai.js"></script>
+    <script src="/assets/js/interactive-tools.js" defer></script>
 </body>
 </html>

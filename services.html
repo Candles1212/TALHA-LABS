@@ -146,6 +146,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/assets/css/interior.css">
     <link rel="stylesheet" href="/assets/css/brand-refresh.css">
+    <link rel="stylesheet" href="/assets/css/interactive-tools.css">
 </head>
 <body class="bg-gray-50 text-gray-800">
 
@@ -186,8 +187,8 @@
         <h1 class="text-4xl font-bold text-center text-gray-900 mb-4">Our Services</h1>
         <hr class="hr-animated mb-8">
         <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">Talha Labs offers blood tests, thyroid and hormone profiles, HbA1c, Vitamin D, medical screening and home sample collection in Sadiqabad, with fast and accurate reports.</p>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <div class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center service-card">
+        <div id="tl-service-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div data-service-card class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center service-card">
                 <img src="https://img.icons8.com/color/96/000000/test-tube.png" alt="Blood and urine lab tests in Sadiqabad" width="96" height="96" class="mb-4">
                 <h2 class="text-2xl font-semibold mb-2 text-green-700">Comprehensive Lab Tests</h2>
                 <p class="text-gray-700 mb-4">Blood, urine, and other diagnostic tests performed with accuracy and care.</p>
@@ -199,7 +200,7 @@
                     <li>Blood Sugar &amp; Lipid Profile</li>
                 </ul>
             </div>
-            <div class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center service-card">
+            <div data-service-card class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center service-card">
                 <img src="https://img.icons8.com/color/96/000000/medical-mobile-app.png" alt="Home sample collection service" width="96" height="96" class="mb-4">
                 <h2 class="text-2xl font-semibold mb-2 text-green-700">Home Sampling</h2>
                 <p class="text-gray-700 mb-4">Book a home visit for sample collection at your convenience.</p>
@@ -209,7 +210,7 @@
                     <li>Quick report delivery</li>
                 </ul>
             </div>
-            <div class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center service-card">
+            <div data-service-card class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center service-card">
                 <img src="https://img.icons8.com/fluency/96/sun.png" alt="Vitamin D test" width="96" height="96" class="mb-4">
                 <h2 class="text-2xl font-semibold mb-2 text-green-700">Vitamin D Test</h2>
                 <p class="text-gray-700 mb-4">Check your Vitamin D levels for bone health and overall wellness.</p>
@@ -219,7 +220,7 @@
                     <li>Expert interpretation</li>
                 </ul>
             </div>
-            <div class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center service-card">
+            <div data-service-card class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center service-card">
                 <img src="https://img.icons8.com/color/96/000000/health-checkup.png" alt="Medical screening PFA" width="96" height="96" class="mb-4">
                 <h2 class="text-2xl font-semibold mb-2 text-green-700">Medical Screening (PFA)</h2>
                 <p class="text-gray-700 mb-4">Pre-employment and annual medical screening for organizations.</p>
@@ -229,7 +230,7 @@
                     <li>Health Certificates</li>
                 </ul>
             </div>
-            <div class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center service-card">
+            <div data-service-card class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center service-card">
                 <span class="mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="#16a34a" stroke-width="2" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2" stroke-width="2" fill="white"/><path d="M9 7h6M9 11h6M9 15h4" stroke-width="2" stroke-linecap="round"/></svg></span>
                 <h2 class="text-2xl font-semibold mb-2 text-green-700">Digital Reports</h2>
                 <p class="text-gray-700 mb-4">Receive your test results online via email or WhatsApp.</p>
@@ -238,7 +239,7 @@
                     <li>Easy access &amp; download</li>
                 </ul>
             </div>
-            <div class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center service-card">
+            <div data-service-card class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center service-card">
                 <img src="https://img.icons8.com/color/96/000000/doctor-male.png" alt="Consultation with pathologist" width="96" height="96" class="mb-4">
                 <h2 class="text-2xl font-semibold mb-2 text-green-700">Consultation</h2>
                 <p class="text-gray-700 mb-4">Expert advice from qualified pathologists and medical professionals.</p>
@@ -248,7 +249,7 @@
                     <li>Follow-up support</li>
                 </ul>
             </div>
-            <div class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center service-card">
+            <div data-service-card class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center service-card">
                 <img src="https://img.icons8.com/color/96/diabetes.png" alt="HbA1c test for diabetes" width="96" height="96" class="mb-4">
                 <h2 class="text-2xl font-semibold mb-2 text-green-700">HbA1c Test</h2>
                 <p class="text-gray-700 mb-4">Monitor your average blood sugar levels over the past 2-3 months.</p>
@@ -258,7 +259,7 @@
                     <li>Quick results</li>
                 </ul>
             </div>
-            <div class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center service-card">
+            <div data-service-card class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center service-card">
                 <span class="mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="#16a34a" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3l7 4v5c0 5.25-3.5 9.74-7 11-3.5-1.26-7-5.75-7-11V7l7-4z"/></svg></span>
                 <h2 class="text-2xl font-semibold mb-2 text-green-700">Thyroid Profile</h2>
                 <p class="text-gray-700 mb-4">Assess your thyroid function for overall metabolic health.</p>
@@ -268,7 +269,7 @@
                     <li>Expert consultation</li>
                 </ul>
             </div>
-            <div class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center service-card">
+            <div data-service-card class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center service-card">
                 <span class="mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="#16a34a" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="white"/><circle cx="19" cy="5" r="2" fill="white"/><circle cx="5" cy="19" r="2" fill="white"/><line x1="13.5" y1="10.5" x2="17" y2="7"/><line x1="10.5" y1="13.5" x2="7" y2="17"/></svg></span>
                 <h2 class="text-2xl font-semibold mb-2 text-green-700">Hormones Test</h2>
                 <p class="text-gray-700 mb-4">Comprehensive hormone testing for men and women.</p>
@@ -279,6 +280,22 @@
                 </ul>
             </div>
         </div>
+    
+        <section class="tl-service-tools">
+          <div class="tl-service-toolbar"><div><span class="tl-eyebrow">FIND A SERVICE</span><h2>What test or service are you looking for?</h2><p>Search the listed services by test name or department.</p></div>
+            <label class="tl-search-wrap"><span class="sr-only">Search laboratory services</span><input id="tl-service-search" type="search" placeholder="Search CBC, thyroid, vitamin D..." autocomplete="off"><span>⌕</span></label>
+          </div>
+          <div class="tl-filter-row"><button class="is-active" data-filter="all" type="button">All services</button><button data-filter="blood" type="button">Blood tests</button><button data-filter="profiles" type="button">Profiles</button><button data-filter="support" type="button">Patient support</button></div>
+          <p class="tl-results-count" id="tl-service-count" aria-live="polite">Showing all listed services</p>
+        </section>
+        <section class="tl-service-explain"><div class="tl-section-intro"><span class="tl-eyebrow">UNDERSTANDING THE DEPARTMENTS</span><h2>Different tests answer different questions.</h2><p>Your doctor chooses tests based on your health history and clinical needs. These short descriptions are general information only.</p></div>
+          <div class="tl-department-grid">
+            <article id="hematology"><span>HEMATOLOGY</span><h3>Blood cell analysis</h3><p>Hematology examines blood cells and related components. A CBC is a commonly requested test in this department.</p></article>
+            <article id="biochemistry"><span>BIOCHEMISTRY</span><h3>Chemical markers</h3><p>Biochemistry tests measure substances in blood and other samples, including markers used to assess liver, kidney and metabolic health.</p></article>
+            <article id="serology"><span>SEROLOGY</span><h3>Antigens and antibodies</h3><p>Serology tests look for selected antigens or antibodies and may support a clinician's assessment of certain infections.</p></article>
+          </div>
+        </section>
+        <section class="tl-action-panel"><div class="container mx-auto px-4"><div><span class="tl-eyebrow">NOT SURE WHICH TEST TO ASK ABOUT?</span><h2>Send your test enquiry directly.</h2><p>Share the test name with the team to confirm availability, preparation and current rates.</p></div><div class="tl-action-buttons"><a class="tl-btn-primary" href="rates.html">Build a test enquiry</a><a class="tl-btn-secondary" href="https://wa.me/923006700196" target="_blank" rel="noopener">WhatsApp</a></div></div></section>
     </main>
 
     <!-- Decorative HR with text above footer -->
@@ -364,5 +381,6 @@
         <div class="tlai-note">AI se jawab ghalat ho sakte hain. Apni zaati ya medical tafseel na likhein.</div>
     </div>
     <script src="/assets/js/tl-ai.js"></script>
+    <script src="/assets/js/interactive-tools.js" defer></script>
 </body>
 </html>
