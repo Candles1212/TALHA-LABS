@@ -100,3 +100,12 @@ The assistant is an information aid, not a substitute for a qualified healthcare
 ## Deployment
 
 The project is configured for Vercel. When the connected GitHub branch is updated, Vercel may start a deployment according to the project's integration settings. A successful GitHub commit alone does not prove that the production deployment completed; check the Vercel deployment status and test the live pages after changes.
+
+
+## Guest access and optional customer portal
+
+- The homepage offers **Continue as Guest** as the default route. Visitors can browse public pages without creating an account.
+- **Customer Login (Optional)** opens `account.html`, a non-indexed portal information page.
+- The customer portal is currently a front-end placeholder. Do not collect passwords or personal medical information through it until a real authentication provider, server-side authorization, secure report storage and privacy controls have been configured and tested.
+- The portal page provides a route back to guest browsing and a general contact route for portal updates. It does not authenticate users or expose medical reports.
+- Keep personal laboratory reports private and accessible only after identity verification and authorization. Never put report files or credentials in public website assets.
