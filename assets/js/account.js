@@ -32,7 +32,7 @@ if (!SUPABASE_URL || !SUPABASE_ANON_KEY || SUPABASE_URL.includes('PASTE_YOUR_') 
   status('Secure sign-in is not connected yet. The portal is ready, but the Supabase project URL and public anon/publishable key must be configured before accounts can be created.', 'warning');
 } else {
   try {
-    supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, { auth: { autoRefreshToken: true, persistSession: true, detectSessionInUrl: true, flowType: 'pkce' } });
+    supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, { auth: { autoRefreshToken: true, persistSession: true, detectSessionInUrl: true, flowType: 'implicit' } });
     formsBox.hidden = false;
     status('Secure authentication service connected.', 'success');
     const { data: { session } } = await supabase.auth.getSession();
