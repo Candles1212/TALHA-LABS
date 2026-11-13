@@ -36,3 +36,21 @@ input,select,textarea{max-width:100%;font:inherit}
 }
 @media(hover:none){.tl-trust-card:hover,.tl-specialty-grid a:hover,.tl-values-grid article:hover,.tl-deep-card:hover,#tl-service-grid [data-service-card]:hover{transform:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+/* Text-only professional role frames for the About Us team cards */
+.tl-role-frame{
+  position:relative;isolation:isolate;flex:0 0 160px;width:160px;height:160px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;
+  overflow:hidden;border:1px solid rgba(166,211,67,.58);border-radius:22px;
+  background:radial-gradient(circle at 80% 12%,rgba(166,211,67,.22),transparent 38%),linear-gradient(145deg,#17194f 0%,#252978 58%,#10143d 100%);
+  color:#fff;text-align:center;box-shadow:inset 0 0 0 5px rgba(255,255,255,.045),0 12px 28px rgba(23,25,79,.18);
+}
+.tl-role-frame::before,.tl-role-frame::after{content:"";position:absolute;z-index:-1;width:44px;height:44px;border:1px solid rgba(166,211,67,.5);transform:rotate(45deg)}
+.tl-role-frame::before{top:-25px;right:-25px}.tl-role-frame::after{bottom:-25px;left:-25px}
+.tl-role-brand{font-size:9px;letter-spacing:.24em;font-weight:800;color:#c9e78b}
+.tl-role-main{max-width:90%;font-size:clamp(16px,2vw,20px);line-height:1.12;font-weight:800;letter-spacing:.06em}
+.tl-role-sub{max-width:88%;font-size:10px;line-height:1.35;font-weight:700;letter-spacing:.12em;color:#d8e1ff;text-transform:uppercase}
+.tl-role-frame--small{flex-basis:128px;width:128px;height:128px;border-radius:18px;gap:6px}
+.tl-role-frame--small .tl-role-main{font-size:15px}
+.tl-role-frame--small .tl-role-sub{font-size:9px}
+@media(max-width:767px){.tl-role-frame{flex-basis:140px;width:140px;height:140px}.tl-role-frame--small{flex-basis:128px;width:128px;height:128px}}
