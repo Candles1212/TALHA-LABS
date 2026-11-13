@@ -73,13 +73,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/assets/css/interior.css">
     <link rel="stylesheet" href="/assets/css/brand-refresh.css">
-    <link rel="stylesheet" href="/assets/css/interactive-tools.css">
+    <link rel="stylesheet" href="/assets/css/site-polish.css">
     <!-- Talha Labs brand favicon: same logo used across the website -->
     <link rel="icon" type="image/jpeg" href="/assets/images/taha.jpg?v=1">
     <link rel="shortcut icon" type="image/jpeg" href="/assets/images/taha.jpg?v=1">
     <link rel="apple-touch-icon" href="/assets/images/taha.jpg?v=1">
 </head>
 <body class="bg-gray-50 text-gray-800">
+    <a class="tl-skip-link" href="#main-content">Skip to main content</a>
 
     <!-- Header Section -->
     <header class="bg-white shadow-sm sticky top-0 z-50 nav-animate">
@@ -97,7 +98,7 @@
                 <a href="contact.html" class="text-gray-600 hover:text-green-600 font-medium nav-underline transition duration-300">Contact Us</a>
             </div>
             <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" aria-label="Open menu" class="lg:hidden text-gray-600 hover:text-green-600 focus:outline-none transition-transform duration-300 hover:scale-110">
+            <button id="mobile-menu-button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu" class="lg:hidden text-gray-600 hover:text-green-600 focus:outline-none transition-transform duration-300 hover:scale-110">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4"></path>
                 </svg>
@@ -114,7 +115,7 @@
         </div>
     </header>
 
-    <main class="space-y-20">
+    <main class="space-y-20" id="main-content">
         <section id="about" class="bg-gray-100 py-16 md:py-24 rounded-3xl shadow-inner fade-in delay-1">
             <div class="container mx-auto px-4">
                 <h1 class="text-4xl font-bold text-center text-gray-900 mb-4">Meet Our Team</h1>
