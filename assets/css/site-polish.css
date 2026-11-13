@@ -351,3 +351,25 @@ main .service-card:nth-child(3n)>span:has(svg){background:linear-gradient(145deg
 
 /* Center the single optional customer-account panel */
 .tl-account-content:has(.tl-account-option:only-child){grid-template-columns:minmax(0,620px);justify-content:center}
+
+/* Customer portal authentication interface */
+.tl-auth-card{max-width:760px;margin-inline:auto}
+.tl-auth-status{margin:22px 26px 0;padding:13px 16px;border:1px solid #d8e8e4;border-radius:13px;background:#f3faf8;color:#245a55;font-size:.92rem;line-height:1.55}
+.tl-auth-status[data-kind="warning"]{background:#fff8e9;border-color:#f1d7a7;color:#805514}
+.tl-auth-status[data-kind="error"]{background:#fff1f1;border-color:#f0caca;color:#9b2525}
+.tl-auth-status[data-kind="success"]{background:#effaf2;border-color:#c9e8d1;color:#21633a}
+.tl-auth-content{padding:24px 26px 10px}
+.tl-auth-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:5px;border-radius:14px;background:#edf5f3}
+.tl-auth-tab{min-height:44px;border:0;border-radius:10px;background:transparent;color:#46616a;font-weight:750;cursor:pointer}
+.tl-auth-tab.is-active{background:#fff;color:#0b716c;box-shadow:0 3px 12px rgba(20,60,65,.1)}
+.tl-auth-form{display:grid;gap:11px;padding:22px 0}
+.tl-auth-form h2{margin:0 0 5px;color:#123b46;font-size:1.25rem;font-weight:850}
+.tl-auth-form label{margin-top:5px;color:#334e58;font-size:.9rem;font-weight:750}
+.tl-auth-form input{width:100%;min-height:48px;padding:11px 13px;border:1px solid #cbded9;border-radius:11px;background:#fff;color:#183b43}
+.tl-auth-form input:focus{border-color:#168c91;outline:3px solid rgba(22,140,145,.13)}
+.tl-auth-submit{min-height:48px;margin-top:8px;padding:12px 18px;border:0;border-radius:12px;background:linear-gradient(120deg,#087e79,#176b8c);color:#fff;font-weight:800;box-shadow:0 8px 18px rgba(8,126,121,.18);cursor:pointer}
+.tl-auth-submit:disabled{opacity:.6;cursor:wait}
+.tl-auth-text-button{justify-self:center;padding:8px;color:#176b8c;font-size:.9rem;font-weight:750;text-decoration:underline}
+.tl-auth-hint{margin:0;color:#61747c;font-size:.82rem;line-height:1.55}
+.tl-auth-user-email{padding:12px;border-radius:10px;background:#f1f8f6;color:#0b716c;font-weight:750;overflow-wrap:anywhere}
+@media(max-width:600px){.tl-auth-content{padding:18px 16px 8px}.tl-auth-status{margin:18px 16px 0}.tl-auth-tabs{gap:5px}}
