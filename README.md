@@ -108,6 +108,7 @@ The project is configured for Vercel. When the connected GitHub branch is update
 - **Customer Login (Optional)** opens `account.html`, a non-indexed Supabase Auth sign-in page.
 - The portal includes email sign-up, login, email verification, password reset, password update and logout flows, plus a signed-in customer dashboard.
 - Dashboard tools let customers send appointment/home-collection requests, ask about test availability and rates, follow up an existing request, manage password security and contact the laboratory.
+- Customers can start a report request and continue to the laboratory's WhatsApp chat, where they manually attach a receipt screenshot. The website does not upload or store receipt images or reports; staff must verify the receipt and customer identity before report release.
 - Appointment and test enquiries are handed off to the laboratory through WhatsApp; opening WhatsApp does not submit the request until the customer sends the message. The laboratory must confirm availability and bookings.
 - The current dashboard does not maintain a saved booking history or live status tracker. Status follow-up is a direct enquiry to staff; do not represent it as real-time tracking.
 - Passwords are handled by Supabase Auth; Talha Labs does not store plaintext or reversible passwords. Never add a `service_role` key to browser files.
