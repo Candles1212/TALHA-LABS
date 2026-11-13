@@ -1,0 +1,271 @@
+/* Talha LABS — premium brand refresh
+   Brand palette sampled from the existing logo: green, royal blue and red.
+   This file changes presentation only; page copy and business facts stay in HTML. */
+:root{
+  --tl-green:#A6D343;
+  --tl-green-deep:#6D9E20;
+  --tl-blue:#3536A0;
+  --tl-blue-deep:#22236F;
+  --tl-red:#E92732;
+  --tl-ink:#172B3A;
+  --tl-muted:#64748B;
+  --tl-paper:#F7FAF3;
+  --tl-line:#E4EBDD;
+  --tl-white:#FFFFFF;
+  --tl-shadow:0 18px 50px rgba(27,47,71,.09);
+}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{
+  font-family:'Inter',system-ui,sans-serif!important;
+  color:var(--tl-ink)!important;
+  background:var(--tl-paper)!important;
+  line-height:1.7;
+}
+.container{max-width:1180px!important}
+::selection{background:rgba(166,211,67,.35);color:var(--tl-blue-deep)}
+a{transition:color .2s ease,background-color .2s ease,transform .2s ease}
+:focus-visible{outline:3px solid var(--tl-green-deep)!important;outline-offset:3px}
+
+/* Header and navigation */
+body>header{
+  background:rgba(255,255,255,.94)!important;
+  border-bottom:1px solid rgba(53,54,160,.08);
+  box-shadow:0 8px 28px rgba(24,39,75,.06)!important;
+  backdrop-filter:blur(16px);
+}
+body>header nav{min-height:78px;padding-top:12px!important;padding-bottom:12px!important}
+body>header nav>div:first-child{gap:12px!important}
+body>header nav>div:first-child img{
+  width:48px!important;height:48px!important;object-fit:cover;
+  border:2px solid rgba(166,211,67,.8);box-shadow:0 5px 14px rgba(53,54,160,.12);
+  animation:none!important;
+}
+body>header nav>div:first-child a{
+  color:var(--tl-blue)!important;font-size:1.35rem!important;
+  letter-spacing:-.045em;font-weight:800!important;
+}
+body>header nav .nav-underline{
+  color:#526174!important;font-size:.91rem;font-weight:650!important;
+  padding:9px 2px;
+}
+body>header nav .nav-underline:hover,
+body>header nav .nav-underline.active{color:var(--tl-blue)!important;text-shadow:none!important}
+body>header nav .nav-underline::after{
+  height:3px;background:linear-gradient(90deg,var(--tl-green),var(--tl-blue));
+  bottom:0;border-radius:5px;
+}
+#mobile-menu{
+  padding:10px 16px 16px!important;
+  border-top:1px solid var(--tl-line);
+  box-shadow:0 18px 24px rgba(24,39,75,.08)!important;
+}
+#mobile-menu a{border-radius:10px;padding:11px 14px!important;font-weight:600}
+
+/* Shared page rhythm and typography */
+main{position:relative}
+main.space-y-20{display:flex;flex-direction:column;gap:clamp(54px,7vw,92px)}
+main.space-y-20>*{margin-top:0!important}
+main h1{
+  color:var(--tl-blue)!important;font-weight:800!important;
+  letter-spacing:-.055em;line-height:1.12!important;
+}
+main h2{color:var(--tl-blue-deep)!important;letter-spacing:-.035em}
+main h3{letter-spacing:-.02em}
+main p{line-height:1.8}
+main section> .container>h1,
+main> .container>h1{margin-bottom:14px!important}
+main section> .container>h1+p,
+main> .container>h1+p{color:var(--tl-muted)!important;font-size:1.05rem;max-width:760px;margin-left:auto;margin-right:auto}
+.hr-animated{background:linear-gradient(90deg,var(--tl-green),var(--tl-blue))!important;height:3px!important}
+main .text-green-600,main .text-green-700,main .text-green-800{color:var(--tl-blue)!important}
+
+/* Homepage hero */
+body>section.bg-gray-50.py-12.flex{display:none!important}
+#home{
+  margin:0!important;border-radius:0 0 34px 34px!important;
+  padding:clamp(68px,9vw,118px) 0!important;
+  background:
+    radial-gradient(circle at 83% 16%,rgba(166,211,67,.22),transparent 25%),
+    radial-gradient(circle at 12% 90%,rgba(53,54,160,.08),transparent 28%),
+    linear-gradient(125deg,#F7FAF3 0%,#F1F7E8 52%,#EEF1FC 100%)!important;
+  box-shadow:none!important;overflow:hidden;
+}
+#home .container{
+  display:grid;grid-template-columns:minmax(0,1.08fr) minmax(280px,.92fr);
+  align-items:center;gap:clamp(30px,5vw,72px);
+  text-align:left!important;max-width:1180px;
+}
+#home .container h1{
+  grid-column:1;grid-row:1;margin:0 0 10px!important;
+  color:var(--tl-blue)!important;font-size:clamp(2.5rem,5vw,4.35rem)!important;
+  line-height:1.04!important;letter-spacing:-.065em;font-weight:850!important;
+  animation:none!important;
+}
+#home .container>p:first-of-type{
+  grid-column:1;grid-row:2;margin:0 0 18px!important;
+  color:var(--tl-green-deep)!important;text-transform:uppercase;
+  font-size:.82rem!important;letter-spacing:.14em;font-weight:800!important;
+}
+#home .container h2{
+  grid-column:1;grid-row:3;margin:0 0 18px!important;
+  color:var(--tl-ink)!important;font-size:clamp(2.1rem,4vw,3.45rem)!important;
+  line-height:1.12!important;letter-spacing:-.055em;
+}
+#home .container hr{grid-column:1;grid-row:4;width:76px!important;margin:0 0 22px!important}
+#home .container>p:last-of-type{
+  grid-column:1;grid-row:5;max-width:570px;margin:0 0 26px!important;
+  color:#586779!important;font-size:1.08rem!important;line-height:1.85;
+}
+#home .container>a{
+  grid-column:1;grid-row:6;justify-self:start;
+  display:inline-flex;align-items:center;gap:12px;
+  padding:15px 25px!important;border-radius:14px!important;
+  background:var(--tl-blue)!important;color:#fff!important;
+  box-shadow:0 12px 26px rgba(53,54,160,.22)!important;
+  font-weight:750!important;text-decoration:none;
+}
+#home .container>a::after{content:"→";font-size:1.2rem}
+#home .container>a:hover{background:var(--tl-blue-deep)!important;transform:translateY(-3px)}
+#home .container::after{
+  content:"";grid-column:2;grid-row:1/7;justify-self:center;
+  width:min(100%,390px);aspect-ratio:1;
+  background:url('/assets/images/taha.jpg') center/contain no-repeat;
+  border-radius:50%;border:10px solid rgba(255,255,255,.82);
+  box-shadow:0 28px 70px rgba(53,54,160,.16),0 0 0 16px rgba(166,211,67,.16);
+  position:relative;z-index:1;
+}
+#home .absolute.inset-0{opacity:.45}
+#home .absolute.inset-0>div{background:var(--tl-green)!important}
+
+/* Homepage section heading and service cards */
+main #services{padding-top:10px!important;padding-bottom:8px!important}
+main #services h2,main>section h2.text-3xl{font-size:clamp(1.8rem,3vw,2.45rem)!important}
+#services .service-card,
+main .service-card{
+  background:#fff!important;border:1px solid var(--tl-line);
+  border-radius:22px!important;box-shadow:0 12px 32px rgba(28,44,71,.065)!important;
+  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+}
+#services .service-card:hover,main .service-card:hover{
+  transform:translateY(-7px)!important;border-color:rgba(166,211,67,.8);
+  background:#fff!important;box-shadow:0 22px 42px rgba(28,44,71,.12)!important;
+}
+#services .service-card .bg-green-100,
+main .service-card .bg-green-100{
+  background:#F0F6DF!important;color:var(--tl-blue)!important;
+  animation:none!important;
+}
+#services .service-card h3{color:var(--tl-blue)!important}
+main>section.py-12 .grid>a{border:1px solid var(--tl-line);box-shadow:0 12px 30px rgba(28,44,71,.06)!important}
+main>section.py-12 .grid>a h3{color:var(--tl-blue)!important}
+
+/* Interior page hero panels */
+main>section:first-child,
+main>section#about{
+  position:relative;isolation:isolate;
+}
+main>section:first-child::before,
+main>section#about::before{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(circle at 95% 5%,rgba(166,211,67,.18),transparent 25%);
+}
+main>section.bg-gray-100,
+main>section.bg-gray-100.rounded-3xl{
+  background:linear-gradient(135deg,#F3F7E9,#F1F3FC)!important;
+  border:1px solid rgba(53,54,160,.06);box-shadow:none!important;
+}
+main>section:first-child .container{position:relative}
+main>section:first-child h1{font-size:clamp(2rem,4vw,3.1rem)!important}
+
+/* About / team cards */
+.team-card{
+  background:#fff!important;border:1px solid var(--tl-line);
+  border-radius:22px!important;box-shadow:0 14px 36px rgba(28,44,71,.07)!important;
+  opacity:1!important;transform:none!important;animation:none!important;
+}
+.team-card:hover{transform:translateY(-5px)!important;box-shadow:0 22px 42px rgba(28,44,71,.12)!important}
+.team-card h2,.team-card h3{color:var(--tl-blue)!important}
+.team-card .text-green-600,.team-card .text-green-700{color:var(--tl-green-deep)!important}
+
+/* Services, health tips, contact and rates page cards */
+main .grid>.bg-white,
+main .grid>div.bg-white{
+  border:1px solid var(--tl-line);
+  border-radius:22px!important;
+  box-shadow:0 14px 36px rgba(28,44,71,.065)!important;
+}
+main .grid>.bg-white:hover,
+main .grid>div.bg-white:hover{border-color:rgba(166,211,67,.8)}
+main .grid h2,main .grid h3{color:var(--tl-blue)!important}
+main .grid li{margin:.45rem 0;color:#526174}
+main .grid li::marker{color:var(--tl-green-deep)}
+main .min-h-\[600px\]{min-height:0!important}
+main .min-h-\[600px\]>div{width:100%}
+main .max-w-2xl.mx-auto.bg-white{
+  border:1px solid var(--tl-line);box-shadow:var(--tl-shadow)!important;
+  border-radius:26px!important;
+}
+main .max-w-2xl.mx-auto.bg-white .bg-green-100{
+  background:#F0F6DF!important;color:var(--tl-blue)!important;
+}
+
+/* Buttons and links */
+main a.inline-block,main a.rounded-full,main button{
+  border-radius:13px!important;font-weight:700;
+}
+main a.bg-green-600,main a.bg-green-700{
+  background:var(--tl-blue)!important;color:#fff!important;
+  box-shadow:0 10px 24px rgba(53,54,160,.18);
+}
+main a.bg-green-600:hover,main a.bg-green-700:hover{background:var(--tl-blue-deep)!important}
+main a.border-green-600{border-color:var(--tl-blue)!important;color:var(--tl-blue)!important}
+main a.border-green-600:hover{background:var(--tl-blue)!important;color:#fff!important}
+
+/* Footer */
+body>footer.bg-green-100{
+  background:linear-gradient(125deg,#EAF3D6,#EEF0FC)!important;
+  color:var(--tl-ink)!important;border-radius:30px 30px 0 0!important;
+  border-top:1px solid var(--tl-line);box-shadow:none!important;
+}
+body>footer.bg-green-100 a{color:var(--tl-blue)!important}
+body>footer.bg-green-100 .text-green-700{color:var(--tl-green-deep)!important}
+body>footer.bg-green-900{
+  background:var(--tl-blue-deep)!important;color:#fff!important;
+}
+body>footer.bg-green-900 a{color:#fff!important}
+
+/* Floating assistant and WhatsApp buttons */
+#tlai-btn{background:var(--tl-blue)!important;box-shadow:0 10px 28px rgba(53,54,160,.3)!important}
+.tlai-h{background:var(--tl-blue)!important}
+#tlai-msgs{background:#F5F7FC!important}
+.tlai-bot{border-color:#E1E5F5!important}
+#tlai-chips button{border-color:var(--tl-blue)!important;color:var(--tl-blue)!important}
+#tlai-chips button:hover{background:#F0F1FC!important}
+#tlai-send{background:var(--tl-blue)!important}
+#tlai-in:focus{border-color:var(--tl-blue)!important}
+
+/* Motion is intentionally subtle and respects accessibility settings */
+.nav-animate{animation:none!important}
+.logo-animate{animation:none!important}
+.btn-animate{transition:transform .2s ease,box-shadow .2s ease}
+.btn-animate:hover{transform:translateY(-2px)!important}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+@media(max-width:767px){
+  body>header nav{min-height:68px}
+  #home{padding:48px 0 58px!important;border-radius:0 0 24px 24px!important}
+  #home .container{grid-template-columns:1fr;text-align:center!important;gap:24px}
+  #home .container h1,#home .container>p:first-of-type,#home .container h2,
+  #home .container hr,#home .container>p:last-of-type,#home .container>a{grid-column:1;justify-self:center}
+  #home .container h1{grid-row:1;font-size:2.65rem!important}
+  #home .container>p:first-of-type{grid-row:2;font-size:.72rem!important}
+  #home .container h2{grid-row:3;font-size:2.15rem!important}
+  #home .container hr{grid-row:4;margin:0 auto 10px!important}
+  #home .container>p:last-of-type{grid-row:5;font-size:1rem!important}
+  #home .container>a{grid-row:6}
+  #home .container::after{grid-column:1;grid-row:7;width:min(64vw,250px);margin:10px auto 0;border-width:7px}
+  main.space-y-20{gap:48px}
+  main .grid{gap:18px!important}
+  body>footer.bg-green-100{border-radius:22px 22px 0 0!important}
+}
