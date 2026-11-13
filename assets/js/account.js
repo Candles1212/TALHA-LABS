@@ -57,7 +57,7 @@ if (!SUPABASE_URL || !SUPABASE_ANON_KEY || SUPABASE_URL.includes('PASTE_YOUR_') 
         const { data: result, error } = await supabase.auth.signUp({ email, password, options: { emailRedirectTo: window.location.origin + '/account.html' } });
         if (error) throw error;
         if (result.session) status('Account created and signed in successfully.', 'success');
-        else { status('Account request received. Check your email and verify your address before logging in.', 'success'); form.reset(); setTab('login'); }
+        else { status('Account request received. Supabase will send your Talha Labs verification email. The sender may appear as Supabase; check your inbox and spam folder, then verify your address before logging in.', 'success'); form.reset(); setTab('login'); }
       } catch (error) { status(friendlyError(error), 'error'); } finally { setBusy(form, false); }
     });
     $('login-form').addEventListener('submit', async (event) => {
@@ -72,7 +72,7 @@ if (!SUPABASE_URL || !SUPABASE_ANON_KEY || SUPABASE_URL.includes('PASTE_YOUR_') 
       event.preventDefault(); const form = event.currentTarget; const email = String(new FormData(form).get('email') || '').trim().toLowerCase();
       if (!validEmail(email)) return status('Enter a valid email address.', 'error');
       setBusy(form, true); status('Sending password reset email…');
-      try { const { error } = await supabase.auth.resetPasswordForEmail(email, { redirectTo: window.location.origin + '/account.html' }); if (error) throw error; status('If an account exists for that email, a secure password reset link has been sent.', 'success'); }
+      try { const { error } = await supabase.auth.resetPasswordForEmail(email, { redirectTo: window.location.origin + '/account.html' }); if (error) throw error; status('If an account exists for that email, Supabase has sent a Talha Labs password-reset email. The sender may appear as Supabase; check your inbox and spam folder.', 'success'); }
       catch (error) { status(friendlyError(error), 'error'); } finally { setBusy(form, false); }
     });
     $('new-password-form').addEventListener('submit', async (event) => {
