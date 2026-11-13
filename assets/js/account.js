@@ -85,5 +85,45 @@ if (!SUPABASE_URL || !SUPABASE_ANON_KEY || SUPABASE_URL.includes('PASTE_YOUR_') 
       catch (error) { status(friendlyError(error), 'error'); } finally { setBusy(form, false); }
     });
     $('logout-button').addEventListener('click', async () => { const { error } = await supabase.auth.signOut(); if (error) status(friendlyError(error), 'error'); });
+    const profileEmail = $('customer-profile-email');
+    const syncProfile = async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      const email = user?.email || 'Not available';
+      $('signed-in-email').textContent = email;
+      if (profileEmail) profileEmail.textContent = email;
+    };
+    await syncProfile();
+    function sendWhatsApp(lines) {
+      const message = lines.filter(Boolean).join('\n');
+      const url = 'https://wa.me/923006700196?text=' + encodeURIComponent(message);
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }
+    $('customer-appointment-form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const data = new FormData(event.currentTarget);
+      sendWhatsApp(['TALHA LABS — CUSTOMER APPOINTMENT REQUEST','Name: ' + data.get('name'),'Contact: ' + data.get('phone'),'Service: ' + data.get('type'),'Preferred date: ' + data.get('date'),'Preferred time: ' + (data.get('time') || 'Flexible'),'Account email: ' + (profileEmail.textContent || ''),'Please confirm availability.']);
+      status('WhatsApp opened with your request. Send the message there to contact the laboratory.', 'success');
+    });
+    $('customer-test-form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const data = new FormData(event.currentTarget);
+      sendWhatsApp(['TALHA LABS — TEST AVAILABILITY / RATE ENQUIRY','Name: ' + data.get('name'),'Contact: ' + data.get('phone'),'Test(s): ' + data.get('tests'),'Account email: ' + (profileEmail.textContent || ''),'Please confirm availability and current rates.']);
+      status('WhatsApp opened with your test enquiry. Send the message there to contact the laboratory.', 'success');
+    });
+    $('customer-status-form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const data = new FormData(event.currentTarget);
+      sendWhatsApp(['TALHA LABS — REQUEST FOLLOW-UP','Name: ' + data.get('name'),'Reference: ' + (data.get('reference') || 'Not provided'),'Contact: ' + data.get('phone'),'Account email: ' + (profileEmail.textContent || ''),'Please help me check the status of my request.']);
+      status('WhatsApp opened with your follow-up. The laboratory team will need to confirm the status.', 'success');
+    });
+    $('customer-password-reset').addEventListener('click', async () => {
+      const email = profileEmail.textContent;
+      if (!validEmail(email)) return status('Your account email could not be read. Please sign in again.', 'error');
+      try {
+        const { error } = await supabase.auth.resetPasswordForEmail(email, { redirectTo: window.location.origin + '/account.html' });
+        if (error) throw error;
+        status('If your account is eligible, Supabase has sent a secure password reset link to your registered email.', 'success');
+      } catch (error) { status(friendlyError(error), 'error'); }
+    });
   } catch (error) { status('The authentication client could not start. Check the Supabase project settings and try again.', 'error'); console.error('Talha Labs auth initialization failed:', error); }
 }
