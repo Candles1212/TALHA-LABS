@@ -73,6 +73,7 @@
               <a class="tl-dashboard-tile" href="#customer-appointments"><span>📅</span><strong>Request an appointment</strong><small>Choose a date and visit type</small></a>
               <a class="tl-dashboard-tile" href="#customer-tests"><span>🧪</span><strong>Enquire about tests</strong><small>Ask about test availability and rates</small></a>
               <a class="tl-dashboard-tile" href="#customer-status"><span>🔎</span><strong>Follow up a request</strong><small>Ask staff about an existing request</small></a>
+              <a class="tl-dashboard-tile" href="#customer-report"><span>🧾</span><strong>Get your report</strong><small>Send your receipt screenshot to the lab</small></a>
               <a class="tl-dashboard-tile" href="#customer-profile"><span>👤</span><strong>Account settings</strong><small>View your email and reset password</small></a>
             </div>
           </section>
@@ -103,6 +104,17 @@
               <label for="customer-status-reference">Request reference (if provided)</label><input id="customer-status-reference" name="reference" type="text" maxlength="40" placeholder="Reference number">
               <label for="customer-status-phone">Contact number</label><input id="customer-status-phone" name="phone" type="tel" maxlength="20" required>
               <button class="tl-auth-submit" type="submit">Ask for an update ↗</button>
+            </form>
+          </section>
+          <section id="customer-report" class="tl-dashboard-section">
+            <h3>Get your laboratory report</h3>
+            <p class="tl-dashboard-muted">If you have already paid for your test, send a clear screenshot or photo of your Talha LABS receipt to the laboratory WhatsApp number. Staff will verify the receipt and your identity before discussing report collection.</p>
+            <form id="customer-report-form" class="tl-dashboard-form">
+              <label for="customer-report-name">Name on the receipt</label><input id="customer-report-name" name="name" type="text" maxlength="60" autocomplete="name" required>
+              <label for="customer-report-phone">Contact number</label><input id="customer-report-phone" name="phone" type="tel" maxlength="20" autocomplete="tel" required>
+              <label for="customer-report-reference">Receipt / lab reference number (if visible)</label><input id="customer-report-reference" name="reference" type="text" maxlength="50">
+              <button class="tl-auth-submit" type="submit">Continue to WhatsApp and attach receipt ↗</button>
+              <p class="tl-auth-hint">WhatsApp will open with a prepared message. Attach the receipt screenshot yourself and press Send. This website does not upload or store the image. Share only the Talha LABS receipt; hide unrelated personal or payment information. Never send your password, bank PIN or card details.</p>
             </form>
           </section>
           <section id="customer-profile" class="tl-dashboard-section">
