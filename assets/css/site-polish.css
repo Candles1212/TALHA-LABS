@@ -142,3 +142,38 @@ input,select,textarea{max-width:100%;font:inherit}
     border-radius:16px!important;
   }
 }
+
+
+/* Category colour system: matching box types share one accent colour */
+:where(.team-card,.tl-story-card){
+  border-left:4px solid #3976C8!important;
+  background:linear-gradient(115deg,#F1F6FF 0%,#FFFFFF 62%,#F7FAFF 100%)!important;
+}
+:where(main .service-card,.tl-specialty-grid a,.tl-department-grid article,.tl-deep-card){
+  border-left:4px solid #0F8B8D!important;
+  background:linear-gradient(115deg,#EFFAF9 0%,#FFFFFF 62%,#F5FCFB 100%)!important;
+}
+:where(.tl-trust-card,.tl-journey-grid article,.tl-values-grid article){
+  border-left:4px solid #32966D!important;
+  background:linear-gradient(115deg,#F0FAF4 0%,#FFFFFF 62%,#F7FCF8 100%)!important;
+}
+:where(.tl-test-picker,.tl-selection-panel,.tl-check-grid label){
+  border-left:4px solid #D18A32!important;
+  background:linear-gradient(115deg,#FFF8EC 0%,#FFFFFF 62%,#FFFCF6 100%)!important;
+}
+:where(.tl-info-grid article,.tl-enquiry-form,.tl-faq-list details){
+  border-left:4px solid #6B63B5!important;
+  background:linear-gradient(115deg,#F5F3FF 0%,#FFFFFF 62%,#FAF9FF 100%)!important;
+}
+:where(.tl-trust-card,.tl-journey-grid article,.tl-values-grid article,
+       .tl-specialty-grid a,.tl-department-grid article,.tl-deep-card,
+       .tl-info-grid article,.tl-check-grid label){
+  border-top:1px solid rgba(255,255,255,.9)!important;
+}
+@media(max-width:640px){
+  :where(.team-card,.tl-story-card,main .service-card,.tl-specialty-grid a,
+         .tl-department-grid article,.tl-deep-card,.tl-trust-card,
+         .tl-journey-grid article,.tl-values-grid article,.tl-test-picker,
+         .tl-selection-panel,.tl-check-grid label,.tl-info-grid article,
+         .tl-enquiry-form,.tl-faq-list details){border-left-width:4px!important}
+}
