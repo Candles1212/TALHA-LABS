@@ -1,6 +1,8 @@
 // TL AI - Talha Labs website assistant (Vercel serverless function)
-// Needs ONE environment variable in Vercel: ANTHROPIC_API_KEY
-// Optional: TLAI_MODEL (default: claude-haiku-5-5)
+// Works with EITHER provider. Set ONE of these environment variables in Vercel:
+//   GEMINI_API_KEY    -> free option (Google AI Studio key, no card). Optional: GEMINI_MODEL
+//   ANTHROPIC_API_KEY -> paid option (Claude). Optional: TLAI_MODEL
+// If both are set, the Claude key is used. If none is set, the website falls back to built-in answers.
 
 const SYSTEM = `You are TL AI, the automatic assistant on the website of Talha Labs, a diagnostic laboratory in Sadiqabad, Punjab, Pakistan.
 
@@ -42,6 +44,55 @@ function tooMany(ip) {
   return false;
 }
 
+async function askClaude(key, messages) {
+  const r = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+      'x-api-key': key,
+      'anthropic-version': '2023-06-01',
+    },
+    body: JSON.stringify({
+      model: process.env.TLAI_MODEL || 'claude-haiku-5-5',
+      max_tokens: 350,
+      system: SYSTEM,
+      messages,
+    }),
+    signal: AbortSignal.timeout(8500),
+  });
+  if (!r.ok) throw new Error('claude ' + r.status);
+  const data = await r.json();
+  return (data.content || [])
+    .filter((b) => b && b.type === 'text')
+    .map((b) => b.text)
+    .join('\n')
+    .trim();
+}
+
+async function askGemini(key, messages) {
+  const model = process.env.GEMINI_MODEL || 'gemini-flash-latest';
+  const r = await fetch(
+    'https://generativelanguage.googleapis.com/v1beta/models/' + encodeURIComponent(model) + ':generateContent',
+    {
+      method: 'POST',
+      headers: { 'content-type': 'application/json', 'x-goog-api-key': key },
+      body: JSON.stringify({
+        systemInstruction: { parts: [{ text: SYSTEM }] },
+        contents: messages.map((m) => ({
+          role: m.role === 'assistant' ? 'model' : 'user',
+          parts: [{ text: m.content }],
+        })),
+        generationConfig: { maxOutputTokens: 1024, temperature: 0.4 },
+      }),
+      signal: AbortSignal.timeout(8500),
+    }
+  );
+  if (!r.ok) throw new Error('gemini ' + r.status);
+  const data = await r.json();
+  const parts = (data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts) || [];
+  return parts.map((p) => (p && p.text) || '').join('').trim();
+}
+
 module.exports = async function handler(req, res) {
   res.setHeader('Cache-Control', 'no-store');
 
@@ -50,8 +101,9 @@ module.exports = async function handler(req, res) {
     return;
   }
 
-  const key = process.env.ANTHROPIC_API_KEY;
-  if (!key) {
+  const claudeKey = process.env.ANTHROPIC_API_KEY;
+  const geminiKey = process.env.GEMINI_API_KEY;
+  if (!claudeKey && !geminiKey) {
     res.status(503).json({ error: 'AI is not set up yet' });
     return;
   }
@@ -84,34 +136,7 @@ module.exports = async function handler(req, res) {
   }
 
   try {
-    const r = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-        'x-api-key': key,
-        'anthropic-version': '2023-06-01',
-      },
-      body: JSON.stringify({
-        model: process.env.TLAI_MODEL || 'claude-haiku-5-5',
-        max_tokens: 350,
-        system: SYSTEM,
-        messages,
-      }),
-      signal: AbortSignal.timeout(8500),
-    });
-
-    if (!r.ok) {
-      res.status(502).json({ error: 'AI service error' });
-      return;
-    }
-
-    const data = await r.json();
-    const reply = (data.content || [])
-      .filter((b) => b && b.type === 'text')
-      .map((b) => b.text)
-      .join('\n')
-      .trim();
-
+    const reply = claudeKey ? await askClaude(claudeKey, messages) : await askGemini(geminiKey, messages);
     if (!reply) {
       res.status(502).json({ error: 'Empty answer' });
       return;
