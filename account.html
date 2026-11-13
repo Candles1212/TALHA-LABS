@@ -58,10 +58,63 @@
           <label for="new-password-confirm">Confirm new password</label><input id="new-password-confirm" name="confirm" type="password" autocomplete="new-password" minlength="12" required>
           <button class="tl-auth-submit" type="submit">Update password</button>
         </form>
-        <section id="signed-in-panel" class="tl-auth-form" hidden aria-live="polite">
-          <h2>You’re signed in</h2><p id="signed-in-email" class="tl-auth-user-email"></p>
-          <p class="tl-auth-hint">This account currently provides sign-in only. It does not display, upload or store laboratory reports.</p>
-          <button id="logout-button" class="tl-auth-submit" type="button">Log out</button>
+        <section id="signed-in-panel" class="tl-auth-form tl-customer-dashboard" hidden aria-live="polite">
+          <div class="tl-dashboard-welcome">
+            <div><span class="tl-dashboard-eyebrow">CUSTOMER PORTAL</span><h2>Welcome to Talha LABS</h2><p>Your laboratory service hub.</p></div>
+            <span class="tl-dashboard-avatar" aria-hidden="true">TL</span>
+          </div>
+          <p class="tl-dashboard-account">Signed in as <strong id="signed-in-email"></strong></p>
+          <nav class="tl-dashboard-nav" aria-label="Customer dashboard">
+            <a href="#customer-home">Overview</a><a href="#customer-appointments">Appointments</a><a href="#customer-tests">Test enquiry</a><a href="#customer-status">Request status</a><a href="#customer-profile">My profile</a><a href="#customer-support">Support</a>
+          </nav>
+          <section id="customer-home" class="tl-dashboard-section">
+            <h3>Your dashboard</h3><p class="tl-dashboard-muted">Choose a service below. Your requests are sent directly to Talha LABS through WhatsApp for staff confirmation.</p>
+            <div class="tl-dashboard-grid">
+              <a class="tl-dashboard-tile" href="#customer-appointments"><span>📅</span><strong>Request an appointment</strong><small>Choose a date and visit type</small></a>
+              <a class="tl-dashboard-tile" href="#customer-tests"><span>🧪</span><strong>Enquire about tests</strong><small>Ask about test availability and rates</small></a>
+              <a class="tl-dashboard-tile" href="#customer-status"><span>🔎</span><strong>Follow up a request</strong><small>Ask staff about an existing request</small></a>
+              <a class="tl-dashboard-tile" href="#customer-profile"><span>👤</span><strong>Account settings</strong><small>View your email and reset password</small></a>
+            </div>
+          </section>
+          <section id="customer-appointments" class="tl-dashboard-section">
+            <h3>Appointment &amp; home collection request</h3><p class="tl-dashboard-muted">Send a request. The laboratory team will confirm availability; submitting this form does not confirm a booking.</p>
+            <form id="customer-appointment-form" class="tl-dashboard-form">
+              <label for="customer-appointment-name">Your name</label><input id="customer-appointment-name" name="name" type="text" maxlength="60" autocomplete="name" required>
+              <label for="customer-appointment-phone">Contact number</label><input id="customer-appointment-phone" name="phone" type="tel" maxlength="20" autocomplete="tel" required>
+              <label for="customer-appointment-type">Service</label><select id="customer-appointment-type" name="type"><option>Visit the laboratory</option><option>Home sample collection request</option><option>General appointment enquiry</option></select>
+              <label for="customer-appointment-date">Preferred date</label><input id="customer-appointment-date" name="date" type="date" required>
+              <label for="customer-appointment-time">Preferred time (optional)</label><select id="customer-appointment-time" name="time"><option value="">Any available time</option><option>Morning</option><option>Afternoon</option><option>Evening</option></select>
+              <button class="tl-auth-submit" type="submit">Send request to Talha LABS ↗</button><p class="tl-auth-hint">Do not include symptoms, diagnoses, reports or other medical details.</p>
+            </form>
+          </section>
+          <section id="customer-tests" class="tl-dashboard-section">
+            <h3>Test availability &amp; rate enquiry</h3><p class="tl-dashboard-muted">Tell the team which test or tests you want to ask about. Rates and availability must be confirmed by the laboratory.</p>
+            <form id="customer-test-form" class="tl-dashboard-form">
+              <label for="customer-test-name">Your name</label><input id="customer-test-name" name="name" type="text" maxlength="60" autocomplete="name" required>
+              <label for="customer-test-phone">Contact number</label><input id="customer-test-phone" name="phone" type="tel" maxlength="20" autocomplete="tel" required>
+              <label for="customer-test-list">Test name(s)</label><textarea id="customer-test-list" name="tests" rows="3" maxlength="300" placeholder="Example: CBC, HbA1c, Thyroid Profile" required></textarea>
+              <button class="tl-auth-submit" type="submit">Send test enquiry ↗</button><p class="tl-auth-hint">This is an enquiry, not a test order. Do not send prescriptions or medical records here.</p>
+            </form>
+          </section>
+          <section id="customer-status" class="tl-dashboard-section">
+            <h3>Request follow-up</h3><p class="tl-dashboard-muted">Your appointment is not confirmed until the laboratory contacts you. Enter the reference number provided by staff to ask for an update.</p>
+            <form id="customer-status-form" class="tl-dashboard-form">
+              <label for="customer-status-name">Your name</label><input id="customer-status-name" name="name" type="text" maxlength="60" required>
+              <label for="customer-status-reference">Request reference (if provided)</label><input id="customer-status-reference" name="reference" type="text" maxlength="40" placeholder="Reference number">
+              <label for="customer-status-phone">Contact number</label><input id="customer-status-phone" name="phone" type="tel" maxlength="20" required>
+              <button class="tl-auth-submit" type="submit">Ask for an update ↗</button>
+            </form>
+          </section>
+          <section id="customer-profile" class="tl-dashboard-section">
+            <h3>My profile &amp; security</h3><div class="tl-dashboard-profile"><span>Registered email</span><strong id="customer-profile-email"></strong></div>
+            <p class="tl-dashboard-muted">Your login email is managed securely by Supabase. To change your password, request a secure reset link.</p>
+            <button id="customer-password-reset" class="tl-auth-secondary" type="button">Email me a password reset link</button>
+          </section>
+          <section id="customer-support" class="tl-dashboard-section">
+            <h3>Customer support</h3><p>Need help with a booking, test availability or general information?</p>
+            <div class="tl-dashboard-support"><a href="tel:+923006700196">Call 0300-6700196</a><a href="https://wa.me/923006700196" target="_blank" rel="noopener noreferrer">WhatsApp Talha LABS ↗</a><a href="mailto:talhalabs78@gmail.com">Email Talha LABS</a></div>
+          </section>
+          <div class="tl-dashboard-footer"><p>For privacy, this portal does not store medical reports or test results. Request messages are sent to the laboratory only when you press a send button.</p><button id="logout-button" class="tl-auth-secondary" type="button">Log out</button></div>
         </section>
       </div>
       <div class="tl-account-notice" role="note"><strong>Privacy and security:</strong> Passwords are handled by Supabase Authentication and are not stored in Talha Labs website files. Never share your password. This portal does not collect medical reports, test results, identity documents or payment details.</div>
