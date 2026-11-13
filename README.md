@@ -104,7 +104,7 @@ The project is configured for Vercel. When the connected GitHub branch is update
 
 ## Guest access and optional customer portal
 
-- The homepage offers **Continue as Guest** as the default route. Visitors can browse public pages without creating an account.
+- Public website pages remain open without requiring a customer account; no separate guest option is displayed.
 - **Customer Login (Optional)** opens `account.html`, a non-indexed portal information page.
 - The customer portal is currently a front-end placeholder. Do not collect passwords or personal medical information through it until a real authentication provider, server-side authorization, secure report storage and privacy controls have been configured and tested.
 - The portal page provides a route back to guest browsing and a general contact route for portal updates. It does not authenticate users or expose medical reports.
