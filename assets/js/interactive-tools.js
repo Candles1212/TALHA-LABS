@@ -50,13 +50,7 @@
     openWhatsApp(msg);
   });
 
-  /* Floating quick actions + reading progress */
-  if(!$('#tl-quick-actions')){
-    var dock=document.createElement('nav');dock.id='tl-quick-actions';dock.setAttribute('aria-label','Quick actions');
-    dock.innerHTML='<a href="index.html" aria-label="Home"><span>⌂</span><small>Home</small></a><a href="services.html" aria-label="Services"><span>▦</span><small>Services</small></a><a href="https://wa.me/923006700196" target="_blank" rel="noopener" aria-label="WhatsApp"><span>◉</span><small>WhatsApp</small></a><button type="button" id="tl-top-button" aria-label="Back to top"><span>↑</span><small>Top</small></button>';
-    document.body.appendChild(dock);
-    var top=$('#tl-top-button');if(top)top.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
-  }
+  /* Bottom quick-action dock removed for a cleaner page layout. */
   if(!$('#tl-reading-progress')){var bar=document.createElement('div');bar.id='tl-reading-progress';bar.setAttribute('aria-hidden','true');document.body.appendChild(bar);}
   var progress=$('#tl-reading-progress'),ticking=false;
   function updateProgress(){var doc=document.documentElement,scroll=doc.scrollTop||document.body.scrollTop,max=doc.scrollHeight-doc.clientHeight;if(progress)progress.style.width=(max>0?Math.min(100,scroll/max*100):0)+'%';ticking=false;}
