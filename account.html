@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Customer Account | Talha Labs</title>
-  <meta name="description" content="Optional secure customer sign-in for Talha Labs. Public website pages remain open without an account.">
+  <title>Customer Portal | Talha Labs</title>
+  <meta name="description" content="Access Talha Labs appointment requests, test enquiries, request follow-ups and report requests.">
   <meta name="robots" content="noindex, nofollow">
   <link rel="canonical" href="https://talhalabs.vercel.app/account.html">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,49 +23,17 @@
     <section class="tl-account-card tl-auth-card" aria-labelledby="account-title">
       <div class="tl-account-card-head">
         <span class="tl-account-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 19 6v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3Z"/><path d="m9 12 2 2 4-4"/></svg></span>
-        <h1 id="account-title">Customer Account</h1>
-        <p>Sign-in is optional. All public Talha Labs pages remain available without an account.</p>
+        <h1 id="account-title">Customer Portal</h1>
+        <p>Access laboratory services and send your request directly to the Talha LABS team.</p>
       </div>
-      <div id="auth-status" class="tl-auth-status" role="status" aria-live="polite">Checking secure sign-in configuration…</div>
-      <div id="auth-forms" class="tl-auth-content" hidden>
-        <div class="tl-auth-tabs" role="tablist" aria-label="Account actions">
-          <button type="button" class="tl-auth-tab is-active" data-auth-tab="login" role="tab" aria-selected="true">Log in</button>
-          <button type="button" class="tl-auth-tab" data-auth-tab="signup" role="tab" aria-selected="false">Create account</button>
-        </div>
-        <form id="login-form" class="tl-auth-form" autocomplete="on">
-          <h2>Welcome back</h2><label for="login-email">Email address</label><input id="login-email" name="email" type="email" autocomplete="username" required maxlength="254">
-          <label for="login-password">Password</label><input id="login-password" name="password" type="password" autocomplete="current-password" required>
-          <button class="tl-auth-submit" type="submit">Log in securely</button><button class="tl-auth-text-button" type="button" data-show-reset>Forgot password?</button>
-        </form>
-        <form id="signup-form" class="tl-auth-form" autocomplete="on" hidden>
-          <h2>Create your account</h2><label for="signup-email">Email address</label><input id="signup-email" name="email" type="email" autocomplete="email" required maxlength="254">
-          <label for="signup-password">Create password</label><input id="signup-password" name="password" type="password" autocomplete="new-password" minlength="12" required>
-          <p class="tl-auth-hint">Use at least 12 characters. A long, unique passphrase is recommended.</p>
-          <label for="signup-confirm">Confirm password</label><input id="signup-confirm" name="confirm" type="password" autocomplete="new-password" minlength="12" required>
-          <button class="tl-auth-submit" type="submit">Create account</button>
-          <p class="tl-auth-hint">Email verification is required before the account can be used.</p>
-          <p class="tl-auth-hint">Verification emails are delivered by Supabase's shared email service for Talha Labs, so the sender may appear as Supabase. Only open the verification link if you just created an account on this Talha Labs website. Check your spam or junk folder if you cannot find the email.</p>
-        </form>
-        <form id="reset-form" class="tl-auth-form" hidden>
-          <h2>Reset your password</h2><p>Enter your account email. If an account exists, you’ll receive a secure reset link.</p>
-          <label for="reset-email">Email address</label><input id="reset-email" name="email" type="email" autocomplete="email" required maxlength="254">
-          <button class="tl-auth-submit" type="submit">Send reset link</button>
-          <p class="tl-auth-hint">Password-reset emails are also delivered by Supabase's shared email service for Talha Labs, so the sender may appear as Supabase.</p>
-          <button class="tl-auth-text-button" type="button" data-show-login>Back to login</button>
-        </form>
-        <form id="new-password-form" class="tl-auth-form" hidden>
-          <h2>Choose a new password</h2><label for="new-password">New password</label><input id="new-password" name="password" type="password" autocomplete="new-password" minlength="12" required>
-          <label for="new-password-confirm">Confirm new password</label><input id="new-password-confirm" name="confirm" type="password" autocomplete="new-password" minlength="12" required>
-          <button class="tl-auth-submit" type="submit">Update password</button>
-        </form>
-        <section id="signed-in-panel" class="tl-auth-form tl-customer-dashboard" hidden aria-live="polite">
+      <div id="portal-status" class="tl-auth-status" role="status" aria-live="polite">Choose a service below. WhatsApp opens with your prepared request; press Send there to contact the laboratory.</div>
+              <section id="customer-dashboard" class="tl-customer-dashboard" aria-live="polite">
           <div class="tl-dashboard-welcome">
             <div><span class="tl-dashboard-eyebrow">CUSTOMER PORTAL</span><h2>Welcome to Talha LABS</h2><p>Your laboratory service hub.</p></div>
             <span class="tl-dashboard-avatar" aria-hidden="true">TL</span>
           </div>
-          <p class="tl-dashboard-account">Signed in as <strong id="signed-in-email"></strong></p>
           <nav class="tl-dashboard-nav" aria-label="Customer dashboard">
-            <a href="#customer-home">Overview</a><a href="#customer-appointments">Appointments</a><a href="#customer-tests">Test enquiry</a><a href="#customer-status">Request status</a><a href="#customer-profile">My profile</a><a href="#customer-support">Support</a>
+            <a href="#customer-home">Overview</a><a href="#customer-appointments">Appointments</a><a href="#customer-tests">Test enquiry</a><a href="#customer-status">Request status</a><a href="#customer-report">Report request</a><a href="#customer-support">Support</a>
           </nav>
           <section id="customer-home" class="tl-dashboard-section">
             <h3>Your dashboard</h3><p class="tl-dashboard-muted">Choose a service below. Your requests are sent directly to Talha LABS through WhatsApp for staff confirmation.</p>
@@ -74,7 +42,6 @@
               <a class="tl-dashboard-tile" href="#customer-tests"><span>🧪</span><strong>Enquire about tests</strong><small>Ask about test availability and rates</small></a>
               <a class="tl-dashboard-tile" href="#customer-status"><span>🔎</span><strong>Follow up a request</strong><small>Ask staff about an existing request</small></a>
               <a class="tl-dashboard-tile" href="#customer-report"><span>🧾</span><strong>Get your report</strong><small>Send your receipt screenshot to the lab</small></a>
-              <a class="tl-dashboard-tile" href="#customer-profile"><span>👤</span><strong>Account settings</strong><small>View your email and reset password</small></a>
             </div>
           </section>
           <section id="customer-appointments" class="tl-dashboard-section">
@@ -117,22 +84,16 @@
               <p class="tl-auth-hint">WhatsApp will open with a prepared message. Attach the receipt screenshot yourself and press Send. This website does not upload or store the image. Share only the Talha LABS receipt; hide unrelated personal or payment information. Never send your password, bank PIN or card details.</p>
             </form>
           </section>
-          <section id="customer-profile" class="tl-dashboard-section">
-            <h3>My profile &amp; security</h3><div class="tl-dashboard-profile"><span>Registered email</span><strong id="customer-profile-email"></strong></div>
-            <p class="tl-dashboard-muted">Your login email is managed securely by Supabase. To change your password, request a secure reset link.</p>
-            <button id="customer-password-reset" class="tl-auth-secondary" type="button">Email me a password reset link</button>
-          </section>
           <section id="customer-support" class="tl-dashboard-section">
             <h3>Customer support</h3><p>Need help with a booking, test availability or general information?</p>
             <div class="tl-dashboard-support"><a href="tel:+923006700196">Call 0300-6700196</a><a href="https://wa.me/923006700196" target="_blank" rel="noopener noreferrer">WhatsApp Talha LABS ↗</a><a href="mailto:talhalabs78@gmail.com">Email Talha LABS</a></div>
           </section>
-          <div class="tl-dashboard-footer"><p>For privacy, this portal does not store medical reports or test results. Request messages are sent to the laboratory only when you press a send button.</p><button id="logout-button" class="tl-auth-secondary" type="button">Log out</button></div>
+          <div class="tl-dashboard-footer"><p>For privacy, this portal does not store medical reports or test results. Request messages are sent to the laboratory only when you press Send in WhatsApp.</p></div>
         </section>
-      </div>
-      <div class="tl-account-notice" role="note"><strong>Privacy and security:</strong> Passwords are handled by Supabase Authentication and are not stored in Talha Labs website files. Never share your password. This portal does not collect medical reports, test results, identity documents or payment details.</div>
+      <div class="tl-account-notice" role="note"><strong>Privacy &amp; safety:</strong> This website does not upload or store receipt images, medical reports or test results. Report requests go to the laboratory through WhatsApp; staff must verify the receipt and identity before discussing report collection. Do not share passwords, bank PINs, card details or unrelated personal information.</div>
     </section>
     <p class="mt-5 text-center text-sm text-slate-600">Need general information? <a class="font-bold text-teal-800 underline" href="https://wa.me/923006700196" target="_blank" rel="noopener noreferrer">Contact Talha Labs</a>. Or <a class="font-bold text-teal-800 underline" href="index.html">continue browsing the public website</a>.</p>
   </div></main>
   <footer class="bg-green-900 py-5 text-center text-sm text-white">© 2026 Talha Labs. All rights reserved.</footer>
-  <script type="module" src="/assets/js/account.js"></script>
+  <script src="/assets/js/account.js"></script>
 </body></html>
