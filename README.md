@@ -42,6 +42,7 @@ TALHA-LABS/
 ├── health-tips.html
 ├── about.html
 ├── contact.html
+├── account.html                  # Public customer portal (no login required)
 ├── robots.txt                     # Crawler rules and sitemap reference
 ├── sitemap.xml                    # Canonical, indexable page URLs
 ├── vercel.json                    # Vercel redirects
@@ -102,20 +103,13 @@ The assistant is an information aid, not a substitute for a qualified healthcare
 The project is configured for Vercel. When the connected GitHub branch is updated, Vercel may start a deployment according to the project's integration settings. A successful GitHub commit alone does not prove that the production deployment completed; check the Vercel deployment status and test the live pages after changes.
 
 
-## Guest access and optional customer portal
+## Customer portal (no login required)
 
-- Public website pages remain open without requiring a customer account; no separate guest option is displayed.
-- **Customer Login (Optional)** opens `account.html`, a non-indexed Supabase Auth sign-in page.
-- The portal includes email sign-up, login, email verification, password reset, password update and logout flows, plus a signed-in customer dashboard.
-- Dashboard tools let customers send appointment/home-collection requests, ask about test availability and rates, follow up an existing request, manage password security and contact the laboratory.
-- Customers can start a report request and continue to the laboratory's WhatsApp chat, where they manually attach a receipt screenshot. The website does not upload or store receipt images or reports; staff must verify the receipt and customer identity before report release.
-- Appointment and test enquiries are handed off to the laboratory through WhatsApp; opening WhatsApp does not submit the request until the customer sends the message. The laboratory must confirm availability and bookings.
-- The current dashboard does not maintain a saved booking history or live status tracker. Status follow-up is a direct enquiry to staff; do not represent it as real-time tracking.
-- Passwords are handled by Supabase Auth; Talha Labs does not store plaintext or reversible passwords. Never add a `service_role` key to browser files.
-- This portal does not collect or display medical reports, test results, identity documents or payment details. Review `supabase/SETUP.md` before enabling authentication.
-- Keep personal laboratory reports private and accessible only after identity verification and authorization. Never put report files or credentials in public website assets.
-
-
-## Customer authentication
-
-See supabase/SETUP.md. The frontend is wired for Supabase Auth, but is not live until the laboratory's authorized project owner creates/configures the Supabase project and adds its public project URL and publishable/anon key. No password database is maintained by this website.
+- `account.html` opens directly as a public customer portal; there is no login, sign-up, password or account gate.
+- Customers can request an appointment or home collection, ask about test availability and rates, follow up a request, and start a report request.
+- Each form prepares a WhatsApp message to the laboratory. The customer must review and press Send in WhatsApp; opening WhatsApp alone does not submit a request.
+- Appointment and home-collection requests are not confirmed until laboratory staff respond.
+- For a report request, the customer manually attaches a Talha LABS receipt screenshot in WhatsApp. The website does not upload or store receipt images, medical reports or test results. Staff must verify the receipt and identity before report release.
+- Do not ask customers to submit symptoms, diagnoses, prescriptions, medical records, identity documents, bank PINs, card details or passwords through this portal.
+- The portal does not maintain saved booking history or live request tracking. Follow-up is a direct enquiry to staff.
+- The previous Supabase login integration has been removed from the website; the separate Supabase project has not been deleted.
