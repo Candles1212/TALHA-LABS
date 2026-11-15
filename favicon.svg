@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <title>Talha Labs</title>
+  <defs><clipPath id="circle"><circle cx="256" cy="256" r="246"/></clipPath></defs>
+  <rect width="512" height="512" rx="112" fill="#ffffff"/>
+  <image href="/assets/images/taha.jpg" x="10" y="10" width="492" height="492" preserveAspectRatio="xMidYMid slice" clip-path="url(#circle)"/>
+</svg>
