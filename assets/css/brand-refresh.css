@@ -527,3 +527,7 @@ body>header nav .nav-underline:hover,body>header nav .nav-underline.active{color
  .tl-deep-dive{padding:36px 12px!important}
 }
 #tl-quick-actions{display:none!important}
+
+/* Prevent homepage hero headings from overflowing on narrow screens */
+#home .container h1{min-width:0;max-width:100%;overflow-wrap:anywhere;word-break:normal;line-height:1.08}
+@media(max-width:767px){#home .container h1{font-size:clamp(2rem,8.5vw,2.65rem)!important;letter-spacing:-.045em!important;max-width:100%;overflow-wrap:anywhere}#home .container{min-width:0;width:100%;padding-inline:clamp(12px,4vw,24px)}}
