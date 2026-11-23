@@ -43,7 +43,6 @@ TALHA-LABS/
 ├── health-tips.html
 ├── about.html
 ├── contact.html
-├── account.html                  # Public customer portal (no login required)
 ├── robots.txt                     # Crawler rules and sitemap reference
 ├── sitemap.xml                    # Canonical, indexable page URLs
 ├── vercel.json                    # Vercel redirects
@@ -103,14 +102,3 @@ The assistant is an information aid, not a substitute for a qualified healthcare
 
 The project is configured for Vercel. When the connected GitHub branch is updated, Vercel may start a deployment according to the project's integration settings. A successful GitHub commit alone does not prove that the production deployment completed; check the Vercel deployment status and test the live pages after changes.
 
-
-## Customer portal (no login required)
-
-- `account.html` opens directly as a public customer portal; there is no login, sign-up, password or account gate.
-- Customers can request an appointment or home collection, ask about test availability and rates, follow up a request, and start a report request.
-- Each form prepares a WhatsApp message to the laboratory. The customer must review and press Send in WhatsApp; opening WhatsApp alone does not submit a request.
-- Appointment and home-collection requests are not confirmed until laboratory staff respond.
-- For a report request, the customer manually attaches a Talha LABS receipt screenshot in WhatsApp. The website does not upload or store receipt images, medical reports or test results. Staff must verify the receipt and identity before report release.
-- Do not ask customers to submit symptoms, diagnoses, prescriptions, medical records, identity documents, bank PINs, card details or passwords through this portal.
-- The portal does not maintain saved booking history or live request tracking. Follow-up is a direct enquiry to staff.
-- The previous Supabase login integration has been removed from the website; the separate Supabase project has not been deleted.
