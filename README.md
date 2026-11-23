@@ -36,7 +36,6 @@ TALHA-LABS/
 │       ├── analytics.js           # Analytics integration and contact-click events
 │       ├── tl-ai.js               # TL AI assistant interface
 │       ├── interactive-tools.js   # Service filters, enquiry builders, FAQs and reading progress
-│       └── account.js              # Customer portal WhatsApp request hand-offs
 ├── index.html
 ├── services.html
 ├── rates.html
