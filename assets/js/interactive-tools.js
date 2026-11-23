@@ -56,6 +56,28 @@
   function updateProgress(){var doc=document.documentElement,scroll=doc.scrollTop||document.body.scrollTop,max=doc.scrollHeight-doc.clientHeight;if(progress)progress.style.width=(max>0?Math.min(100,scroll/max*100):0)+'%';ticking=false;}
   window.addEventListener('scroll',function(){if(!ticking){window.requestAnimationFrame(updateProgress);ticking=true;}},{passive:true});updateProgress();
 
+  /* Smart Test Finder: client-side search + category filters */
+  var smartSearch=$('#tl-smart-test-search'),smartCards=$('[data-smart-test]'),smartFilters=$('.tl-finder-filters [data-smart-filter]'),smartActive='all',smartCount=$('#tl-smart-test-count');
+  function filterSmartTests(){
+    var q=(smartSearch?smartSearch.value:'').trim().toLowerCase(),shown=0;
+    smartCards.forEach(function(card){
+      var text=card.textContent.toLowerCase(),group=card.getAttribute('data-group')||'all';
+      var matchText=!q||text.indexOf(q)>-1,matchGroup=smartActive==='all'||group===smartActive;
+      card.hidden=!(matchText&&matchGroup);if(!card.hidden)shown++;
+    });
+    if(smartCount)smartCount.textContent='Showing '+shown+' of '+smartCards.length+' test and service options';
+  }
+  if(smartSearch)smartSearch.addEventListener('input',filterSmartTests);
+  smartFilters.forEach(function(btn){btn.addEventListener('click',function(){smartActive=btn.getAttribute('data-smart-filter');smartFilters.forEach(function(b){b.classList.toggle('is-active',b===btn);});filterSmartTests();});});
+  if(smartCards.length)filterSmartTests();
+
+  /* TL AI contextual shortcuts: open assistant and submit a safe general question */
+  $('[data-tlai-prompt]').forEach(function(btn){btn.addEventListener('click',function(){
+    var prompt=btn.getAttribute('data-tlai-prompt'),openBtn=$('#tlai-btn'),input=$('#tlai-in'),send=$('#tlai-send');
+    if(!openBtn||!input||!send)return;
+    openBtn.click();input.value=prompt;
+    window.setTimeout(function(){if(!input.disabled)send.click();},180);
+  });});
   /* FAQ accordions: keep one answer open at a time per list */
   $$('.tl-faq-list').forEach(function(list){$$('details',list).forEach(function(d){d.addEventListener('toggle',function(){if(d.open)$$('details',list).forEach(function(other){if(other!==d)other.open=false;});});});});
 })();
