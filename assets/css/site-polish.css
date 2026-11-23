@@ -316,3 +316,39 @@ main .service-card:nth-child(3n)>span:has(svg){background:linear-gradient(145deg
 .tl-health-prep-section>.container>.tl-btn-primary{display:table;margin:18px auto 0}
 @media(max-width:640px){.tl-health-hero{margin:14px 8px 0;padding:46px 12px!important;border-radius:23px}.tl-health-hero-actions{flex-direction:column;align-items:stretch}.tl-health-pill{justify-content:center}.tl-health-tip-card{padding:22px!important}.tl-health-tip-icon{width:52px;height:52px}}
 @media(prefers-reduced-motion:reduce){.tl-health-hero-orb,.tl-health-tip-icon,.tl-career-icon{animation:none!important}.tl-health-pill{transition:none!important}}
+
+/* Feature suite: Smart Test Finder, Lab Explorer and TL AI quick prompts */
+.tl-feature-suite{margin:48px 0;display:grid;gap:22px}
+.tl-feature-head{text-align:center;max-width:760px;margin:0 auto 8px}
+.tl-feature-head h2{font-size:clamp(1.65rem,3.2vw,2.4rem);font-weight:800;color:#172B3A;margin:8px 0}
+.tl-feature-head p,.tl-finder-top p,.tl-lab-explorer p,.tl-ai-quick-questions p{color:#64748B;line-height:1.65}
+.tl-smart-finder,.tl-lab-explorer,.tl-ai-quick-questions{border:1px solid #DCEBE7;border-radius:20px;padding:clamp(16px,3vw,28px);background:linear-gradient(140deg,#F3FAF8,#fff 60%,#F5F8FC);box-shadow:0 10px 28px rgba(15,55,65,.06)}
+.tl-finder-top{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.tl-feature-label{font-size:.75rem;font-weight:800;letter-spacing:.14em;color:#3536A0}
+.tl-finder-top h3,.tl-lab-explorer h3,.tl-ai-quick-questions h3{font-size:1.35rem;font-weight:800;color:#172B3A;margin:5px 0}
+.tl-feature-search{display:flex;min-width:min(100%,300px);flex:1;max-width:460px}
+.tl-feature-search input{width:100%;border:1px solid #D5E3E0;border-radius:14px;padding:12px 14px;background:white;outline:none}
+.tl-feature-search input:focus{border-color:#3536A0;box-shadow:0 0 0 3px #3536A022}
+.tl-finder-filters{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 8px}
+.tl-finder-filters button,.tl-ai-prompts button{border:1px solid #D5E3E0;border-radius:999px;background:#fff;padding:9px 13px;color:#172B3A;font-weight:650;font-size:.88rem;cursor:pointer;transition:background .18s,border-color .18s}
+.tl-finder-filters button.is-active{background:#3536A0;color:#fff;border-color:#3536A0}
+.tl-finder-filters button:hover,.tl-ai-prompts button:hover{border-color:#6D9E20;background:#F2F9E5}
+.tl-finder-filters button.is-active:hover{background:#22236F}
+.tl-feature-count{font-size:.83rem;color:#64748B;margin:10px 0}
+.tl-smart-test-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.tl-smart-test{min-width:0;border:1px solid #DCEBE7;border-radius:16px;padding:17px;background:#fff;display:flex;flex-direction:column;gap:8px}
+.tl-smart-test[hidden]{display:none!important}
+.tl-smart-test h4{font-weight:800;color:#172B3A;font-size:1.02rem}
+.tl-smart-test p{color:#64748B;font-size:.9rem;line-height:1.5;flex:1}
+.tl-test-tag{font-size:.68rem;font-weight:750;color:#3536A0;letter-spacing:.06em;text-transform:uppercase}
+.tl-test-ask{font-weight:750;font-size:.88rem;color:#6D9E20;text-decoration:none;margin-top:4px}
+.tl-test-ask:hover{color:#3536A0;text-decoration:underline}
+.tl-lab-jumps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:18px}
+.tl-lab-jumps a{border:1px solid #DCEBE7;border-radius:16px;background:#fff;padding:16px;display:flex;flex-direction:column;gap:7px;text-decoration:none;transition:transform .2s,border-color .2s}
+.tl-lab-jumps a:hover{transform:translateY(-3px);border-color:#A6D343}
+.tl-lab-jumps span{font-size:1.4rem}.tl-lab-jumps b{color:#172B3A}.tl-lab-jumps small{color:#64748B}.tl-lab-jumps em{font-size:.8rem;color:#3536A0;font-style:normal;font-weight:750;margin-top:3px}
+.tl-ai-quick-questions{background:linear-gradient(140deg,#F4F3FF,#fff 60%,#F5FAFF)}
+.tl-ai-quick-questions .tl-feature-label{color:#6B63B5}
+.tl-ai-prompts{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+@media(max-width:900px){.tl-smart-test-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.tl-lab-jumps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.tl-smart-test-grid,.tl-lab-jumps{grid-template-columns:1fr}.tl-finder-top{align-items:stretch}.tl-feature-search{min-width:100%;max-width:none}.tl-smart-finder,.tl-lab-explorer,.tl-ai-quick-questions{padding:16px}.tl-finder-filters button{padding:8px 10px;font-size:.82rem}}
