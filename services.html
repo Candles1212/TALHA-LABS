@@ -310,6 +310,32 @@
           <div class="tl-filter-row"><button class="is-active" data-filter="all" type="button">All services</button><button data-filter="blood" type="button">Blood tests</button><button data-filter="profiles" type="button">Profiles</button><button data-filter="support" type="button">Patient support</button></div>
           <p class="tl-results-count" id="tl-service-count" aria-live="polite">Showing all listed services</p>
         </section>
+        <section class="tl-feature-suite" id="tl-feature-suite">
+          <div class="tl-feature-head"><span class="tl-eyebrow">SMART TOOLS · NEW</span><h2>Find tests. Explore departments. Ask TL AI.</h2><p>Helpful shortcuts for learning about laboratory services. Confirm test availability, preparation and rates with the laboratory team.</p></div>
+          <div class="tl-smart-finder">
+            <div class="tl-finder-top"><div><span class="tl-feature-label">SMART TEST FINDER</span><h3>Find a test or profile</h3><p>Search by name or keyword.</p></div><label class="tl-feature-search"><span class="sr-only">Search test finder</span><input id="tl-smart-test-search" type="search" placeholder="Try CBC, thyroid, sugar, vitamin D..." autocomplete="off"></label></div>
+            <div class="tl-finder-filters" role="group" aria-label="Filter tests"><button type="button" class="is-active" data-smart-filter="all">All</button><button type="button" data-smart-filter="blood">Blood &amp; biochemistry</button><button type="button" data-smart-filter="profiles">Profiles &amp; hormones</button><button type="button" data-smart-filter="support">Patient support</button></div>
+            <p id="tl-smart-test-count" class="tl-feature-count" aria-live="polite">Showing all tests</p>
+            <div class="tl-smart-test-grid">
+              <article class="tl-smart-test" data-smart-test data-group="blood"><span class="tl-test-tag">Blood &amp; biochemistry</span><h4>Complete Blood Count (CBC)</h4><p>Blood-cell count and related measurements.</p><a class="tl-test-ask" href="https://wa.me/923006700196?text=Assalam%20o%20Alaikum%2C%20please%20confirm%20CBC%20availability%2C%20rate%20and%20report%20timing." target="_blank" rel="noopener">Ask about CBC ↗</a></article>
+              <article class="tl-smart-test" data-smart-test data-group="blood"><span class="tl-test-tag">Blood &amp; biochemistry</span><h4>Liver Function Tests (LFTs)</h4><p>Common biochemical markers related to liver assessment.</p><a class="tl-test-ask" href="https://wa.me/923006700196?text=Assalam%20o%20Alaikum%2C%20please%20confirm%20LFT%20availability%2C%20rate%20and%20preparation." target="_blank" rel="noopener">Ask about LFTs ↗</a></article>
+              <article class="tl-smart-test" data-smart-test data-group="blood"><span class="tl-test-tag">Blood &amp; biochemistry</span><h4>Kidney Function Tests (KFTs)</h4><p>Common kidney-related biochemical markers.</p><a class="tl-test-ask" href="https://wa.me/923006700196?text=Assalam%20o%20Alaikum%2C%20please%20confirm%20KFT%20availability%2C%20rate%20and%20preparation." target="_blank" rel="noopener">Ask about KFTs ↗</a></article>
+              <article class="tl-smart-test" data-smart-test data-group="blood"><span class="tl-test-tag">Blood &amp; biochemistry</span><h4>Blood Sugar</h4><p>Glucose testing; ask which sample type is required.</p><a class="tl-test-ask" href="https://wa.me/923006700196?text=Assalam%20o%20Alaikum%2C%20please%20confirm%20blood%20sugar%20test%20availability%2C%20rate%20and%20preparation." target="_blank" rel="noopener">Ask about blood sugar ↗</a></article>
+              <article class="tl-smart-test" data-smart-test data-group="blood"><span class="tl-test-tag">Blood &amp; biochemistry</span><h4>Lipid Profile</h4><p>Cholesterol and related lipid measurements.</p><a class="tl-test-ask" href="https://wa.me/923006700196?text=Assalam%20o%20Alaikum%2C%20please%20confirm%20lipid%20profile%20availability%2C%20rate%20and%20preparation." target="_blank" rel="noopener">Ask about lipid profile ↗</a></article>
+              <article class="tl-smart-test" data-smart-test data-group="profiles"><span class="tl-test-tag">Profiles &amp; hormones</span><h4>Thyroid Profile (T3, T4, TSH)</h4><p>Common thyroid-related hormone measurements.</p><a class="tl-test-ask" href="https://wa.me/923006700196?text=Assalam%20o%20Alaikum%2C%20please%20confirm%20thyroid%20profile%20availability%2C%20rate%20and%20preparation." target="_blank" rel="noopener">Ask about thyroid ↗</a></article>
+              <article class="tl-smart-test" data-smart-test data-group="profiles"><span class="tl-test-tag">Profiles &amp; hormones</span><h4>HbA1c</h4><p>Longer-term blood glucose marker.</p><a class="tl-test-ask" href="https://wa.me/923006700196?text=Assalam%20o%20Alaikum%2C%20please%20confirm%20HbA1c%20availability%2C%20rate%20and%20report%20timing." target="_blank" rel="noopener">Ask about HbA1c ↗</a></article>
+              <article class="tl-smart-test" data-smart-test data-group="profiles"><span class="tl-test-tag">Profiles &amp; hormones</span><h4>Vitamin D (25-Hydroxy)</h4><p>Common test used to assess vitamin D status.</p><a class="tl-test-ask" href="https://wa.me/923006700196?text=Assalam%20o%20Alaikum%2C%20please%20confirm%20Vitamin%20D%20availability%2C%20rate%20and%20report%20timing." target="_blank" rel="noopener">Ask about Vitamin D ↗</a></article>
+              <article class="tl-smart-test" data-smart-test data-group="profiles"><span class="tl-test-tag">Profiles &amp; hormones</span><h4>Hormone Tests</h4><p>Ask about the specific hormone and collection timing.</p><a class="tl-test-ask" href="https://wa.me/923006700196?text=Assalam%20o%20Alaikum%2C%20please%20confirm%20availability%20and%20rate%20for%20a%20specific%20hormone%20test." target="_blank" rel="noopener">Ask about hormones ↗</a></article>
+              <article class="tl-smart-test" data-smart-test data-group="support"><span class="tl-test-tag">Patient support</span><h4>Home Sample Collection</h4><p>Ask about area coverage and appointment availability.</p><a class="tl-test-ask" href="https://wa.me/923006700196?text=Assalam%20o%20Alaikum%2C%20please%20confirm%20home%20sample%20collection%20availability%20in%20my%20area." target="_blank" rel="noopener">Ask about home sampling ↗</a></article>
+              <article class="tl-smart-test" data-smart-test data-group="support"><span class="tl-test-tag">Patient support</span><h4>Medical Screening (PFA)</h4><p>Ask about screening packages and requirements.</p><a class="tl-test-ask" href="https://wa.me/923006700196?text=Assalam%20o%20Alaikum%2C%20please%20share%20details%20and%20rate%20for%20Medical%20Screening%20(PFA)." target="_blank" rel="noopener">Ask about PFA ↗</a></article>
+            </div>
+          </div>
+          <div class="tl-lab-explorer">
+            <div><span class="tl-feature-label">INTERACTIVE LAB EXPLORER</span><h3>Explore a laboratory department</h3><p>Jump straight to a department guide below.</p></div>
+            <div class="tl-lab-jumps"><a href="#hematology-details"><span>🩸</span><b>Hematology</b><small>Blood cells &amp; CBC</small><em>Explore ↘</em></a><a href="#biochemistry-details"><span>⚗️</span><b>Clinical Biochemistry</b><small>Metabolic markers</small><em>Explore ↘</em></a><a href="#serology-details"><span>◎</span><b>Serology &amp; Immunology</b><small>Antigens &amp; antibodies</small><em>Explore ↘</em></a><a href="#endocrine-details"><span>◈</span><b>Hormones &amp; Endocrinology</b><small>Thyroid &amp; hormones</small><em>Explore ↘</em></a></div>
+          </div>
+          <div class="tl-ai-quick-questions"><span class="tl-feature-label">TL AI QUICK HELP</span><h3>Need a quick answer?</h3><p>Open TL AI with a common question. Do not share personal medical details in chat.</p><div class="tl-ai-prompts"><button type="button" data-tlai-prompt="What are your laboratory timings?">Lab timings</button><button type="button" data-tlai-prompt="Where is Talha Labs located?">Location</button><button type="button" data-tlai-prompt="Do you offer home sampling?">Home sampling</button><button type="button" data-tlai-prompt="How can I ask about test rates?">Test rates</button><button type="button" data-tlai-prompt="How can I receive my reports?">Reports</button></div></div>
+        </section>
         <section class="tl-service-explain"><div class="tl-section-intro"><span class="tl-eyebrow">UNDERSTANDING THE DEPARTMENTS</span><h2>Different tests answer different questions.</h2><p>Your doctor chooses tests based on your health history and clinical needs. These short descriptions are general information only.</p></div>
           <div class="tl-department-grid">
             <article id="hematology"><span>HEMATOLOGY</span><h3>Blood cell analysis</h3><p>Hematology examines blood cells and related components. A CBC is a commonly requested test in this department.</p></article>
@@ -457,12 +483,33 @@
         <span style="width:44px;height:44px;border-radius:50%;overflow:hidden;background:#fff;display:inline-block;flex-shrink:0"><img src="/assets/images/taha.jpg" alt="" width="44" height="44" style="display:block;width:100%;height:100%;transform:scale(1.07)"></span>
         <span>TL AI</span>
     </button>
-    <div id="tlai-box" role="dialog" aria-label="TL AI assistant">
-        <div class="tlai-h"><div style="display:flex;align-items:center;gap:10px"><span style="width:36px;height:36px;border-radius:50%;overflow:hidden;background:#fff;display:inline-block;flex-shrink:0"><img src="/assets/images/taha.jpg" alt="" width="36" height="36" style="display:block;width:100%;height:100%;transform:scale(1.07)"></span><div><b>TL AI</b><small>Talha Labs AI assistant</small></div></div><button class="tlai-x" type="button" id="tlai-close" aria-label="Close chat">&times;</button></div>
-        <div id="tlai-msgs"></div>
-        <div id="tlai-chips"></div>
-        <div class="tlai-f"><input id="tlai-in" type="text" maxlength="300" placeholder="Apna sawal likhein..." aria-label="Type your question" autocomplete="off"><button id="tlai-send" type="button">Send</button></div>
-        <div class="tlai-note">AI se jawab ghalat ho sakte hain. Apni zaati ya medical tafseel na likhein.</div>
+    <div id="tlai-box" role="dialog" aria-label="TL AI assistant" aria-modal="false">
+        <div class="tlai-h">
+            <div class="tlai-brand">
+                <span class="tlai-avatar"><img src="/assets/images/taha.jpg" alt="Talha Labs" width="42" height="42"></span>
+                <div class="tlai-brand-copy"><b>TL AI <span class="tlai-version">ASSISTANT</span></b><small><i class="tlai-online-dot"></i> Talha Labs · Here to help</small></div>
+            </div>
+            <div class="tlai-head-actions"><button type="button" id="tlai-clear" class="tlai-head-action" aria-label="Start a new chat" title="New chat">↻</button><button class="tlai-x" type="button" id="tlai-close" aria-label="Close chat">&times;</button></div>
+        </div>
+        <div class="tlai-welcome" id="tlai-welcome">
+            <span class="tlai-welcome-kicker">WELCOME TO TALHA LABS</span>
+            <h3>How can we help<br>you today?</h3>
+            <p>Ask about our tests, timings, reports or home sample collection.</p>
+            <div class="tlai-starter-grid">
+                <button type="button" data-tlai-starter="What tests and services do you offer?"><span>🧪</span><b>Explore tests</b><small>Services &amp; profiles</small></button>
+                <button type="button" data-tlai-starter="What are your laboratory timings?"><span>🕒</span><b>Lab timings</b><small>Opening hours</small></button>
+                <button type="button" data-tlai-starter="Where is Talha Labs located?"><span>📍</span><b>Find us</b><small>Address &amp; directions</small></button>
+                <button type="button" data-tlai-starter="Do you offer home sample collection?"><span>🏠</span><b>Home sampling</b><small>Area &amp; booking</small></button>
+            </div>
+        </div>
+        <div id="tlai-msgs" aria-live="polite" aria-label="Conversation"></div>
+        <div class="tlai-suggest-label">QUICK QUESTIONS</div>
+        <div id="tlai-chips" aria-label="Suggested questions"></div>
+        <form class="tlai-f" id="tlai-form">
+            <input id="tlai-in" type="text" maxlength="300" placeholder="Type in English or Roman Urdu..." aria-label="Type your question" autocomplete="off">
+            <button id="tlai-send" type="submit" aria-label="Send message"><span>Send</span><b>↑</b></button>
+        </form>
+        <div class="tlai-note"><span>🔒</span> Please don't share personal, medical or financial details. TL AI does not diagnose or interpret reports.</div>
     </div>
     <script src="/assets/js/tl-ai.js"></script>
     <script src="/assets/js/interactive-tools.js" defer></script>

@@ -37,3 +37,68 @@
             body.rt-bar-on #tlai-box { bottom:calc(198px + env(safe-area-inset-bottom,0px)); height:min(480px, calc(100vh - 250px)); }
         }
     
+
+/* TL AI redesign — responsive branded assistant */
+#tlai-btn{position:fixed;right:18px;bottom:calc(84px + env(safe-area-inset-bottom,0px));z-index:61;height:58px;min-width:164px;padding:0 20px 0 7px;border:1px solid rgba(255,255,255,.55);border-radius:999px;background:linear-gradient(135deg,#3536A0,#22236F);color:#fff;font:700 15px 'Inter',sans-serif;display:flex;align-items:center;gap:11px;box-shadow:0 9px 28px rgba(34,35,111,.28);cursor:pointer;transition:transform .2s,box-shadow .2s}
+#tlai-btn:hover{transform:translateY(-3px);box-shadow:0 13px 32px rgba(34,35,111,.35)}
+#tlai-btn>span:first-child{width:46px!important;height:46px!important;border:2px solid rgba(255,255,255,.8);border-radius:50%;overflow:hidden;background:#fff}
+#tlai-box{position:fixed;right:18px;bottom:calc(154px + env(safe-area-inset-bottom,0px));z-index:62;width:min(410px,calc(100vw - 36px));height:min(650px,calc(100dvh - 190px));min-height:440px;background:#fff;border:1px solid #E4EBDD;border-radius:25px;box-shadow:0 22px 70px rgba(23,43,58,.23);display:none;flex-direction:column;overflow:hidden;font-family:'Inter',sans-serif;color:#172B3A}
+#tlai-box.open{display:flex;animation:tlai-rise .22s ease-out}
+@keyframes tlai-rise{from{opacity:0;transform:translateY(12px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+.tlai-h{background:linear-gradient(120deg,#3536A0 0%,#22236F 100%);color:#fff;padding:16px 17px;display:flex;align-items:center;justify-content:space-between;min-height:76px}
+.tlai-brand{display:flex;align-items:center;gap:11px;min-width:0}
+.tlai-avatar{width:44px;height:44px;border:2px solid rgba(255,255,255,.65);border-radius:50%;overflow:hidden;background:#fff;flex-shrink:0}
+.tlai-avatar img{display:block;width:100%;height:100%;object-fit:cover}
+.tlai-brand-copy b{display:flex;align-items:center;gap:7px;font-size:16px;letter-spacing:-.02em}
+.tlai-brand-copy small{display:block;margin-top:4px;font-size:11px;color:#E2E7FF}
+.tlai-version{font-size:8px;letter-spacing:.12em;border:1px solid #ffffff55;border-radius:5px;padding:3px 5px;color:#E5E7FF}
+.tlai-online-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#A6D343;margin-right:4px}
+.tlai-head-actions{display:flex;align-items:center;gap:6px}
+.tlai-head-action,.tlai-x{width:34px;height:34px;border:0;border-radius:10px;background:#ffffff1c;color:#fff;font-size:20px;cursor:pointer}
+.tlai-head-action:hover,.tlai-x:hover{background:#ffffff32}
+.tlai-x{font-size:25px;line-height:1}
+.tlai-welcome{padding:20px 17px 13px;background:linear-gradient(180deg,#F7FAF3,#fff)}
+.tlai-welcome-kicker{font-size:9px;font-weight:800;letter-spacing:.16em;color:#6D9E20}
+.tlai-welcome h3{font-size:23px;line-height:1.12;letter-spacing:-.045em;font-weight:800;color:#172B3A;margin:7px 0}
+.tlai-welcome>p{font-size:12px;line-height:1.55;color:#64748B;margin:0 0 13px}
+.tlai-starter-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.tlai-starter-grid button{display:grid;grid-template-columns:28px 1fr;grid-template-rows:auto auto;align-items:center;text-align:left;column-gap:8px;border:1px solid #E4EBDD;border-radius:12px;padding:9px;background:#fff;cursor:pointer;transition:border-color .18s,transform .18s}
+.tlai-starter-grid button:hover{border-color:#A6D343;transform:translateY(-1px)}
+.tlai-starter-grid button>span{grid-row:1/3;font-size:20px}
+.tlai-starter-grid b{font-size:11px;color:#172B3A}
+.tlai-starter-grid small{font-size:9px;color:#64748B;margin-top:2px}
+#tlai-msgs{flex:1;min-height:65px;overflow-y:auto;padding:14px 13px 8px;background:#F7F9FC;scroll-behavior:smooth}
+.tlai-m{max-width:88%;padding:10px 12px;border-radius:15px;margin-bottom:9px;font-size:12px;line-height:1.55;color:#263746;overflow-wrap:anywhere}
+.tlai-bot{background:#fff;border:1px solid #E5EAF0;border-bottom-left-radius:5px;box-shadow:0 2px 7px #172b3a08}
+.tlai-me{background:#3536A0;color:#fff;margin-left:auto;border-bottom-right-radius:5px}
+.tlai-m a{color:#3536A0;text-decoration:underline}
+.tlai-me a{color:#fff}
+.tlai-ai{white-space:pre-wrap}
+.tlai-suggest-label{padding:9px 13px 0;background:#fff;color:#64748B;font-size:8px;font-weight:800;letter-spacing:.13em}
+#tlai-chips{padding:7px 11px 10px;display:flex;flex-wrap:nowrap;gap:6px;background:#fff;overflow-x:auto;scrollbar-width:thin}
+#tlai-chips button{white-space:nowrap;border:1px solid #DCE3F0;background:#fff;color:#3536A0;border-radius:999px;padding:6px 10px;font-size:10px;font-weight:650;cursor:pointer}
+#tlai-chips button:hover{background:#F2F3FF;border-color:#3536A0}
+.tlai-f{display:flex;gap:8px;padding:10px 12px;background:#fff;border-top:1px solid #EEF1F5;align-items:center}
+#tlai-in{flex:1;min-width:0;border:1px solid #DCE3F0;border-radius:14px;padding:11px 13px;font-size:12px;outline:none;color:#172B3A;background:#F9FAFC}
+#tlai-in:focus{border-color:#3536A0;box-shadow:0 0 0 3px #3536A018;background:#fff}
+#tlai-send{border:0;background:#3536A0;color:#fff;border-radius:13px;padding:0 13px;height:40px;display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700;cursor:pointer}
+#tlai-send b{font-size:17px}
+#tlai-send:hover{background:#22236F}
+#tlai-send:disabled,#tlai-in:disabled{opacity:.55;cursor:not-allowed}
+.tlai-note{font-size:9px;line-height:1.4;color:#64748B;padding:0 12px 11px;background:#fff;text-align:center}
+.tlai-note span{margin-right:3px}
+.tlai-copy{display:block;margin:7px 0 0 auto;border:0;background:#F1F3F8;color:#536176;border-radius:7px;padding:4px 8px;font-size:9px;cursor:pointer}
+.tlai-copy:hover{background:#E8EAFB;color:#3536A0}
+@media(max-width:640px){
+ #tlai-btn{right:12px;bottom:calc(74px + env(safe-area-inset-bottom,0px));min-width:0;width:52px;height:52px;padding:0;border-radius:50%;justify-content:center;gap:0}
+ #tlai-btn>span:last-child{display:none}
+ #tlai-btn>span:first-child{width:46px!important;height:46px!important}
+ #tlai-box{right:10px;bottom:calc(134px + env(safe-area-inset-bottom,0px));width:calc(100vw - 20px);height:min(690px,calc(100dvh - 155px));min-height:390px;border-radius:21px}
+ body.rt-bar-on #tlai-btn{bottom:calc(138px + env(safe-area-inset-bottom,0px))}
+ body.rt-bar-on #tlai-box{bottom:calc(198px + env(safe-area-inset-bottom,0px));height:min(650px,calc(100dvh - 220px))}
+ .tlai-welcome{padding:15px 13px 10px}
+ .tlai-welcome h3{font-size:21px}
+ .tlai-starter-grid{gap:6px}
+ .tlai-starter-grid button{padding:8px}
+}
+@media(prefers-reduced-motion:reduce){#tlai-box.open{animation:none}#tlai-btn,.tlai-starter-grid button{transition:none}}
