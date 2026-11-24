@@ -3,36 +3,22 @@
         var WA = 'https://wa.me/923006700196';
         var WAL = '<a href="' + WA + '" target="_blank" rel="noopener">WhatsApp par rabta karein</a>';
         var KB = [
-            { k: ['dawai', 'dawa ', 'medicine', 'treatment', 'ilaj', 'bimari', 'symptom', 'normal range', 'report theek', 'diagnos', ' dard ', ' pain ', 'bukhar', ' fever '],
-              a: 'Main bimari, dawai ya report ke natayej ke baare mein medical salah nahi de sakta. Is ke liye apne doctor se mashwara karein.' },
-            { k: ['rate', 'price', 'charges', ' fee ', ' cost ', 'kitne paise', 'qeemat', 'kitna ', 'ریٹ', 'قیمت'],
-              a: 'Test ke rate test ke mutabiq hote hain. Rate janne ke liye test ka naam WhatsApp par bhej dein: ' + WAL + '.' },
-            { k: ['khali pet', 'fasting', 'empty stomach', 'bhooka'],
-              a: 'Kuch tests (jaise blood sugar ya lipid profile) ke liye khali pet aana ho sakta hai. Aap ke test ke liye sahi hidayat janne ke liye ' + WAL + ' ya apne doctor se poochein.' },
-            { k: ['home', 'ghar', 'sampling', 'sample collection'],
-              a: 'Ji, <b>home sampling</b> available hai: ghar par safe aur hygienic sample collection. Ilaqa aur waqt ke liye ' + WAL + '.' },
-            { k: ['report', 'result', 'kitni der', 'delivery', 'رپورٹ'],
-              a: 'Reports digital taur par <b>WhatsApp ya email</b> par bhi mil sakti hain. Kisi khaas test ki report kitni der mein milti hai, ye test par depend karta hai, uske liye ' + WAL + '.' },
-            { k: ['time', 'timing', 'open', 'close', 'kab ', 'khula', 'khulta', 'hours', 'waqt', 'baje', 'وقت', 'ٹائم'],
-              a: 'Talha Labs roz <b>subah 7:00 se raat 9:00 baje</b> tak khula hai (haftay ke saaton din).' },
-            { k: ['address', 'location', 'where', 'kahan', 'jagah', 'map', ' pata ', 'direction', 'پتہ', 'ایڈریس'],
-              a: 'Hamara address: <b>Hospital Road, Near Telephone Exchange, Sadiqabad</b>.<br><a href="https://maps.app.goo.gl/Wy42WbfJg7LeZgX67" target="_blank" rel="noopener">Google Maps par dekhein</a>' },
-            { k: ['phone', 'number', 'call', 'contact', 'whatsapp', 'rabta', 'email', 'mail', 'فون', 'نمبر'],
-              a: 'Cell/WhatsApp: <a href="tel:+923006700196">0300-6700196</a><br>Landline: <a href="tel:+92685701210">068-5701210</a><br>Email: <a href="mailto:talhalabs78@gmail.com">talhalabs78@gmail.com</a><br>' + WAL },
-            { k: ['appointment', 'booking', 'book ', 'time lena'],
-              a: 'Booking aur home sampling ke liye ' + WAL + ' ya <a href="tel:+923006700196">0300-6700196</a> par call karein.' },
-            { k: ['doctor', 'pathologist', 'team', 'kab se', 'since', 'founder', 'owner', 'anwar'],
-              a: 'Talha Labs <b>2003</b> se khidmat de raha hai. Hamari team mein Dr. Khalid Mehmood (Consultant Pathologist) aur Prof. Dr. M Rafique Cheema (CEO / Consultant Hematologist) shamil hain. <a href="about.html">Team dekhein</a>' },
-            { k: ['cbc', 'lft', 'kft', 'liver', 'kidney', 'thyroid', 'hba1c', 'vitamin', 'hormone', 'sugar', 'lipid', 'dengue', 'hepatitis', 'hiv', 'screening', 'pfa'],
-              a: 'Ji, ye test hamari services mein shamil hai. Rate aur report ke waqt ke liye ' + WAL + '. <a href="services.html">Poori list dekhein</a>' },
-            { k: ['service', 'kon kon', 'kya kya', 'tests', 'list', 'ٹیسٹ'],
-              a: 'Hamari services: CBC, Liver aur Kidney function tests, Thyroid profile, Blood sugar aur Lipid profile, HbA1c, Vitamin D, Hormones test, Medical screening (PFA), Home sampling aur Digital reports. <a href="services.html">Poori list dekhein</a>' },
-            { k: ['thank', 'shukria', 'shukriya', 'jazak'],
-              a: 'Khushi hui madad kar ke. Koi aur sawal ho to poochein.' },
-            { k: ['salam', 'hello', ' hi ', ' hey ', 'aoa'],
-              a: 'Wa Alaikum Assalam! Aap timing, location, services ya rabta ke baare mein poochh sakte hain.' }
+            { k: ['price', 'prices', 'rate', 'rates', 'cost', 'charges', 'fee', 'qeemat', 'kitne paise', 'ریٹ', 'قیمت'], a: 'Test rates test ke mutabiq hote hain. Aap Test Rates page dekh sakte hain ya test ka naam WhatsApp par bhej dein: ' + WAL + '.' },
+            { k: ['fasting', 'empty stomach', 'khali pet', 'bhooka', 'fast karna'], a: 'Har test ke liye fasting zaroori nahi hoti. Blood sugar ya lipid profile jaise kuch tests mein fasting ki hidayat ho sakti hai. Apne specific test ke liye lab ya doctor se confirm kar lein.' },
+            { k: ['home sample', 'home collection', 'home sampling', 'ghar se', 'ghar par', 'sample collect', 'sample lene'], a: 'Ji, home sample collection ke liye rabta kar sakte hain. Aap ka area, available time aur charges team confirm karegi: ' + WAL + '.' },
+            { k: ['report', 'result', 'reports', 'results', 'kitni der', 'report time', 'delivery'], a: 'Reports WhatsApp ya email par digital form mein share ki ja sakti hain. Report ka waqt test ke mutabiq hota hai; exact timing ke liye lab se confirm karein: ' + WAL + '.' },
+            { k: ['timing', 'opening', 'open', 'close', 'hours', 'kab khulta', 'kitne baje', 'waqt', 'time'], a: 'Talha Labs haftay ke saaton din subah 7:00 AM se raat 9:00 PM tak open hai.' },
+            { k: ['address', 'location', 'where', 'kahan', 'map', 'directions', 'pata', 'پتہ', 'کہاں'], a: 'Talha Labs: Hospital Road, Near Telephone Exchange, Sadiqabad, Punjab. <a href="https://maps.app.goo.gl/Wy42WbfJg7LeZgX67" target="_blank" rel="noopener">Google Maps par directions dekhein</a>.' },
+            { k: ['phone', 'number', 'call', 'contact', 'whatsapp', 'rabta', 'email', 'mail', 'نمبر', 'فون'], a: 'WhatsApp / Cell: <a href="tel:+923006700196">0300-6700196</a><br>Landline: <a href="tel:+92685701210">068-5701210</a><br>Email: <a href="mailto:talhalabs78@gmail.com">talhalabs78@gmail.com</a>.' },
+            { k: ['appointment', 'booking', 'book', 'appointment lena'], a: 'Appointment ya home sampling ke liye WhatsApp par message karein: ' + WAL + ' ya 0300-6700196 par call karein.' },
+            { k: ['doctor', 'pathologist', 'team', 'staff', 'founder', 'owner', 'since', 'kab se'], a: 'Talha Labs 2003 se Sadiqabad mein khidmat de raha hai. Team aur lab ke bare mein mazeed maloomat <a href="about.html">About Us</a> page par dekhein.' },
+            { k: ['cbc', 'lft', 'kft', 'liver', 'kidney', 'thyroid', 'hba1c', 'vitamin', 'hormone', 'sugar', 'lipid', 'dengue', 'hepatitis', 'hiv', 'serology', 'hematology', 'biochemistry'], a: 'In mein se kai tests Talha Labs ki services mein shamil hain. Departments aur available tests <a href="services.html">Services page</a> par dekhein. Rate aur timing ke liye ' + WAL + '.' },
+            { k: ['service', 'services', 'tests', 'test list', 'what tests', 'kya test', 'kon se test', 'list', 'ٹیسٹ'], a: 'Talha Labs mein Hematology, Biochemistry, Serology, thyroid aur hormone tests, Vitamin D, HbA1c, blood sugar, lipid profile aur home sampling jaisi services hain. <a href="services.html">Complete services list dekhein</a>.' },
+            { k: ['career', 'job', 'vacancy', 'work with'], a: 'Careers aur job enquiries ke liye <a href="health-tips.html#careers">Careers section</a> dekhein ya lab se rabta karein: ' + WAL + '.' },
+            { k: ['thank', 'thanks', 'shukria', 'shukriya', 'jazak'], a: 'You’re welcome! Talha Labs ke bare mein koi aur maloomat chahiye ho to pooch sakte hain.' },
+            { k: ['salam', 'assalam', 'hello', 'hi', 'hey', 'aoa'], a: 'Wa Alaikum Assalam! Main Talha Labs ki services, test rates, timings, location, reports aur home sampling ke bare mein help kar sakta hoon. Aap kya maloomat chahte hain?' }
         ];
-        var FALLBACK = 'Maaf kijiye, mujhe is sawal ka jawab nahi pata. Neeche diye gaye options dekhein, ya hamari team se baat karein: ' + WAL + '.';
+        var FALLBACK = 'Main Talha Labs ki services, test rates, timings, location, reports aur home sampling ke bare mein maloomat de sakta hoon. Aap in mein se kis cheez ke bare mein poochna chahte hain? Mazeed help ke liye ' + WAL + '.';
         var CHIPS = [['Test rates', 'rate'], ['Services', 'services'], ['Reports', 'report'], ['Fasting info', 'fasting'], ['Contact', 'phone'], ['Doctors', 'doctor']];
 
         var btn = document.getElementById('tlai-btn'), box = document.getElementById('tlai-box'),
@@ -48,13 +34,22 @@
             return d;
         }
         function answer(text) {
-            var t = ' ' + text.toLowerCase().replace(/[.,!?;:()"'\/\\-]/g, ' ') + ' ';
+            var t = ' ' + String(text || '').toLowerCase()
+                .replace(/[.,!?;:()"'\\/\\\\-]/g, ' ')
+                .replace(/\\s+/g, ' ') + ' ';
+            // Prefer the most specific match; this prevents broad words from hijacking a question.
+            var best = null, bestScore = 0;
             for (var i = 0; i < KB.length; i++) {
+                var score = 0;
                 for (var j = 0; j < KB[i].k.length; j++) {
-                    if (t.indexOf(KB[i].k[j]) > -1) return KB[i].a;
+                    var key = KB[i].k[j].toLowerCase();
+                    if (t.indexOf(' ' + key + ' ') > -1 || t.indexOf(key) > -1) {
+                        score += Math.max(1, key.length);
+                    }
                 }
+                if (score > bestScore) { bestScore = score; best = KB[i].a; }
             }
-            return FALLBACK;
+            return best || FALLBACK;
         }
         function ask(text, label) {
             text = (text || '').replace(/^\s+|\s+$/g, '');
