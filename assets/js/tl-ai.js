@@ -33,11 +33,11 @@
               a: 'Wa Alaikum Assalam! Aap timing, location, services ya rabta ke baare mein poochh sakte hain.' }
         ];
         var FALLBACK = 'Maaf kijiye, mujhe is sawal ka jawab nahi pata. Neeche diye gaye options dekhein, ya hamari team se baat karein: ' + WAL + '.';
-        var CHIPS = [['Timing', 'timing'], ['Location', 'location'], ['Phone / WhatsApp', 'phone'], ['Email', 'email'], ['Services', 'services'], ['Home sampling', 'home sampling'], ['Reports', 'report'], ['Rates', 'rate'], ['Booking', 'booking'], ['Khali pet (fasting)', 'fasting'], ['Doctors / Team', 'doctor'], ['CBC', 'cbc'], ['Thyroid', 'thyroid'], ['Vitamin D', 'vitamin'], ['HbA1c', 'hba1c'], ['Liver / Kidney', 'liver'], ['Blood sugar', 'sugar'], ['Hormones', 'hormone'], ['Dengue / Hepatitis', 'dengue'], ['Medical screening', 'screening'], ['Bimari ki salah', 'dawai']];
+        var CHIPS = [['Test rates', 'rate'], ['Services', 'services'], ['Reports', 'report'], ['Fasting info', 'fasting'], ['Contact', 'phone'], ['Doctors', 'doctor']];
 
         var btn = document.getElementById('tlai-btn'), box = document.getElementById('tlai-box'),
             msgs = document.getElementById('tlai-msgs'), chips = document.getElementById('tlai-chips'),
-            started = false;
+            welcome = document.getElementById('tlai-welcome'), started = false;
 
         function add(content, me) {
             var d = document.createElement('div');
@@ -60,6 +60,7 @@
             text = (text || '').replace(/^\s+|\s+$/g, '');
             if (!text) return;
             add(label || text, true);
+            if (welcome) welcome.hidden = true;
             if (window.gtag) { gtag('event', 'tl_ai_question', { topic: text }); }
             setTimeout(function () { add(answer(text), false); }, 350);
         }
@@ -106,11 +107,14 @@
                 if (!j || !j.reply) { throw new Error('ai'); }
                 wait.className = 'tlai-m tlai-bot tlai-ai';
                 wait.textContent = j.reply;
+                addCopyButton(wait, j.reply);
                 convo.push({ role: 'user', content: text }, { role: 'assistant', content: j.reply });
                 convo = convo.slice(-6);
             })
             .catch(function () {
-                wait.innerHTML = answer(text); // built-in answers when the AI is not available
+                var fallback = answer(text);
+                wait.innerHTML = fallback; // built-in answers when the AI is not available
+                addCopyButton(wait, wait.textContent || fallback.replace(/<[^>]*>/g, ' '));
             })
             .then(function () {
                 clearTimeout(timer);
@@ -119,8 +123,29 @@
                 inp.focus();
             });
         }
+        function addCopyButton(node, value) {
+            var copy = document.createElement('button');
+            copy.type = 'button'; copy.className = 'tlai-copy'; copy.textContent = 'Copy answer';
+            copy.addEventListener('click', function () {
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(value).then(function () { copy.textContent = 'Copied'; }).catch(function () { copy.textContent = 'Copy unavailable'; });
+                } else { copy.textContent = 'Copy unavailable'; }
+            });
+            node.appendChild(copy);
+        }
         sendBtn.addEventListener('click', askAI);
+        var form = document.getElementById('tlai-form');
+        if (form) form.addEventListener('submit', function (e) { e.preventDefault(); askAI(); });
         inp.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); askAI(); } });
+        Array.prototype.forEach.call(document.querySelectorAll('[data-tlai-starter]'), function (starter) {
+            starter.addEventListener('click', function () { inp.value = starter.getAttribute('data-tlai-starter'); askAI(); });
+        });
+        var clearBtn = document.getElementById('tlai-clear');
+        if (clearBtn) clearBtn.addEventListener('click', function () {
+            convo = []; asked = 0; msgs.innerHTML = ''; chips.innerHTML = ''; started = false;
+            if (welcome) welcome.hidden = false;
+            toggle(false); toggle(true);
+        });
         btn.addEventListener('click', function () { toggle(!box.classList.contains('open')); });
         document.getElementById('tlai-close').addEventListener('click', function () { toggle(false); });
     })();
