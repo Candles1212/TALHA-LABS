@@ -129,3 +129,56 @@ a[aria-label^="Chat with Talha Labs on WhatsApp - Contact Us"]>span:last-child{d
   display:block!important;font-size:15px!important;font-weight:700!important;white-space:nowrap!important;
  }
 }
+
+
+/* TL AI refresh: calm, minimal chat UI with less visual clutter */
+#tlai-box{
+ background:#fff!important;border:1px solid #e7eaf1!important;border-radius:20px!important;
+ box-shadow:0 18px 55px rgba(25,35,70,.16)!important;
+}
+.tlai-h{
+ background:#fff!important;color:#172B3A!important;border-bottom:1px solid #edf0f4!important;
+ min-height:66px!important;padding:12px 16px!important;
+}
+.tlai-avatar{width:40px!important;height:40px!important;border:1px solid #e7eaf1!important}
+.tlai-brand-copy b{font-size:15px!important;color:#22236F!important}
+.tlai-brand-copy small{color:#788397!important;font-size:10px!important}
+.tlai-version{background:#f2f3ff!important;color:#3536A0!important;border:0!important}
+.tlai-online-dot{background:#6D9E20!important}
+.tlai-head-action,.tlai-x{background:#f4f5f8!important;color:#445!important}
+.tlai-head-action:hover,.tlai-x:hover{background:#e9ebf2!important}
+.tlai-welcome{background:#fff!important;padding:16px 16px 10px!important}
+.tlai-welcome-kicker{font-size:9px!important;letter-spacing:.12em!important;color:#6D9E20!important}
+.tlai-welcome h3{font-size:21px!important;line-height:1.2!important;font-weight:700!important;letter-spacing:-.035em!important;margin:6px 0!important}
+.tlai-welcome>p{font-size:12px!important;color:#788397!important;margin-bottom:10px!important}
+.tlai-starter-grid{display:flex!important;flex-wrap:wrap!important;gap:6px!important}
+.tlai-starter-grid button{
+ display:block!important;width:auto!important;grid-template-columns:none!important;
+ border:1px solid #e7eaf1!important;border-radius:999px!important;
+ padding:7px 10px!important;background:#fff!important;box-shadow:none!important;
+}
+.tlai-starter-grid button>span{display:none!important}
+.tlai-starter-grid b{font-size:10px!important;font-weight:600!important;color:#46516a!important}
+.tlai-starter-grid small{display:none!important}
+#tlai-msgs{background:#fbfcfe!important;padding:16px!important}
+.tlai-m{max-width:86%!important;padding:10px 13px!important;border-radius:15px!important;font-size:13px!important;line-height:1.55!important;box-shadow:none!important}
+.tlai-bot{background:#fff!important;border:1px solid #edf0f4!important;color:#344054!important;border-bottom-left-radius:5px!important}
+.tlai-me{background:#3536A0!important;color:#fff!important;border:0!important;border-bottom-right-radius:5px!important}
+.tlai-suggest-label{background:#fff!important;color:#98a1b2!important;font-size:8px!important;letter-spacing:.1em!important;padding:8px 14px 0!important}
+#tlai-chips{background:#fff!important;padding:7px 12px 10px!important;gap:6px!important}
+#tlai-chips button{border:1px solid #e7eaf1!important;background:#fff!important;color:#505b76!important;font-weight:550!important;padding:6px 10px!important;font-size:10px!important}
+#tlai-chips button:hover,.tlai-starter-grid button:hover{background:#f5f6ff!important;border-color:#cfd2f4!important}
+.tlai-f{border-top:1px solid #edf0f4!important;padding:10px 12px!important}
+#tlai-in{background:#f8f9fc!important;border:1px solid #e5e8ef!important;border-radius:12px!important;min-height:42px!important}
+#tlai-in:focus{background:#fff!important;box-shadow:0 0 0 3px rgba(53,54,160,.08)!important}
+#tlai-send{background:#3536A0!important;border-radius:11px!important;min-height:42px!important}
+.tlai-note{font-size:9px!important;color:#929bad!important;background:#fff!important}
+.tlai-copy{background:#f4f5f8!important;color:#667085!important}
+@media(max-width:640px){
+ #tlai-box,#tlai-box.open{border-radius:0!important}
+ .tlai-h{min-height:62px!important;padding:9px 13px!important}
+ .tlai-welcome{padding:13px 13px 9px!important}
+ .tlai-welcome h3{font-size:20px!important}
+ #tlai-msgs{padding:13px 12px!important}
+ .tlai-m{max-width:90%!important;font-size:14px!important}
+}
