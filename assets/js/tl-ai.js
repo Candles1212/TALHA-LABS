@@ -91,6 +91,7 @@
             }
             asked++;
             add(text, true);
+            if (welcome) welcome.hidden = true;
             busy = true; inp.disabled = true; sendBtn.disabled = true;
             var wait = add('...', false);
             if (window.gtag) { gtag('event', 'tl_ai_typed_question'); }
