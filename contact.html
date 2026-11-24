@@ -303,12 +303,33 @@
         <span style="width:44px;height:44px;border-radius:50%;overflow:hidden;background:#fff;display:inline-block;flex-shrink:0"><img src="/assets/images/taha.jpg" alt="" width="44" height="44" style="display:block;width:100%;height:100%;transform:scale(1.07)"></span>
         <span>TL AI</span>
     </button>
-    <div id="tlai-box" role="dialog" aria-label="TL AI assistant">
-        <div class="tlai-h"><div style="display:flex;align-items:center;gap:10px"><span style="width:36px;height:36px;border-radius:50%;overflow:hidden;background:#fff;display:inline-block;flex-shrink:0"><img src="/assets/images/taha.jpg" alt="" width="36" height="36" style="display:block;width:100%;height:100%;transform:scale(1.07)"></span><div><b>TL AI</b><small>Talha Labs AI assistant</small></div></div><button class="tlai-x" type="button" id="tlai-close" aria-label="Close chat">&times;</button></div>
-        <div id="tlai-msgs"></div>
-        <div id="tlai-chips"></div>
-        <div class="tlai-f"><input id="tlai-in" type="text" maxlength="300" placeholder="Apna sawal likhein..." aria-label="Type your question" autocomplete="off"><button id="tlai-send" type="button">Send</button></div>
-        <div class="tlai-note">AI se jawab ghalat ho sakte hain. Apni zaati ya medical tafseel na likhein.</div>
+    <div id="tlai-box" role="dialog" aria-label="TL AI assistant" aria-modal="false">
+        <div class="tlai-h">
+            <div class="tlai-brand">
+                <span class="tlai-avatar"><img src="/assets/images/taha.jpg" alt="Talha Labs" width="42" height="42"></span>
+                <div class="tlai-brand-copy"><b>TL AI <span class="tlai-version">ASSISTANT</span></b><small><i class="tlai-online-dot"></i> Talha Labs · Here to help</small></div>
+            </div>
+            <div class="tlai-head-actions"><button type="button" id="tlai-clear" class="tlai-head-action" aria-label="Start a new chat" title="New chat">↻</button><button class="tlai-x" type="button" id="tlai-close" aria-label="Close chat">&times;</button></div>
+        </div>
+        <div class="tlai-welcome" id="tlai-welcome">
+            <span class="tlai-welcome-kicker">WELCOME TO TALHA LABS</span>
+            <h3>How can we help<br>you today?</h3>
+            <p>Ask about our tests, timings, reports or home sample collection.</p>
+            <div class="tlai-starter-grid">
+                <button type="button" data-tlai-starter="What tests and services do you offer?"><span>🧪</span><b>Explore tests</b><small>Services &amp; profiles</small></button>
+                <button type="button" data-tlai-starter="What are your laboratory timings?"><span>🕒</span><b>Lab timings</b><small>Opening hours</small></button>
+                <button type="button" data-tlai-starter="Where is Talha Labs located?"><span>📍</span><b>Find us</b><small>Address &amp; directions</small></button>
+                <button type="button" data-tlai-starter="Do you offer home sample collection?"><span>🏠</span><b>Home sampling</b><small>Area &amp; booking</small></button>
+            </div>
+        </div>
+        <div id="tlai-msgs" aria-live="polite" aria-label="Conversation"></div>
+        <div class="tlai-suggest-label">QUICK QUESTIONS</div>
+        <div id="tlai-chips" aria-label="Suggested questions"></div>
+        <form class="tlai-f" id="tlai-form">
+            <input id="tlai-in" type="text" maxlength="300" placeholder="Type in English or Roman Urdu..." aria-label="Type your question" autocomplete="off">
+            <button id="tlai-send" type="submit" aria-label="Send message"><span>Send</span><b>↑</b></button>
+        </form>
+        <div class="tlai-note"><span>🔒</span> Please don't share personal, medical or financial details. TL AI does not diagnose or interpret reports.</div>
     </div>
     <script src="/assets/js/tl-ai.js"></script>
     <script src="/assets/js/interactive-tools.js" defer></script>
