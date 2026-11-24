@@ -36,7 +36,7 @@
         function answer(text) {
             var t = ' ' + String(text || '').toLowerCase()
                 .replace(/[.,!?;:()"'\\/\\\\-]/g, ' ')
-                .replace(/\\s+/g, ' ') + ' ';
+                .replace(/\s+/g, ' ') + ' ';
             // Prefer the most specific match; this prevents broad words from hijacking a question.
             var best = null, bestScore = 0;
             for (var i = 0; i < KB.length; i++) {
