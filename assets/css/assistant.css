@@ -182,3 +182,136 @@ a[aria-label^="Chat with Talha Labs on WhatsApp - Contact Us"]>span:last-child{d
  #tlai-msgs{padding:13px 12px!important}
  .tlai-m{max-width:90%!important;font-size:14px!important}
 }
+
+
+/* TL AI V2 — colourful, lively assistant experience */
+#tlai-box{
+  isolation:isolate!important;overflow:hidden!important;
+  border:1px solid #c9cafa!important;
+  background:linear-gradient(145deg,#fff 0%,#f8faff 48%,#f5fff8 100%)!important;
+  box-shadow:0 24px 75px rgba(35,39,112,.25),0 0 0 1px rgba(166,211,67,.16)!important;
+}
+.tlai-h{
+  position:relative!important;overflow:hidden!important;
+  color:#fff!important;
+  background:linear-gradient(112deg,#22236f 0%,#3536a0 48%,#5865d8 100%)!important;
+  border:0!important;
+  box-shadow:0 7px 24px rgba(35,39,112,.2)!important;
+}
+.tlai-h:after{
+  content:"";position:absolute;width:180px;height:180px;right:48px;top:-120px;
+  border:1px solid #ffffff35;border-radius:50%;pointer-events:none;
+  box-shadow:0 0 0 18px #ffffff0b,0 0 0 38px #ffffff08;
+}
+.tlai-avatar{
+  border:2px solid #c7e77d!important;
+  box-shadow:0 0 0 4px #ffffff20,0 5px 16px #11154b55!important;
+}
+.tlai-brand-copy b{color:#fff!important}
+.tlai-brand-copy small{color:#e4e8ff!important}
+.tlai-version{background:#ffffff20!important;color:#fff!important;border:1px solid #ffffff45!important}
+.tlai-online-dot{background:#b9ef62!important;box-shadow:0 0 0 4px #b9ef6230!important}
+.tlai-head-action,.tlai-x{background:#ffffff1d!important;color:#fff!important;border:1px solid #ffffff24!important}
+.tlai-head-action:hover,.tlai-x:hover{background:#ffffff35!important;transform:translateY(-1px)}
+.tlai-welcome{
+  position:relative!important;isolation:isolate!important;overflow:hidden!important;
+  padding:20px 18px 15px!important;
+  background:radial-gradient(circle at 92% 18%,#d8e3ff 0,transparent 30%),radial-gradient(circle at 8% 100%,#e7f8c9 0,transparent 34%),linear-gradient(135deg,#f3f5ff,#fff 58%,#f4fff0)!important;
+  border-bottom:1px solid #e5e9fb!important;
+}
+.tlai-welcome:before,.tlai-welcome:after{
+  content:"";position:absolute;z-index:-1;border-radius:50%;pointer-events:none;
+  animation:tlai-float 7s ease-in-out infinite;
+}
+.tlai-welcome:before{width:58px;height:58px;right:28px;top:25px;background:linear-gradient(135deg,#a6d34355,#5c68dc35);filter:blur(.2px)}
+.tlai-welcome:after{width:20px;height:20px;right:105px;top:70px;background:#a6d34388;animation-delay:-2.5s;box-shadow:0 0 24px #a6d34355}
+.tlai-welcome-kicker{
+  display:inline-flex!important;align-items:center!important;gap:6px!important;
+  padding:5px 9px!important;border-radius:999px!important;
+  background:#e7f4d2!important;color:#527d16!important;
+  letter-spacing:.1em!important;font-size:9px!important;
+}
+.tlai-welcome-kicker:before{content:"✦";font-size:11px}
+.tlai-welcome h3{color:#24266f!important;font-size:25px!important;line-height:1.12!important;margin:10px 0 7px!important}
+.tlai-welcome>p{color:#59647e!important;max-width:88%!important}
+.tlai-starter-grid{
+  display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important;
+}
+.tlai-starter-grid button{
+  position:relative!important;display:grid!important;grid-template-columns:34px 1fr!important;
+  grid-template-rows:auto auto!important;align-items:center!important;text-align:left!important;
+  width:100%!important;min-height:58px!important;padding:9px 10px!important;
+  border:1px solid #e0e4f6!important;border-radius:15px!important;
+  background:linear-gradient(135deg,#fff,#f8f9ff)!important;
+  box-shadow:0 4px 13px #292c7310!important;
+  transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease!important;
+}
+.tlai-starter-grid button:nth-child(2){background:linear-gradient(135deg,#fff,#f2fff0)!important}
+.tlai-starter-grid button:nth-child(3){background:linear-gradient(135deg,#fff,#fff8ed)!important}
+.tlai-starter-grid button:nth-child(4){background:linear-gradient(135deg,#fff,#f3f8ff)!important}
+.tlai-starter-grid button>span{
+  display:flex!important;grid-row:1/3!important;width:30px;height:30px;
+  align-items:center;justify-content:center;border-radius:10px;
+  background:#eceeff;font-size:19px!important;
+}
+.tlai-starter-grid button:nth-child(2)>span{background:#e8f7dc}
+.tlai-starter-grid button:nth-child(3)>span{background:#fff0d9}
+.tlai-starter-grid button:nth-child(4)>span{background:#e2f1ff}
+.tlai-starter-grid b{font-size:11px!important;font-weight:750!important;color:#292b72!important}
+.tlai-starter-grid small{display:block!important;font-size:9px!important;color:#7a849a!important;margin-top:3px!important}
+.tlai-starter-grid button:hover{transform:translateY(-3px)!important;border-color:#aeb5ef!important;box-shadow:0 9px 20px #3536a022!important}
+#tlai-msgs{
+  position:relative!important;
+  background:radial-gradient(circle at 100% 0%,#eef0ff 0,transparent 28%),linear-gradient(180deg,#f8f9ff,#f7fbf8)!important;
+}
+.tlai-m{animation:tlai-message-in .28s ease both!important}
+.tlai-bot{
+  background:linear-gradient(135deg,#fff,#f7f8ff)!important;
+  border:1px solid #e1e5f7!important;color:#30375a!important;
+  box-shadow:0 5px 15px #25296c0b!important;
+}
+.tlai-bot:before{content:"✦";color:#78952c;margin-right:6px;font-size:11px}
+.tlai-me{
+  background:linear-gradient(120deg,#3536a0,#5968dc)!important;
+  box-shadow:0 5px 16px #3536a033!important;
+}
+.tlai-suggest-label{color:#7180b4!important;background:#fff!important}
+#tlai-chips{background:#fff!important;border-top:1px solid #edf0fa!important}
+#tlai-chips button{
+  border:1px solid #dfe3fa!important;background:linear-gradient(135deg,#fff,#f5f6ff)!important;
+  color:#3536a0!important;transition:all .2s ease!important;
+}
+#tlai-chips button:hover{background:#e9ebff!important;border-color:#9da6ed!important;transform:translateY(-2px)!important}
+.tlai-f{background:linear-gradient(90deg,#fff,#f7f8ff)!important;border-top:1px solid #e7e9f7!important}
+#tlai-in{background:#fff!important;border:1.5px solid #dce1f5!important;box-shadow:inset 0 1px 3px #20245c08!important}
+#tlai-in:focus{border-color:#666de0!important;box-shadow:0 0 0 4px #626be01c!important}
+#tlai-send{
+  background:linear-gradient(135deg,#3536a0,#6875e6)!important;
+  box-shadow:0 5px 14px #3536a044!important;transition:transform .2s ease,box-shadow .2s ease!important;
+}
+#tlai-send:hover{transform:translateY(-2px)!important;box-shadow:0 8px 19px #3536a055!important}
+.tlai-note{background:#fff!important;color:#7a849a!important}
+#tlai-btn{
+  background:linear-gradient(135deg,#3536a0,#6875e6)!important;
+  box-shadow:0 8px 24px #3536a066,0 0 0 5px #6875e61c!important;
+  animation:tlai-launcher-pulse 3s ease-in-out infinite!important;
+}
+#tlai-btn>span:first-child{border:2px solid #c9e989!important;box-shadow:0 0 0 3px #ffffff30!important}
+#tlai-box.open{animation:tlai-panel-in .3s cubic-bezier(.2,.8,.2,1) both!important}
+@keyframes tlai-float{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(0,-11px,0)}}
+@keyframes tlai-message-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes tlai-panel-in{from{opacity:0;transform:translateY(12px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes tlai-launcher-pulse{0%,100%{box-shadow:0 8px 24px #3536a066,0 0 0 5px #6875e61c}50%{box-shadow:0 10px 30px #3536a077,0 0 0 9px #6875e610}}
+@media(max-width:640px){
+ .tlai-welcome{padding:16px 13px 12px!important}
+ .tlai-welcome h3{font-size:22px!important}
+ .tlai-starter-grid{gap:7px!important}
+ .tlai-starter-grid button{min-height:56px!important;padding:8px!important;grid-template-columns:30px 1fr!important}
+ .tlai-starter-grid button>span{width:27px;height:27px;font-size:17px!important}
+ .tlai-starter-grid b{font-size:10px!important}
+ .tlai-starter-grid small{font-size:8px!important}
+}
+@media(prefers-reduced-motion:reduce){
+ .tlai-m,.tlai-welcome:before,.tlai-welcome:after,#tlai-btn,#tlai-box.open{animation:none!important}
+ .tlai-starter-grid button,#tlai-chips button,#tlai-send{transition:none!important}
+}
